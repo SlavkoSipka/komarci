@@ -1,0 +1,105 @@
+// Button Component
+.btn {
+  cursor: pointer;
+  @include border-radius(0);
+  box-shadow: 0 5px 20px -5px rgba(0, 0, 0, 0.5);
+
+  &:hover,
+  &:active,
+  &:focus {
+    outline: none;
+  }
+
+  &.btn-primary {
+    background: lighten($primary, 0);
+    border: 1px solid lighten($primary, 0);
+    color: $white;
+
+    &:hover {
+      border: 1px solid $primary;
+      background: transparent !important;
+      color: $primary;
+    }
+
+    &.btn-outline-primary {
+      border: 1px solid $primary;
+      background: transparent;
+      color: $primary;
+
+      &:hover {
+        border: 1px solid transparent;
+        background: $primary;
+        color: $white;
+      }
+    }
+  }
+
+  &.btn-secondary {
+    background: lighten($secondary, 0);
+    border: 1px solid lighten($secondary, 0);
+    color: $white;
+
+    &:hover {
+      border: 1px solid $secondary;
+      background: transparent;
+      color: $secondary;
+    }
+
+    &.btn-outline-secondary {
+      border: 1px solid $secondary;
+      background: transparent;
+      color: $secondary;
+
+      &:hover {
+        border: 1px solid transparent;
+        background: $secondary;
+        color: $white;
+      }
+    }
+  }
+
+  &.btn-white {
+    background: $white;
+    border: 1px solid $white;
+    color: $black;
+    @include border-radius(0);
+
+    &:hover {
+      border: 1px solid $black;
+      background: $black;
+      color: $white;
+    }
+
+    &.btn-outline-white {
+      border-color: rgba($white, 0.8);
+      background: none;
+      @include border-radius(0);
+      border-width: 1px;
+      color: $white;
+
+      &:hover,
+      &:focus,
+      &:active {
+        background: $white;
+        border-color: $white;
+        color: $primary;
+      }
+    }
+  }
+
+  &.btn-outline-black {
+    border-color: rgba($black, 1);
+    background: none;
+    @include border-radius(2px);
+    border-width: 1px;
+    color: $black;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background: $black;
+      border-color: $black;
+      color: $white;
+    }
+  }
+}

@@ -1,0 +1,62 @@
+// Base Styles
+html {
+  // overflow-x: hidden;
+}
+
+body {
+  font-family: $font-primary;
+  background: $white;
+  font-size: 16px;
+  line-height: 1.8;
+  font-weight: 300;
+  color: lighten($black, 50%);
+
+  &.menu-show {
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+span {
+  color: lighten($black, 75%);
+}
+
+a {
+  transition: 0.3s all ease;
+  color: $primary;
+
+  &:hover {
+    text-decoration: none;
+    color: $primary;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5 {
+  line-height: 1.4;
+  color: $black;
+  font-family: $font-secondary;
+  font-weight: 400;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+.bg-light {
+  background: lighten($black, 98%) !important;
+}
+
+.bg-primary {
+  background: $primary;
+}
