@@ -1862,23 +1862,34 @@
     		}
     		
     		@media (max-width: 576px) {
-    			.carousel-slide {
-    				min-width: calc(100vw - 120px) !important;
-    				max-width: calc(100vw - 120px) !important;
-    				flex-shrink: 0;
-    			}
-    			
-    			.custom-carousel-track {
-    				gap: 20px !important;
-    				padding: 0 60px !important;
-    			}
-    			
+    			/* VERTIKALNI LAYOUT ZA TELEFON - BEZ CAROUSEL */
     			.custom-carousel-wrapper {
-    				padding: 30px 0 !important;
+    				padding: 0 !important;
     			}
     			
     			.custom-carousel-container {
-    				overflow: hidden !important;
+    				overflow: visible !important;
+    			}
+    			
+    			.custom-carousel-track {
+    				display: block !important;
+    				transform: none !important;
+    				transition: none !important;
+    				gap: 0 !important;
+    				padding: 0 15px !important;
+    			}
+    			
+    			.carousel-slide {
+    				min-width: 100% !important;
+    				max-width: 100% !important;
+    				width: 100% !important;
+    				display: block !important;
+    				margin-bottom: 20px !important;
+    			}
+    			
+    			/* Sakrij strelice na telefonu */
+    			.carousel-arrow {
+    				display: none !important;
     			}
     		}
     		
@@ -2018,6 +2029,18 @@
     			
     			if (!track || !prevBtn || !nextBtn) return;
     			
+    			// Check if mobile
+    			function isMobile() {
+    				return window.innerWidth <= 576;
+    			}
+    			
+    			// If mobile, don't initialize carousel
+    			if (isMobile()) {
+    				prevBtn.style.display = 'none';
+    				nextBtn.style.display = 'none';
+    				return;
+    			}
+    			
     			// Get original slides and clone them for infinite loop
     			const originalSlides = Array.from(track.querySelectorAll('.carousel-slide'));
     			const slideCount = originalSlides.length;
@@ -2039,11 +2062,6 @@
     			let currentIndex = slideCount; // Start at first original slide (after prepended clones)
     			let slidesToShow = 4;
     			let isTransitioning = false;
-    			
-    			// Touch/Swipe variables
-    			let touchStartX = 0;
-    			let touchEndX = 0;
-    			let isDragging = false;
     			
     			// Calculate slides to show based on screen width
     			function calculateSlidesToShow() {
@@ -2117,41 +2135,15 @@
     			prevBtn.addEventListener('click', goToPrevSlide);
     			nextBtn.addEventListener('click', goToNextSlide);
     			
-    			// Touch events for mobile swipe
-    			container.addEventListener('touchstart', function(e) {
-    				touchStartX = e.changedTouches[0].screenX;
-    				isDragging = true;
-    			}, { passive: true });
-    			
-    			container.addEventListener('touchmove', function(e) {
-    				if (!isDragging) return;
-    			}, { passive: true });
-    			
-    			container.addEventListener('touchend', function(e) {
-    				if (!isDragging) return;
-    				touchEndX = e.changedTouches[0].screenX;
-    				handleSwipe();
-    				isDragging = false;
-    			}, { passive: true });
-    			
-    			function handleSwipe() {
-    				const swipeThreshold = 50;
-    				const diff = touchStartX - touchEndX;
-    				
-    				if (Math.abs(diff) > swipeThreshold) {
-    					if (diff > 0) {
-    						goToNextSlide();
-    					} else {
-    						goToPrevSlide();
-    					}
-    				}
-    			}
-    			
     			// Update on window resize
     			let resizeTimeout;
     			window.addEventListener('resize', function() {
     				clearTimeout(resizeTimeout);
-    				resizeTimeout = setTimeout(() => updateCarousel(false), 200);
+    				resizeTimeout = setTimeout(() => {
+    					if (!isMobile()) {
+    						updateCarousel(false);
+    					}
+    				}, 200);
     			});
     			
     			// Initial update
