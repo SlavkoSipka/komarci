@@ -794,37 +794,40 @@
           font-size: 13px !important;
         }
         
-        /* OWL CAROUSEL - PRIORITET VERTIKALNOM SCROLLU */
+        /* OWL CAROUSEL - NEMA HORIZONTALNI SCROLL */
         .carousel-cause,
         .carousel-cause .owl-stage-outer,
         .carousel-cause .owl-stage,
         .carousel-cause .owl-item,
         .carousel-cause .cause-entry {
-          touch-action: auto !important;
-          -ms-touch-action: auto !important;
+          touch-action: pan-y !important;
+          -ms-touch-action: pan-y !important;
           pointer-events: auto !important;
         }
         
-        /* Omogući scroll na svim osama */
+        /* Omogući samo vertikalni scroll */
         .ftco-section.bg-light,
         .ftco-section.bg-light .container-fluid,
         .ftco-section.bg-light .col-md-12 {
-          touch-action: auto !important;
-          overflow: visible !important;
+          touch-action: pan-y !important;
+          overflow-x: hidden !important;
+          overflow-y: visible !important;
         }
         
         .carousel-cause {
-          overflow: visible !important;
+          overflow-x: hidden !important;
+          overflow-y: visible !important;
         }
         
         .carousel-cause .owl-stage-outer {
-          overflow: hidden !important;
-          scrollbar-width: none !important; /* Firefox */
-          -ms-overflow-style: none !important; /* IE and Edge */
+          overflow-x: hidden !important;
+          overflow-y: hidden !important;
+          scrollbar-width: none !important;
+          -ms-overflow-style: none !important;
         }
         
         .carousel-cause .owl-stage-outer::-webkit-scrollbar {
-          display: none !important; /* Chrome, Safari and Opera */
+          display: none !important;
         }
         
         .owl-carousel .owl-nav {
