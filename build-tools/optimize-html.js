@@ -77,9 +77,6 @@ htmlFiles.forEach(async (file) => {
     });
   }
   
-  // Ukloni stare preload tag-ove za CSS i JS
-  html = html.replace(/<link\s+rel=["']preload["'][^>]*href=["'](?:css|js)\/[^"']*["'][^>]*>/gi, '');
-  
   // Dodaj preload za kritične resurse
   const headClosing = html.indexOf('</head>');
   if (headClosing !== -1) {
@@ -92,18 +89,22 @@ htmlFiles.forEach(async (file) => {
     html = html.slice(0, headClosing) + preloads + html.slice(headClosing);
   }
   
-  // NE minifikuj HTML zbog UTF-8 encoding problema sa srpskim slovima
-  // Samo sačuvaj sa ispravnim encoding-om
+  // Minifikuj HTML
+  const minified = await minify(html, minifyOptions);
+  
+  // Sačuvaj
   const outputPath = path.join(distDir, file);
-  fs.writeFileSync(outputPath, html, { encoding: 'utf8' });
+  fs.writeFileSync(outputPath, minified);
   
   const originalSize = (html.length / 1024).toFixed(2);
+  const minifiedSize = (minified.length / 1024).toFixed(2);
+  const savings = ((1 - minified.length / html.length) * 100).toFixed(2);
   
   totalOriginal += html.length;
-  totalMinified += html.length;
+  totalMinified += minified.length;
   
   console.log(`✅ ${file}`);
-  console.log(`   ${originalSize} KB (without minification to preserve encoding)`);
+  console.log(`   ${originalSize} KB → ${minifiedSize} KB (${savings}% savings)`);
 });
 
 setTimeout(() => {

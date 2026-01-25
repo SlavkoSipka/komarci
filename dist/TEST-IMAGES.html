@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔍 IMAGE TEST PAGE - KOMOTRAKS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a1a1a;
+            color: #fff;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            color: coral;
+            text-align: center;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .test-item {
+            background: #2a2a2a;
+            border: 2px solid #444;
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+        .test-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 4px;
+            background: #111;
+        }
+        .test-item.success {
+            border-color: #4CAF50;
+        }
+        .test-item.error {
+            border-color: #f44336;
+        }
+        .status {
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+        .status.ok {
+            background: #4CAF50;
+            color: white;
+        }
+        .status.fail {
+            background: #f44336;
+            color: white;
+        }
+        .filename {
+            color: #FFD700;
+            font-size: 12px;
+            word-break: break-all;
+            margin-top: 10px;
+        }
+        .instructions {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid coral;
+        }
+        .summary {
+            background: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .summary-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .stat {
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .stat.success {
+            background: #4CAF50;
+        }
+        .stat.error {
+            background: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔍 KOMOTRAKS - IMAGE TEST PAGE</h1>
+    
+    <div class="instructions">
+        <h2>📋 Kako koristiti ovu stranicu:</h2>
+        <ol>
+            <li><strong>Otvori Dev Tools:</strong> Pritisni <code>F12</code></li>
+            <li><strong>Idi na Network tab</strong> i filtriraj na "images/"</li>
+            <li><strong>Refresh stranicu:</strong> <code>Ctrl + R</code></li>
+            <li><strong>Proveri status:</strong> Sve slike treba da budu ✅ (200 OK)</li>
+        </ol>
+        <p><strong>Ako vidiš ❌ (404 ili greška):</strong> Ta slika ne postoji ili putanja nije dobra!</p>
+    </div>
+
+    <div class="test-grid" id="testGrid">
+        <!-- Images will be loaded here by JavaScript -->
+    </div>
+
+    <div class="summary" id="summary">
+        <h2>📊 REZULTATI TESTA</h2>
+        <div class="summary-stats">
+            <div class="stat success">
+                ✅ Uspešno: <span id="successCount">0</span>
+            </div>
+            <div class="stat error">
+                ❌ Neuspešno: <span id="errorCount">0</span>
+            </div>
+        </div>
+        <p id="finalMessage" style="margin-top: 20px; font-size: 18px;"></p>
+    </div>
+
+    <script>
+        // Lista slika iz carousel sekcije koje treba testirati
+        const images = [
+            'images/FIKSNI-KOMARNICI-2.jpg',
+            'images/harmonika-vrata.jpg',
+            'images/zebra-zavesa-1.jpg',
+            'images/trakaste-zavese-cena.jpg',
+            'images/plise-komarnici.jpg',
+            'images/komarnici-karaburma.jpg',
+            'images/ZEBRA-ZAVESA-BEOGRAD.jpg',
+            'images/komotraks-logotip.png',
+            'images/Komarnici.jpg',
+            'images/Komarnici-cena.jpg',
+            'images/harmonika-3.jpg',
+            'images/boje-zavesa.jpg',
+            'images/TRAKASTE-ZAVESE-BEOGRAD.jpg',
+            'images/KOMARNICI-ZVEZDARA.jpg',
+            'images/lepa-harmonika.jpeg'
+        ];
+
+        let successCount = 0;
+        let errorCount = 0;
+        const testGrid = document.getElementById('testGrid');
+
+        images.forEach((imagePath, index) => {
+            const testItem = document.createElement('div');
+            testItem.className = 'test-item';
+            testItem.innerHTML = `
+                <h3>Test ${index + 1}</h3>
+                <img src="${imagePath}" alt="Test ${index + 1}" id="img-${index}">
+                <div class="filename">${imagePath}</div>
+                <div class="status" id="status-${index}">⏳ Loading...</div>
+            `;
+            testGrid.appendChild(testItem);
+
+            const img = document.getElementById(`img-${index}`);
+            const status = document.getElementById(`status-${index}`);
+
+            img.onload = function() {
+                testItem.classList.add('success');
+                status.className = 'status ok';
+                status.textContent = '✅ OK (200)';
+                successCount++;
+                updateSummary();
+            };
+
+            img.onerror = function() {
+                testItem.classList.add('error');
+                status.className = 'status fail';
+                status.textContent = '❌ FAILED (404)';
+                errorCount++;
+                updateSummary();
+            };
+        });
+
+        function updateSummary() {
+            document.getElementById('successCount').textContent = successCount;
+            document.getElementById('errorCount').textContent = errorCount;
+            
+            const totalTested = successCount + errorCount;
+            if (totalTested === images.length) {
+                const finalMessage = document.getElementById('finalMessage');
+                if (errorCount === 0) {
+                    finalMessage.innerHTML = '<strong style="color: #4CAF50;">🎉 SVE SLIKE RADE PERFEKTNO!</strong>';
+                } else {
+                    finalMessage.innerHTML = `<strong style="color: #f44336;">⚠️ ${errorCount} slika ne radi! Proveri putanje u Network tab-u.</strong>`;
+                }
+            }
+        }
+
+        // Log u console za dodatnu dijagnostiku
+        console.log('🔍 IMAGE TEST PAGE - Testiranje slika...');
+        console.log('📋 Ukupno slika za test:', images.length);
+        console.log('📸 Lista slika:', images);
+    </script>
+</body>
+</html>
