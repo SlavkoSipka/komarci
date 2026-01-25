@@ -2038,14 +2038,25 @@
     				return window.innerWidth <= 576;
     			}
     			
-    			// If mobile, don't initialize carousel
+    			// MOBILE - samo sakrij strelice, ne kloniraj ništa
     			if (isMobile()) {
     				prevBtn.style.display = 'none';
     				nextBtn.style.display = 'none';
-    				return;
+    				
+    				// Sakrij sve osim prvih 7 originalnih kartica (ako ima duplikata)
+    				const allSlides = track.querySelectorAll('.carousel-slide');
+    				if (allSlides.length > 7) {
+    					// Ima klonove, sakrij ih
+    					allSlides.forEach((slide, index) => {
+    						if (index >= 7) {
+    							slide.style.display = 'none';
+    						}
+    					});
+    				}
+    				return; // STOP - ne inicijalizuj carousel
     			}
     			
-    			// Get original slides and clone them for infinite loop
+    			// DESKTOP/TABLET - Clone slides for infinite loop
     			const originalSlides = Array.from(track.querySelectorAll('.carousel-slide'));
     			const slideCount = originalSlides.length;
     			
