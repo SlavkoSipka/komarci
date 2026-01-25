@@ -441,6 +441,10 @@
           display: flex !important;
           align-items: center !important;
           justify-content: center !important;
+          /* ISKLJUČI PARALLAX - FIKSNA POZADINA */
+          background-attachment: scroll !important;
+          background-position: center center !important;
+          background-size: cover !important;
         }
         
         .hero-wrap .slider-text {
@@ -2665,6 +2669,50 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  
+  <!-- DISABLE PARALLAX ON MOBILE -->
+  <script>
+    (function() {
+      function isMobile() {
+        return window.innerWidth <= 768;
+      }
+      
+      function disableParallaxOnMobile() {
+        if (isMobile()) {
+          // Ukloni Stellar parallax
+          if (typeof $.fn.stellar !== 'undefined') {
+            $('.hero-wrap').stellar('destroy');
+          }
+          
+          // Ukloni data-stellar atribute
+          $('.hero-wrap').removeAttr('data-stellar-background-ratio');
+          
+          // Ukloni Scrollax animacije
+          $('[data-scrollax], [data-scrollax-parent]').each(function() {
+            $(this).removeAttr('data-scrollax');
+            $(this).removeAttr('data-scrollax-parent');
+          });
+          
+          // Resetuj pozadinu na fixed position
+          $('.hero-wrap').css({
+            'background-attachment': 'scroll',
+            'background-position': 'center center',
+            'background-size': 'cover'
+          });
+        }
+      }
+      
+      // Pozovi na load
+      $(window).on('load', function() {
+        disableParallaxOnMobile();
+      });
+      
+      // Pozovi i odmah
+      $(document).ready(function() {
+        disableParallaxOnMobile();
+      });
+    })();
+  </script>
 
   <!-- Schema.org LocalBusiness Markup -->
   <script type="application/ld+json">
