@@ -399,43 +399,43 @@
             <div class="contact-form-wrapper">
               <h3>Pošaljite Upit</h3>
               <p style="margin-bottom: 30px; color: #666;">Popunite formu i mi ćemo vas kontaktirati u najkraćem roku.</p>
-              <form action="#" method="POST">
+              <form id="contact-form" action="#" method="POST">
                 <div class="row">
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Vaše Ime *" required>
+                      <input type="text" name="name" class="form-control" placeholder="Vaše Ime *" required>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input type="tel" class="form-control" placeholder="Telefon *" required>
+                      <input type="tel" name="phone" class="form-control" placeholder="Telefon *" required>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <input type="email" class="form-control" placeholder="Email">
+                      <input type="email" name="email" class="form-control" placeholder="Email (opciono)">
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <select class="form-control">
+                      <select name="service" class="form-control" required>
                         <option value="">Izaberite Uslugu *</option>
-                        <option value="komarnici">Komarnici</option>
-                        <option value="harmonika">Harmonika Vrata</option>
-                        <option value="zebra">Zebra Zavese</option>
-                        <option value="trakaste">Trakaste Zavese</option>
-                        <option value="ostalo">Ostalo</option>
+                        <option value="Komarnici">Komarnici</option>
+                        <option value="Harmonika Vrata">Harmonika Vrata</option>
+                        <option value="Zebra Zavese">Zebra Zavese</option>
+                        <option value="Trakaste Zavese">Trakaste Zavese</option>
+                        <option value="Ostalo">Ostalo</option>
                       </select>
                     </div>
                   </div>
                   <div class="col-md-6">
                     <div class="form-group">
-                      <input type="text" class="form-control" placeholder="Lokacija (Zvezdara, Palilula...) *" required>
+                      <input type="text" name="location" class="form-control" placeholder="Lokacija (Zvezdara, Palilula...) *" required>
                     </div>
                   </div>
                   <div class="col-md-12">
                     <div class="form-group">
-                      <textarea class="form-control" rows="5" placeholder="Vaša Poruka / Dodatne Informacije"></textarea>
+                      <textarea name="message" class="form-control" rows="5" placeholder="Vaša Poruka / Dodatne Informacije"></textarea>
                     </div>
                   </div>
                   <div class="col-md-12">
@@ -580,6 +580,15 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
+  
+  <!-- EmailJS SDK for contact form -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <!-- API Configuration (EmailJS keys) -->
+  <script src="js/config.js"></script>
+  
+  <!-- EmailJS Contact Form Handler -->
+  <script src="js/emailjs-contact.js"></script>
   
   <!-- Service Worker for offline support and caching -->
   <script src="js/sw-register.js"></script>

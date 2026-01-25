@@ -155,6 +155,7 @@ AOS.init({
 	/**
 	 * Initialize Owl Carousel for causes section
 	 * Displays causes in a responsive carousel with navigation
+	 * NO DRAG - samo strelice za navigaciju
 	 */
 	var carousel = function() {
 		$('.carousel-cause').owlCarousel({
@@ -166,6 +167,11 @@ AOS.init({
 			stagePadding:0,
 			nav: true,
 			navText: ['<span class="ion-ios-arrow-back">', '<span class="ion-ios-arrow-forward">'],
+			// ISKLJUČI SVE VRSTE DRAG-a - samo strelice!
+			mouseDrag: false,    // Isključi drag mišem na kompu
+			touchDrag: false,    // Isključi drag prstom na mobilnom
+			pullDrag: false,     // Isključi pull-to-refresh drag
+			freeDrag: false,     // Isključi slobodan drag
 			responsive:{
 				0:{
 					items: 1,
