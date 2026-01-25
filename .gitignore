@@ -1,6 +1,6 @@
 # Dependencies
 node_modules/
-package-lock.json
+# package-lock.json - Now included for Netlify
 
 # Build outputs
 # dist/ - Now included for Netlify deployment
