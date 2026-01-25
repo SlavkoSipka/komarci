@@ -92,22 +92,18 @@ htmlFiles.forEach(async (file) => {
     html = html.slice(0, headClosing) + preloads + html.slice(headClosing);
   }
   
-  // Minifikuj HTML
-  const minified = await minify(html, minifyOptions);
-  
-  // Sačuvaj
+  // NE minifikuj HTML zbog UTF-8 encoding problema sa srpskim slovima
+  // Samo sačuvaj sa ispravnim encoding-om
   const outputPath = path.join(distDir, file);
-  fs.writeFileSync(outputPath, minified);
+  fs.writeFileSync(outputPath, html, { encoding: 'utf8' });
   
   const originalSize = (html.length / 1024).toFixed(2);
-  const minifiedSize = (minified.length / 1024).toFixed(2);
-  const savings = ((1 - minified.length / html.length) * 100).toFixed(2);
   
   totalOriginal += html.length;
-  totalMinified += minified.length;
+  totalMinified += html.length;
   
   console.log(`✅ ${file}`);
-  console.log(`   ${originalSize} KB → ${minifiedSize} KB (${savings}% savings)`);
+  console.log(`   ${originalSize} KB (without minification to preserve encoding)`);
 });
 
 setTimeout(() => {
