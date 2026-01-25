@@ -1824,13 +1824,7 @@
     			position: relative;
     			width: 100%;
     			overflow: hidden;
-    			padding: 0 80px;
-    		}
-    		
-    		@media (max-width: 768px) {
-    			.custom-carousel-wrapper {
-    				padding: 0 60px;
-    			}
+    			padding: 20px 0;
     		}
     		
     		.custom-carousel-container {
@@ -1872,26 +1866,26 @@
     			position: absolute;
     			top: 50%;
     			transform: translateY(-50%);
-    			width: 60px;
-    			height: 60px;
-    			background: rgba(248, 183, 57, 0.95);
-    			border: none;
+    			width: 70px;
+    			height: 70px;
+    			background: rgba(248, 183, 57, 0.98);
+    			border: 3px solid white;
     			border-radius: 50%;
-    			font-size: 28px;
+    			font-size: 32px;
     			color: white;
     			cursor: pointer;
-    			z-index: 10;
+    			z-index: 999;
     			transition: all 0.3s ease;
     			display: flex;
     			align-items: center;
     			justify-content: center;
-    			box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    			box-shadow: 0 6px 20px rgba(0,0,0,0.4);
     		}
     		
     		.carousel-arrow:hover {
     			background: rgba(233, 161, 33, 1);
-    			transform: translateY(-50%) scale(1.1);
-    			box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    			transform: translateY(-50%) scale(1.15);
+    			box-shadow: 0 8px 30px rgba(0,0,0,0.5);
     		}
     		
     		.carousel-arrow:active {
@@ -1899,26 +1893,35 @@
     		}
     		
     		.carousel-arrow-left {
-    			left: -30px;
+    			left: 20px;
     		}
     		
     		.carousel-arrow-right {
-    			right: -30px;
+    			right: 20px;
     		}
     		
     		@media (max-width: 768px) {
     			.carousel-arrow {
-    				width: 50px;
-    				height: 50px;
-    				font-size: 24px;
+    				width: 55px;
+    				height: 55px;
+    				font-size: 26px;
+    				border: 2px solid white;
     			}
     			
     			.carousel-arrow-left {
-    				left: 10px;
+    				left: 5px;
     			}
     			
     			.carousel-arrow-right {
-    				right: 10px;
+    				right: 5px;
+    			}
+    		}
+    		
+    		@media (max-width: 576px) {
+    			.carousel-arrow {
+    				width: 50px;
+    				height: 50px;
+    				font-size: 24px;
     			}
     		}
     		
@@ -1977,11 +1980,17 @@
     			const prevBtn = document.getElementById('prevBtn');
     			const nextBtn = document.getElementById('nextBtn');
     			const slides = document.querySelectorAll('.carousel-slide');
+    			const container = document.querySelector('.custom-carousel-container');
     			
     			if (!track || !prevBtn || !nextBtn || slides.length === 0) return;
     			
     			let currentIndex = 0;
     			let slidesToShow = 4;
+    			
+    			// Touch/Swipe variables
+    			let touchStartX = 0;
+    			let touchEndX = 0;
+    			let isDragging = false;
     			
     			// Calculate slides to show based on screen width
     			function calculateSlidesToShow() {
@@ -2009,21 +2018,56 @@
     				track.style.transform = `translateX(${translateX}px)`;
     			}
     			
-    			// Move exactly 1 card on click
-    			prevBtn.addEventListener('click', function() {
+    			function goToPrevSlide() {
     				if (currentIndex > 0) {
     					currentIndex--;
     					updateCarousel();
     				}
-    			});
+    			}
     			
-    			nextBtn.addEventListener('click', function() {
+    			function goToNextSlide() {
     				const maxIndex = Math.max(0, slides.length - slidesToShow);
     				if (currentIndex < maxIndex) {
     					currentIndex++;
     					updateCarousel();
     				}
-    			});
+    			}
+    			
+    			// Move exactly 1 card on click
+    			prevBtn.addEventListener('click', goToPrevSlide);
+    			nextBtn.addEventListener('click', goToNextSlide);
+    			
+    			// Touch events for mobile swipe
+    			container.addEventListener('touchstart', function(e) {
+    				touchStartX = e.changedTouches[0].screenX;
+    				isDragging = true;
+    			}, { passive: true });
+    			
+    			container.addEventListener('touchmove', function(e) {
+    				if (!isDragging) return;
+    			}, { passive: true });
+    			
+    			container.addEventListener('touchend', function(e) {
+    				if (!isDragging) return;
+    				touchEndX = e.changedTouches[0].screenX;
+    				handleSwipe();
+    				isDragging = false;
+    			}, { passive: true });
+    			
+    			function handleSwipe() {
+    				const swipeThreshold = 50; // minimum distance for swipe
+    				const diff = touchStartX - touchEndX;
+    				
+    				if (Math.abs(diff) > swipeThreshold) {
+    					if (diff > 0) {
+    						// Swiped left - go to next
+    						goToNextSlide();
+    					} else {
+    						// Swiped right - go to prev
+    						goToPrevSlide();
+    					}
+    				}
+    			}
     			
     			// Update on window resize
     			let resizeTimeout;
