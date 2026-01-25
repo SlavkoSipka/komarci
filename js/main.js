@@ -115,6 +115,29 @@ AOS.init({
 	loader();
 
 	/**
+	 * Fix for back button - hide loader when page is restored from bfcache
+	 * This handles the case when user clicks browser back/forward buttons
+	 */
+	window.addEventListener('pageshow', function(event) {
+		// If page is restored from bfcache (back button), hide loader immediately
+		if (event.persisted || (window.performance && window.performance.navigation.type === 2)) {
+			if($('#ftco-loader').length > 0) {
+				$('#ftco-loader').removeClass('show');
+			}
+			window.scrollTo(0, 0);
+		}
+	});
+
+	/**
+	 * Additional fix: hide loader on popstate (browser back/forward)
+	 */
+	window.addEventListener('popstate', function() {
+		if($('#ftco-loader').length > 0) {
+			$('#ftco-loader').removeClass('show');
+		}
+	});
+
+	/**
 	 * Show loader immediately on any link click
 	 */
 	$(document).on('click', 'a:not([target="_blank"]):not([href^="#"]):not([href^="tel:"]):not([href^="mailto:"])', function(e) {
