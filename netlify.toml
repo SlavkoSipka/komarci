@@ -1,14 +1,13 @@
 [build]
-  # Build command - install dependencies and build
-  command = "npm install && npm run build"
+  # Build command - install ALL dependencies (including dev) and build
+  command = "npm ci && npm run build"
   
   # Publish directory - where the built files are
   publish = "dist"
 
 # Environment variables
 [build.environment]
-  NODE_VERSION = "18"
-  NODE_ENV = "production"
+  NODE_VERSION = "20"
 
 # Redirect rules
 [[redirects]]
