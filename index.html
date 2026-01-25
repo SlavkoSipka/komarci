@@ -1979,13 +1979,31 @@
     			const track = document.getElementById('carouselTrack');
     			const prevBtn = document.getElementById('prevBtn');
     			const nextBtn = document.getElementById('nextBtn');
-    			const slides = document.querySelectorAll('.carousel-slide');
     			const container = document.querySelector('.custom-carousel-container');
     			
-    			if (!track || !prevBtn || !nextBtn || slides.length === 0) return;
+    			if (!track || !prevBtn || !nextBtn) return;
     			
-    			let currentIndex = 0;
+    			// Get original slides and clone them for infinite loop
+    			const originalSlides = Array.from(track.querySelectorAll('.carousel-slide'));
+    			const slideCount = originalSlides.length;
+    			
+    			if (slideCount === 0) return;
+    			
+    			// Clone all slides and append to track for infinite loop
+    			originalSlides.forEach(slide => {
+    				const clone = slide.cloneNode(true);
+    				track.appendChild(clone);
+    			});
+    			
+    			// Clone again and prepend for backward infinite loop
+    			originalSlides.slice().reverse().forEach(slide => {
+    				const clone = slide.cloneNode(true);
+    				track.insertBefore(clone, track.firstChild);
+    			});
+    			
+    			let currentIndex = slideCount; // Start at first original slide (after prepended clones)
     			let slidesToShow = 4;
+    			let isTransitioning = false;
     			
     			// Touch/Swipe variables
     			let touchStartX = 0;
@@ -2001,36 +2019,63 @@
     				return 4;
     			}
     			
-    			function updateCarousel() {
+    			function updateCarousel(smooth = true) {
     				slidesToShow = calculateSlidesToShow();
-    				const maxIndex = Math.max(0, slides.length - slidesToShow);
     				
-    				// Keep currentIndex within bounds
-    				currentIndex = Math.min(currentIndex, maxIndex);
-    				
-    				// Calculate exact slide width including gap
-    				const slideElement = slides[0];
+    				const allSlides = track.querySelectorAll('.carousel-slide');
+    				const slideElement = allSlides[0];
     				const slideWidth = slideElement.offsetWidth;
-    				const gap = 20; // gap from CSS
+    				const gap = 20;
     				const moveDistance = slideWidth + gap;
     				
     				const translateX = -(currentIndex * moveDistance);
+    				
+    				if (smooth) {
+    					track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+    				} else {
+    					track.style.transition = 'none';
+    				}
+    				
     				track.style.transform = `translateX(${translateX}px)`;
     			}
     			
-    			function goToPrevSlide() {
-    				if (currentIndex > 0) {
-    					currentIndex--;
-    					updateCarousel();
+    			function handleInfiniteLoop() {
+    				// If we're at or past the end of original slides, reset to beginning
+    				if (currentIndex >= slideCount * 2) {
+    					isTransitioning = true;
+    					setTimeout(() => {
+    						currentIndex = slideCount;
+    						updateCarousel(false);
+    						setTimeout(() => {
+    							isTransitioning = false;
+    						}, 50);
+    					}, 500);
+    				}
+    				// If we're at or before the beginning, reset to end
+    				else if (currentIndex < slideCount) {
+    					isTransitioning = true;
+    					setTimeout(() => {
+    						currentIndex = slideCount * 2 - 1;
+    						updateCarousel(false);
+    						setTimeout(() => {
+    							isTransitioning = false;
+    						}, 50);
+    					}, 500);
     				}
     			}
     			
+    			function goToPrevSlide() {
+    				if (isTransitioning) return;
+    				currentIndex--;
+    				updateCarousel(true);
+    				handleInfiniteLoop();
+    			}
+    			
     			function goToNextSlide() {
-    				const maxIndex = Math.max(0, slides.length - slidesToShow);
-    				if (currentIndex < maxIndex) {
-    					currentIndex++;
-    					updateCarousel();
-    				}
+    				if (isTransitioning) return;
+    				currentIndex++;
+    				updateCarousel(true);
+    				handleInfiniteLoop();
     			}
     			
     			// Move exactly 1 card on click
@@ -2055,15 +2100,13 @@
     			}, { passive: true });
     			
     			function handleSwipe() {
-    				const swipeThreshold = 50; // minimum distance for swipe
+    				const swipeThreshold = 50;
     				const diff = touchStartX - touchEndX;
     				
     				if (Math.abs(diff) > swipeThreshold) {
     					if (diff > 0) {
-    						// Swiped left - go to next
     						goToNextSlide();
     					} else {
-    						// Swiped right - go to prev
     						goToPrevSlide();
     					}
     				}
@@ -2073,11 +2116,11 @@
     			let resizeTimeout;
     			window.addEventListener('resize', function() {
     				clearTimeout(resizeTimeout);
-    				resizeTimeout = setTimeout(updateCarousel, 200);
+    				resizeTimeout = setTimeout(() => updateCarousel(false), 200);
     			});
     			
     			// Initial update
-    			updateCarousel();
+    			updateCarousel(false);
     		});
     	</script>
     </section>
