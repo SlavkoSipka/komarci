@@ -38,7 +38,7 @@ komotraks_contact_form
 --------------------------------------------------------------------
 SUBJECT (na EmailJS):
 --------------------------------------------------------------------
-🏡 Novi Upit - {{service_type}} | {{from_name}} | {{location}}
+🏡 Novi Upit | {{from_name}} | {{from_phone}}
 
 --------------------------------------------------------------------
 CONTENT / BODY (na EmailJS):
@@ -147,16 +147,6 @@ CONTENT / BODY (na EmailJS):
       <span class="info-value"><a href="mailto:{{from_email}}" style="color: #e9a121; text-decoration: none;">{{from_email}}</a></span>
     </div>
 
-    <div class="info-row">
-      <span class="info-label">🛠️ Vrsta Usluge</span>
-      <span class="info-value" style="font-size: 18px; font-weight: bold; color: #e9a121;">{{service_type}}</span>
-    </div>
-
-    <div class="info-row">
-      <span class="info-label">📍 Lokacija</span>
-      <span class="info-value">{{location}}</span>
-    </div>
-
     <div class="message-box">
       <span class="info-label">💬 Poruka / Dodatne Informacije</span>
       <p class="info-value" style="margin: 10px 0 0 0; white-space: pre-wrap;">{{message}}</p>
@@ -188,12 +178,10 @@ To email: komotraks@gmail.com (gde želiš da primaš upite)
 ====================================================================
 {{from_name}}      - Ime klijenta
 {{from_phone}}     - Telefon klijenta
-{{from_email}}     - Email klijenta
-{{service_type}}   - Vrsta usluge (Komarnici, Harmonika, itd)
-{{location}}       - Lokacija (Zvezdara, Palilula, itd)
-{{message}}        - Poruka / dodatne info
-{{to_name}}        - KOMOTRAKS Tim (default)
-{{reply_to}}       - Reply-to adresa
+{{from_email}}     - Email klijenta (ili "Nije unet email")
+{{message}}        - Poruka klijenta
+{{to_name}}        - KOMOTRAKS Tim (automatski)
+{{reply_to}}       - Reply-to adresa (email ili telefon)
 
 ====================================================================
 

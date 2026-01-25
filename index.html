@@ -2208,21 +2208,21 @@
     		</div>
     		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
     			<h3 class="mb-3">Kontaktirajte KOMOTRAKS</h3>
-    			<form action="#" class="volunter-form">
+    			<form id="contact-form-home" action="#" class="volunter-form">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Vaše Ime">
+              <input type="text" name="name" class="form-control" placeholder="Vaše Ime *" required>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Vaš Email">
+              <input type="tel" name="phone" class="form-control" placeholder="Telefon *" required>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Telefon">
+              <input type="email" name="email" class="form-control" placeholder="Email (opciono)">
             </div>
             <div class="form-group">
-              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Poruka - Navedite lokaciju (Zvezdara, Palilula...)"></textarea>
+              <textarea name="message" cols="30" rows="3" class="form-control" placeholder="Vaša Poruka *" required></textarea>
             </div>
             <div class="form-group">
-              <input type="submit" value="Pošaljite Upit" class="btn btn-white py-3 px-5">
+              <button type="submit" class="btn btn-white py-3 px-5">Pošaljite Upit</button>
             </div>
           </form>
     		</div>    			
@@ -2411,6 +2411,15 @@
   }
   </script>
 
+  <!-- EmailJS SDK for contact form -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
+  <!-- API Configuration (EmailJS keys) -->
+  <script src="js/config.js"></script>
+  
+  <!-- EmailJS Contact Form Handler -->
+  <script src="js/emailjs-contact.js"></script>
+  
   <!-- Service Worker for offline support and caching -->
   <script src="js/sw-register.js"></script>
     
