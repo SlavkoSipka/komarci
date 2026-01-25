@@ -65,4 +65,13 @@ if (fs.existsSync(path.join(__dirname, '../sitemap.xml'))) {
   console.log('🗺️  Copied sitemap.xml');
 }
 
+// Kopiraj _headers za Netlify ako postoji
+if (fs.existsSync(path.join(__dirname, '../_headers'))) {
+  fs.copyFileSync(
+    path.join(__dirname, '../_headers'),
+    path.join(__dirname, '../dist/_headers')
+  );
+  console.log('📋 Copied _headers for Netlify');
+}
+
 console.log('\n✅ All assets copied successfully!');
