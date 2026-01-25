@@ -1828,7 +1828,7 @@
     		}
     		
     		.custom-carousel-container {
-    			overflow: hidden;
+    			overflow: visible;
     			width: 100%;
     		}
     		
@@ -1863,13 +1863,22 @@
     		
     		@media (max-width: 576px) {
     			.carousel-slide {
-    				min-width: calc(100% - 80px);
-    				margin: 0 5px;
+    				min-width: calc(100vw - 120px) !important;
+    				max-width: calc(100vw - 120px) !important;
+    				flex-shrink: 0;
     			}
     			
     			.custom-carousel-track {
-    				gap: 10px;
-    				padding: 0 60px;
+    				gap: 20px !important;
+    				padding: 0 60px !important;
+    			}
+    			
+    			.custom-carousel-wrapper {
+    				padding: 30px 0 !important;
+    			}
+    			
+    			.custom-carousel-container {
+    				overflow: hidden !important;
     			}
     		}
     		
@@ -1930,9 +1939,17 @@
     		
     		@media (max-width: 576px) {
     			.carousel-arrow {
-    				width: 50px;
-    				height: 50px;
-    				font-size: 24px;
+    				width: 45px;
+    				height: 45px;
+    				font-size: 22px;
+    			}
+    			
+    			.carousel-arrow-left {
+    				left: 2px;
+    			}
+    			
+    			.carousel-arrow-right {
+    				right: 2px;
     			}
     		}
     		
@@ -1943,11 +1960,18 @@
     			box-shadow: 0 2px 15px rgba(0,0,0,0.1);
     			transition: transform 0.3s ease, box-shadow 0.3s ease;
     			height: 100%;
+    			width: 100%;
     		}
     		
     		.product-card:hover {
     			transform: translateY(-5px);
     			box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    		}
+    		
+    		@media (max-width: 576px) {
+    			.product-card {
+    				min-height: 400px;
+    			}
     		}
     		
     		.product-card .img-wrapper {
