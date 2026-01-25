@@ -4,12 +4,10 @@
   
   # Publish directory - where the built files are
   publish = "dist"
-  
-  # Node version
-  environment = { NODE_VERSION = "18" }
 
-# Cache node_modules between builds
+# Environment variables
 [build.environment]
+  NODE_VERSION = "18"
   NODE_ENV = "production"
 
 # Redirect rules
