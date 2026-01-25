@@ -1653,8 +1653,10 @@
             <p>KOMOTRAKS nudi širok asortiman rešenja za zaštitu od insekata i moderna vrata. Profesionalna ugradnja komarnika, harmonika vrata i zavesa za Beograd, Zvezdaru, Palilulu, Karaburmu i Voždovac.</p>
           </div>
         </div>
-        
-        <!-- Custom Carousel Wrapper -->
+    	</div>
+    	
+    	<!-- Custom Carousel Wrapper - FULL WIDTH -->
+    	<div class="container-fluid px-0">
         <div class="custom-carousel-wrapper">
         	<button class="carousel-arrow carousel-arrow-left" id="prevBtn">
         		<span class="ion-ios-arrow-back"></span>
@@ -1813,7 +1815,7 @@
     				</div>
     			</div>
     		</div>
-    	</div>
+    		</div>
     	</div>
 
     	<!-- Custom Carousel Styles and Script -->
@@ -1822,6 +1824,13 @@
     			position: relative;
     			width: 100%;
     			overflow: hidden;
+    			padding: 0 80px;
+    		}
+    		
+    		@media (max-width: 768px) {
+    			.custom-carousel-wrapper {
+    				padding: 0 60px;
+    			}
     		}
     		
     		.custom-carousel-container {
@@ -1831,8 +1840,9 @@
     		
     		.custom-carousel-track {
     			display: flex;
-    			transition: transform 0.5s ease;
+    			transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     			gap: 20px;
+    			padding: 0 20px;
     		}
     		
     		.carousel-slide {
@@ -1854,7 +1864,7 @@
     		
     		@media (max-width: 576px) {
     			.carousel-slide {
-    				min-width: 100%;
+    				min-width: calc(100% - 20px);
     			}
     		}
     		
@@ -1984,15 +1994,22 @@
     			
     			function updateCarousel() {
     				slidesToShow = calculateSlidesToShow();
-    				const slideWidth = track.offsetWidth / slidesToShow;
     				const maxIndex = Math.max(0, slides.length - slidesToShow);
     				
+    				// Keep currentIndex within bounds
     				currentIndex = Math.min(currentIndex, maxIndex);
     				
-    				const translateX = -(currentIndex * slideWidth);
+    				// Calculate exact slide width including gap
+    				const slideElement = slides[0];
+    				const slideWidth = slideElement.offsetWidth;
+    				const gap = 20; // gap from CSS
+    				const moveDistance = slideWidth + gap;
+    				
+    				const translateX = -(currentIndex * moveDistance);
     				track.style.transform = `translateX(${translateX}px)`;
     			}
     			
+    			// Move exactly 1 card on click
     			prevBtn.addEventListener('click', function() {
     				if (currentIndex > 0) {
     					currentIndex--;
