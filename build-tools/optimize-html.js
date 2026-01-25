@@ -77,6 +77,9 @@ htmlFiles.forEach(async (file) => {
     });
   }
   
+  // Ukloni stare preload tag-ove za CSS i JS
+  html = html.replace(/<link\s+rel=["']preload["'][^>]*href=["'](?:css|js)\/[^"']*["'][^>]*>/gi, '');
+  
   // Dodaj preload za kritične resurse
   const headClosing = html.indexOf('</head>');
   if (headClosing !== -1) {

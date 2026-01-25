@@ -1,4 +1,0 @@
-BUILD VERSION: 2026-01-25 23:45
-COMMIT: 629ef83
-STATUS: All images fixed - no %20, all dashes
-TEST: If you see this file on deployed site, Netlify IS serving from dist/ folder correctly!
