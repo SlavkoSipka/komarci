@@ -21,12 +21,12 @@
     <meta name="theme-color" content="#1a1a1a">
     <meta name="msapplication-TileColor" content="#1a1a1a">
     <meta name="msapplication-config" content="favicons/browserconfig.xml">
-    <meta name="description" content="KOMOTRAKS - Profesionalna ugradnja komarnika, harmonika vrata i zavesa u Beogradu. Pokrivamo Zvezdaru, Palilulu, Karaburmu, Voždovac, Novi Beograd i Zemun. Besplatno merenje. Cene od 25€. ☎ +381 61 6738181">
+    <meta name="description" content="KOMOTRAKS - Profesionalna ugradnja komarnika, harmonika vrata i zavesa u Beogradu. Pokrivamo Zvezdaru, Palilulu, Karaburmu, Voždovac, Novi Beograd i Zemun. Besplatno merenje. Cene od 20€. ☎ +381 61 6738181">
     <meta name="keywords" content="komarnici beograd, harmonika vrata beograd, zebra zavese beograd, trakaste zavese beograd, komarnici zvezdara, komarnici palilula, harmonika vrata po meri, fiksni komarnici, plise komarnici, ugradnja komarnika">
     
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Komarnici, Harmonika Vrata, Zavese Beograd | KOMOTRAKS - Ugradnja Po Meri">
-    <meta property="og:description" content="KOMOTRAKS - Profesionalna ugradnja komarnika, harmonika vrata i zavesa u Beogradu. Pokrivamo Zvezdaru, Palilulu, Karaburmu, Voždovac. Besplatno merenje. Cene od 25€.">
+    <meta property="og:description" content="KOMOTRAKS - Profesionalna ugradnja komarnika, harmonika vrata i zavesa u Beogradu. Pokrivamo Zvezdaru, Palilulu, Karaburmu, Voždovac. Besplatno merenje. Cene od 20€.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://komotraks.rs/">
     <meta property="og:image" content="https://komotraks.rs/images/komotraks%20logotip.png">
@@ -47,7 +47,7 @@
       "description": "Profesionalna ugradnja komarnika, harmonika vrata i zavesa u Beogradu",
       "image": "https://komotraks.rs/images/komotraks%20logotip.png",
       "telephone": "+381616738181",
-      "email": "homoljac69@gmail.com",
+      "email": "komotraks@gmail.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Beograd",
@@ -61,7 +61,7 @@
         {"@type": "City", "name": "Novi Beograd"},
         {"@type": "City", "name": "Zemun"}
       ],
-      "priceRange": "25€ - 65€",
+      "priceRange": "20€ - 200€",
       "openingHours": "Mo-Sa 08:00-20:00",
       "url": "https://komotraks.rs",
       "sameAs": []
@@ -819,8 +819,12 @@
         
         .carousel-cause .owl-stage-outer {
           overflow: hidden !important;
-          overflow-x: auto !important;
-          -webkit-overflow-scrolling: touch !important;
+          scrollbar-width: none !important; /* Firefox */
+          -ms-overflow-style: none !important; /* IE and Edge */
+        }
+        
+        .carousel-cause .owl-stage-outer::-webkit-scrollbar {
+          display: none !important; /* Chrome, Safari and Opera */
         }
         
         .owl-carousel .owl-nav {
@@ -828,8 +832,7 @@
         }
         
         .owl-carousel .owl-dots {
-          margin-top: 15px !important;
-          text-align: center !important;
+          display: none !important;
         }
         
         /* Kartice u carousel-u jasne */
@@ -1546,8 +1549,8 @@
 	    					<div class="cause-entry">
 		    					<a href="komarnici.html" class="img" style="background-image: url('images/FIKSNI KOMARNICI 2.jpg');"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="komarnici.html">Fiksni Komarnici Beograd</a></h3>
-		    						<p>Kvalitetni fiksni komarnici za prozore. Jednostavna montaža, trajno rešenje protiv komaraca i insekata za sve tipove prozora.</p>
+		    						<h3><a href="komarnici.html">Krovni Komarnici</a></h3>
+		    						<p>Kvalitetni krovni komarnici za prozore. Jednostavna montaža, trajno rešenje protiv komaraca i insekata za sve tipove prozora.</p>
 		    						<span class="donation-time mb-3 d-block">✓ Besplatno merenje</span>
 		                <div class="progress custom-progress-success">
 		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
@@ -1572,7 +1575,7 @@
 	    				</div>
 	    				<div class="item">
 	    					<div class="cause-entry">
-		    					<a href="zavese.html" class="img" style="background-image: url('images/ZEBRA%20ZAVESA.jpg');"></a>
+		    					<a href="zavese.html" class="img" style="background-image: url('images/zebra zavesa 1.jpg');"></a>
 		    					<div class="text p-3 p-md-4">
 		    						<h3><a href="zavese.html">Zebra Zavese Zvezdara</a></h3>
 		    						<p>Elegantne zebra zavese za kontrolu svetlosti. Moderna rešenja za dnevne sobe, spavaće sobe i kancelarije.</p>
@@ -1626,6 +1629,20 @@
 		    					</div>
 		    				</div>
 	    				</div>
+	    				<div class="item">
+	    					<div class="cause-entry">
+		    					<a href="zavese.html" class="img" style="background-image: url('images/ZEBRA%20ZAVESA%20BEOGRAD.jpg');"></a>
+		    					<div class="text p-3 p-md-4">
+		    						<h3><a href="zavese.html">Zebra Zavese Premium Kvalitet</a></h3>
+		    						<p>Moderne zebra zavese za perfekrenu kontrolu svetlosti. Elegantno rešenje za dnevne sobe, kancelarije i spavaće sobe.</p>
+		    						<span class="donation-time mb-3 d-block">✓ Različite boje i dimenzije</span>
+		                <div class="progress custom-progress-success">
+		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 89%" aria-valuenow="89" aria-valuemin="0" aria-valuemax="100"></div>
+		                </div>
+		                <span class="fund-raised d-block">Funkcionalnost i stil - Beograd Centar</span>
+		    					</div>
+		    				</div>
+	    				</div>
     				</div>
     			</div>
     		</div>
@@ -1655,6 +1672,13 @@
       	<div class="row">
           <div class="col-md-10 heading-section ftco-animate">
             <h2 class="mb-5 text-center">Zašto Izabrati KOMOTRAKS</h2>
+            
+            <h4 class="mb-3" style="font-size: 22px; font-weight: 600;" data-aos="fade-right" data-aos-duration="800">2 Godine Garancije na Sve Ugrađene Proizvode</h4>
+            <p class="mb-5" style="font-size: 18px; line-height: 1.8;" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
+              Verujemo u kvalitet naših proizvoda i usluga, zato vam pružamo garanciju od 2 godine na sve ugrađene komarnice, 
+              harmonika vrata i zavese. Ova garancija pokriva sve delove i mehanizme, što vam pruža potpunu sigurnost i mir. 
+              U slučaju bilo kakvih problema, naš tim je tu da vam pomogne i reši svaki problem brzo i profesionalno.
+            </p>
             
             <h4 class="mb-3" style="font-size: 22px; font-weight: 600;" data-aos="fade-right" data-aos-duration="800">5 Godina Iskustva</h4>
             <p class="mb-5" style="font-size: 18px; line-height: 1.8;" data-aos="fade-left" data-aos-duration="800" data-aos-delay="100">
@@ -1699,7 +1723,7 @@
 	    			<span class="icon-search"></span>
 	    		</div>
 	    	</a>
-	    	<a href="images/ZEBRA%20ZAVESA.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url('images/ZEBRA%20ZAVESA.jpg');" title="Zebra Zavesa">
+	    	<a href="images/zebra zavesa 1.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url('images/zebra zavesa 1.jpg');" title="Zebra Zavesa">
 	    		<div class="icon d-flex justify-content-center align-items-center">
 	    			<span class="icon-search"></span>
 	    		</div>
@@ -1729,7 +1753,27 @@
 	    			<span class="icon-search"></span>
 	    		</div>
 	    	</a>
-	    	<a href="images/ZEBRA%20ZAVESA%20BEOGRAD.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url('images/ZEBRA%20ZAVESA%20BEOGRAD.jpg');" title="Zebra Zavesa Beograd">
+	    	<a href="images/zebra zavese 2.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url('images/zebra zavese 2.jpg');" title="Zebra Zavesa Beograd">
+	    		<div class="icon d-flex justify-content-center align-items-center">
+	    			<span class="icon-search"></span>
+	    		</div>
+	    	</a>
+	    	<a href="images/harmonika%203.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url('images/harmonika%203.jpg');" title="Harmonika Vrata - Moderna Ugradnja">
+	    		<div class="icon d-flex justify-content-center align-items-center">
+	    			<span class="icon-search"></span>
+	    		</div>
+	    	</a>
+	    	<a href="images/harmonika%20vrata%202.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url('images/harmonika%20vrata%202.jpg');" title="Harmonika Vrata Po Meri">
+	    		<div class="icon d-flex justify-content-center align-items-center">
+	    			<span class="icon-search"></span>
+	    		</div>
+	    	</a>
+	    	<a href="images/boje%20zavesa.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url('images/boje%20zavesa.jpg');" title="Zavese - Dostupne Boje i Modeli">
+	    		<div class="icon d-flex justify-content-center align-items-center">
+	    			<span class="icon-search"></span>
+	    		</div>
+	    	</a>
+	    	<a href="images/ZEBRA%20ZAVESA%20BEOGRAD.jpg" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url('images/ZEBRA%20ZAVESA%20BEOGRAD.jpg');" title="Zebra Zavese Beograd - Premium Kvalitet">
 	    		<div class="icon d-flex justify-content-center align-items-center">
 	    			<span class="icon-search"></span>
 	    		</div>
@@ -1861,19 +1905,27 @@
               <div class="card-body p-4">
                 <div class="price-item d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
                   <span class="font-weight-600">Fiksni komarnik</span>
-                  <span class="text-primary font-weight-bold" style="font-size: 20px; color: #f8b739 !important;">25€</span>
+                  <span class="text-primary font-weight-bold" style="font-size: 20px; color: #f8b739 !important;">20€ - 25€</span>
                 </div>
                 <div class="price-item d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
-                  <span class="font-weight-600">Rolokomarnik</span>
+                  <span class="font-weight-600">Rolo komarnici</span>
                   <span class="text-primary font-weight-bold" style="font-size: 20px; color: #f8b739 !important;">40€</span>
+                </div>
+                <div class="price-item d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                  <span class="font-weight-600">Krovni komarnici</span>
+                  <span class="text-primary font-weight-bold" style="font-size: 20px; color: #f8b739 !important;">40€ - 45€</span>
+                </div>
+                <div class="price-item d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
+                  <span class="font-weight-600">Američki komarnici</span>
+                  <span class="text-primary font-weight-bold" style="font-size: 20px; color: #f8b739 !important;">150€ - 200€</span>
                 </div>
                 <div class="price-item d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
                   <span class="font-weight-600">Plise Komarnici</span>
-                  <span class="text-primary font-weight-bold" style="font-size: 20px; color: #f8b739 !important;">40€ - 44€</span>
+                  <span class="text-primary font-weight-bold" style="font-size: 20px; color: #f8b739 !important;">38€ - 45€</span>
                 </div>
                 <div class="price-item d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
-                  <span class="font-weight-600">Mini Plise</span>
-                  <span class="text-primary font-weight-bold" style="font-size: 20px; color: #f8b739 !important;">40€</span>
+                  <span class="font-weight-600">Dvodelni Plise</span>
+                  <span class="text-primary font-weight-bold" style="font-size: 20px; color: #f8b739 !important;">45€</span>
                 </div>
                 <div class="price-item d-flex justify-content-between align-items-center">
                   <span class="font-weight-600">Plise za ljubimce</span>
@@ -1899,7 +1951,7 @@
                 </div>
                 <div class="price-item d-flex justify-content-between align-items-center mb-3 pb-3 border-bottom">
                   <span class="font-weight-600">Trakasta zavesa</span>
-                  <span class="text-primary font-weight-bold" style="font-size: 20px; color: #f8b739 !important;">23€ - 30€</span>
+                  <span class="text-primary font-weight-bold" style="font-size: 20px; color: #f8b739 !important;">25€ - 30€</span>
                 </div>
                 <div class="text-muted text-center mt-4">
                   <small>Cene zavise od dimenzija i materijala</small>
@@ -2057,7 +2109,7 @@
 	              <ul>
 	                <li><span class="icon icon-map-marker"></span><span class="text">Beograd - Zvezdara, Palilula, Karaburma, Voždovac</span></li>
 	                <li><a href="tel:+381616738181"><span class="icon icon-phone"></span><span class="text">+381 61 6738181</span></a></li>
-	                <li><a href="mailto:homoljac69@gmail.com"><span class="icon icon-envelope"></span><span class="text">homoljac69@gmail.com</span></a></li>
+	                <li><a href="mailto:komotraks@gmail.com"><span class="icon icon-envelope"></span><span class="text">komotraks@gmail.com</span></a></li>
 	                <li><span class="icon icon-clock-o"></span><span class="text">Pon-Sub: 08:00-20:00</span></li>
 	              </ul>
 	            </div>
@@ -2179,6 +2231,9 @@
     }
   }
   </script>
+
+  <!-- Service Worker for offline support and caching -->
+  <script src="js/sw-register.js"></script>
     
   </body>
 </html>
