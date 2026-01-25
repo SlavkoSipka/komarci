@@ -1,6 +1,6 @@
 [build]
-  # Build command - run the full build
-  command = "npm run build"
+  # Build command - install dependencies and build
+  command = "npm install && npm run build"
   
   # Publish directory - where the built files are
   publish = "dist"
