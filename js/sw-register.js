@@ -13,9 +13,7 @@ if ('serviceWorker' in navigator) {
       });
   });
 }
-*/
-
-// Unregister any existing service workers to fix caching issues
+*/// Unregister any existing service workers to fix caching issues
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.getRegistrations().then(function(registrations) {
     for(let registration of registrations) {

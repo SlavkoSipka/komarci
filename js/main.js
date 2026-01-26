@@ -3,10 +3,13 @@
  * Handles all interactive features and animations
  */
 
-// Initialize AOS (Animate On Scroll) library
+// Initialize AOS (Animate On Scroll) library - optimizovano za mobilne uređaje
 AOS.init({
-	duration: 800,
-	easing: 'slide'
+	duration: 400,  // Brže animacije (ranije 800ms)
+	easing: 'ease-out',  // Brži easing
+	once: true,  // Animacije se pokreću samo jednom (bolje performanse)
+	offset: 50,  // Animacija počinje ranije (manje čekanja)
+	delay: 0  // Bez default delay-a
 });
 
 (function($) {
