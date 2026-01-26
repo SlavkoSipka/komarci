@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://komotraks.rs/sitemap.xml
+Sitemap: https://ugradnja-zavesa-komarnika.com/sitemap.xml
 
 # Disallow admin and config files
 Disallow: /node_modules/

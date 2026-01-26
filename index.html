@@ -28,15 +28,15 @@
     <meta property="og:title" content="Komarnici, Harmonika Vrata, Zavese Beograd | KOMOTRAKS - Ugradnja Po Meri">
     <meta property="og:description" content="KOMOTRAKS - Profesionalna ugradnja komarnika, harmonika vrata i zavesa u Beogradu. Pokrivamo Zvezdaru, Palilulu, Karaburmu, Voždovac. Besplatno merenje. Cene od 20€.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://komotraks.rs/">
-    <meta property="og:image" content="https://komotraks.rs/images/komotraks-logotip.png">
+    <meta property="og:url" content="https://ugradnja-zavesa-komarnika.com/">
+    <meta property="og:image" content="https://ugradnja-zavesa-komarnika.com/images/komotraks-logotip.png">
     <meta property="og:locale" content="sr_RS">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://komotraks.rs/">
+    <link rel="canonical" href="https://ugradnja-zavesa-komarnika.com/">
     
     <!-- Sitemap -->
-    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://komotraks.rs/sitemap.xml">
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://ugradnja-zavesa-komarnika.com/sitemap.xml">
     
     <!-- Structured Data (JSON-LD) for Local Business -->
     <script type="application/ld+json">
@@ -45,7 +45,7 @@
       "@type": "LocalBusiness",
       "name": "KOMOTRAKS",
       "description": "Profesionalna ugradnja komarnika, harmonika vrata i zavesa u Beogradu",
-      "image": "https://komotraks.rs/images/komotraks-logotip.png",
+      "image": "https://ugradnja-zavesa-komarnika.com/images/komotraks-logotip.png",
       "telephone": "+381616738181",
       "email": "komotraks@gmail.com",
       "address": {
@@ -63,7 +63,7 @@
       ],
       "priceRange": "20€ - 200€",
       "openingHours": "Mo-Sa 08:00-20:00",
-      "url": "https://komotraks.rs",
+      "url": "https://ugradnja-zavesa-komarnika.com",
       "sameAs": []
     }
     </script>
@@ -1144,8 +1144,24 @@
         }
         
         /* PRICING KARTICE - Mobilna optimizacija */
-        .card {
+        .card,
+        .card.h-100 {
           margin-bottom: 20px !important;
+          height: auto !important;
+          min-height: auto !important;
+          max-height: none !important;
+          overflow: visible !important;
+          overflow-x: visible !important;
+          overflow-y: visible !important;
+          touch-action: pan-y !important;
+          -webkit-overflow-scrolling: touch !important;
+          overscroll-behavior: none !important;
+          position: relative !important;
+        }
+        
+        .card-header {
+          overflow: visible !important;
+          touch-action: pan-y !important;
         }
         
         .card-header h4 {
@@ -1154,6 +1170,19 @@
         
         .card-body {
           padding: 20px 15px !important;
+          overflow: visible !important;
+          overflow-x: visible !important;
+          overflow-y: visible !important;
+          touch-action: pan-y !important;
+          -webkit-overflow-scrolling: touch !important;
+          overscroll-behavior: none !important;
+          height: auto !important;
+          max-height: none !important;
+        }
+        
+        .card-footer {
+          overflow: visible !important;
+          touch-action: pan-y !important;
         }
         
         .price-item span {
@@ -2013,136 +2042,176 @@
     			
     			if (!track || !prevBtn || !nextBtn) return;
     			
+    			let originalSlides = [];
+    			let isInitialized = false;
+    			
     			// Check if mobile
     			function isMobile() {
     				return window.innerWidth <= 576;
     			}
     			
-    			// MOBILE - samo sakrij strelice, ne kloniraj ništa
-    			if (isMobile()) {
+    			// Funkcija za čišćenje klonova
+    			function removeClones() {
+    				const allSlides = track.querySelectorAll('.carousel-slide');
+    				allSlides.forEach((slide, index) => {
+    					// Ukloni sve klonove (zadržaj samo prvih 6 originalnih)
+    					if (index >= 6) {
+    						slide.remove();
+    					} else {
+    						slide.style.display = 'block'; // Osiguraj da su originali vidljivi
+    					}
+    				});
+    			}
+    			
+    			// MOBILE - samo sakrij strelice i ukloni klonove
+    			function setupMobile() {
     				prevBtn.style.display = 'none';
     				nextBtn.style.display = 'none';
+    				removeClones();
+    				track.style.transform = 'none';
+    				track.style.transition = 'none';
+    			}
+    			
+    			// Inicijalizacija za mobile ili desktop
+    			function initCarousel() {
+    				if (isMobile()) {
+    					setupMobile();
+    					isInitialized = false;
+    					return;
+    				}
     				
-    				// Sakrij sve osim prvih 6 originalnih kartica (ako ima duplikata)
-    				const allSlides = track.querySelectorAll('.carousel-slide');
-    				if (allSlides.length > 6) {
-    					// Ima klonove, sakrij ih
-    					allSlides.forEach((slide, index) => {
-    						if (index >= 6) {
-    							slide.style.display = 'none';
+    				// Ako je već inicijalizovano, ne radi ništa
+    				if (isInitialized) return;
+    				
+    				prevBtn.style.display = 'flex';
+    				nextBtn.style.display = 'flex';
+    				
+    				// DESKTOP/TABLET - Clone slides for infinite loop
+    				originalSlides = Array.from(track.querySelectorAll('.carousel-slide'));
+    				const slideCount = originalSlides.length;
+    				
+    				if (slideCount === 0) return;
+    				
+    				// Clone all slides and append to track for infinite loop
+    				originalSlides.forEach(slide => {
+    					const clone = slide.cloneNode(true);
+    					track.appendChild(clone);
+    				});
+    				
+    				// Clone again and prepend for backward infinite loop
+    				originalSlides.slice().reverse().forEach(slide => {
+    					const clone = slide.cloneNode(true);
+    					track.insertBefore(clone, track.firstChild);
+    				});
+    				
+    				isInitialized = true;
+    				setupDesktopCarousel(slideCount);
+    			}
+    			
+    			// Desktop carousel logic
+    			function setupDesktopCarousel(slideCount) {
+    				let currentIndex = slideCount; // Start at first original slide (after prepended clones)
+    				let slidesToShow = 4;
+    				let isTransitioning = false;
+    				
+    				// Calculate slides to show based on screen width
+    				function calculateSlidesToShow() {
+    					const width = window.innerWidth;
+    					if (width <= 576) return 1;
+    					if (width <= 768) return 2;
+    					if (width <= 1200) return 3;
+    					return 4;
+    				}
+    				
+    				function updateCarousel(smooth = true) {
+    					slidesToShow = calculateSlidesToShow();
+    					
+    					const allSlides = track.querySelectorAll('.carousel-slide');
+    					const slideElement = allSlides[0];
+    					const slideWidth = slideElement.offsetWidth;
+    					const gap = 20;
+    					const moveDistance = slideWidth + gap;
+    					
+    					const translateX = -(currentIndex * moveDistance);
+    					
+    					if (smooth) {
+    						track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
+    					} else {
+    						track.style.transition = 'none';
+    					}
+    					
+    					track.style.transform = `translateX(${translateX}px)`;
+    				}
+    				
+    				function handleInfiniteLoop() {
+    					// If we're at or past the end of original slides, reset to beginning
+    					if (currentIndex >= slideCount * 2) {
+    						isTransitioning = true;
+    						setTimeout(() => {
+    							currentIndex = slideCount;
+    							updateCarousel(false);
+    							setTimeout(() => {
+    								isTransitioning = false;
+    							}, 50);
+    						}, 500);
+    					}
+    					// If we're at or before the beginning, reset to end
+    					else if (currentIndex < slideCount) {
+    						isTransitioning = true;
+    						setTimeout(() => {
+    							currentIndex = slideCount * 2 - 1;
+    							updateCarousel(false);
+    							setTimeout(() => {
+    								isTransitioning = false;
+    							}, 50);
+    						}, 500);
+    					}
+    				}
+    				
+    				function goToPrevSlide() {
+    					if (isTransitioning) return;
+    					currentIndex--;
+    					updateCarousel(true);
+    					handleInfiniteLoop();
+    				}
+    				
+    				function goToNextSlide() {
+    					if (isTransitioning) return;
+    					currentIndex++;
+    					updateCarousel(true);
+    					handleInfiniteLoop();
+    				}
+    				
+    				// Move exactly 1 card on click
+    				prevBtn.addEventListener('click', goToPrevSlide);
+    				nextBtn.addEventListener('click', goToNextSlide);
+    				
+    				// Update on window resize
+    				let resizeTimeout;
+    				window.addEventListener('resize', function() {
+    					clearTimeout(resizeTimeout);
+    					resizeTimeout = setTimeout(() => {
+    						if (!isMobile()) {
+    							updateCarousel(false);
     						}
-    					});
-    				}
-    				return; // STOP - ne inicijalizuj carousel
-    			}
-    			
-    			// DESKTOP/TABLET - Clone slides for infinite loop
-    			const originalSlides = Array.from(track.querySelectorAll('.carousel-slide'));
-    			const slideCount = originalSlides.length;
-    			
-    			if (slideCount === 0) return;
-    			
-    			// Clone all slides and append to track for infinite loop
-    			originalSlides.forEach(slide => {
-    				const clone = slide.cloneNode(true);
-    				track.appendChild(clone);
-    			});
-    			
-    			// Clone again and prepend for backward infinite loop
-    			originalSlides.slice().reverse().forEach(slide => {
-    				const clone = slide.cloneNode(true);
-    				track.insertBefore(clone, track.firstChild);
-    			});
-    			
-    			let currentIndex = slideCount; // Start at first original slide (after prepended clones)
-    			let slidesToShow = 4;
-    			let isTransitioning = false;
-    			
-    			// Calculate slides to show based on screen width
-    			function calculateSlidesToShow() {
-    				const width = window.innerWidth;
-    				if (width <= 576) return 1;
-    				if (width <= 768) return 2;
-    				if (width <= 1200) return 3;
-    				return 4;
-    			}
-    			
-    			function updateCarousel(smooth = true) {
-    				slidesToShow = calculateSlidesToShow();
+    					}, 200);
+    				});
     				
-    				const allSlides = track.querySelectorAll('.carousel-slide');
-    				const slideElement = allSlides[0];
-    				const slideWidth = slideElement.offsetWidth;
-    				const gap = 20;
-    				const moveDistance = slideWidth + gap;
-    				
-    				const translateX = -(currentIndex * moveDistance);
-    				
-    				if (smooth) {
-    					track.style.transition = 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)';
-    				} else {
-    					track.style.transition = 'none';
-    				}
-    				
-    				track.style.transform = `translateX(${translateX}px)`;
+    				// Initial update
+    				updateCarousel(false);
     			}
     			
-    			function handleInfiniteLoop() {
-    				// If we're at or past the end of original slides, reset to beginning
-    				if (currentIndex >= slideCount * 2) {
-    					isTransitioning = true;
-    					setTimeout(() => {
-    						currentIndex = slideCount;
-    						updateCarousel(false);
-    						setTimeout(() => {
-    							isTransitioning = false;
-    						}, 50);
-    					}, 500);
-    				}
-    				// If we're at or before the beginning, reset to end
-    				else if (currentIndex < slideCount) {
-    					isTransitioning = true;
-    					setTimeout(() => {
-    						currentIndex = slideCount * 2 - 1;
-    						updateCarousel(false);
-    						setTimeout(() => {
-    							isTransitioning = false;
-    						}, 50);
-    					}, 500);
-    				}
-    			}
-    			
-    			function goToPrevSlide() {
-    				if (isTransitioning) return;
-    				currentIndex--;
-    				updateCarousel(true);
-    				handleInfiniteLoop();
-    			}
-    			
-    			function goToNextSlide() {
-    				if (isTransitioning) return;
-    				currentIndex++;
-    				updateCarousel(true);
-    				handleInfiniteLoop();
-    			}
-    			
-    			// Move exactly 1 card on click
-    			prevBtn.addEventListener('click', goToPrevSlide);
-    			nextBtn.addEventListener('click', goToNextSlide);
-    			
-    			// Update on window resize
+    			// Handle resize - reinitialize if needed
     			let resizeTimeout;
     			window.addEventListener('resize', function() {
     				clearTimeout(resizeTimeout);
     				resizeTimeout = setTimeout(() => {
-    					if (!isMobile()) {
-    						updateCarousel(false);
-    					}
+    					initCarousel();
     				}, 200);
     			});
     			
-    			// Initial update
-    			updateCarousel(false);
+    			// Initial setup
+    			initCarousel();
     		});
     	</script>
     </section>
