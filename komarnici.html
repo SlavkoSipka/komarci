@@ -471,6 +471,309 @@
           top: 0;
         }
       }
+
+      /* Product Show-off Section */
+      .product-showoff-section {
+        padding: 60px 0;
+        background: #f8f9fa;
+      }
+
+      .product-showoff-section h3 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 50px;
+        color: #333;
+      }
+
+      .product-card {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .product-card:hover {
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        transform: translateY(-5px);
+      }
+
+      .product-illustration {
+        flex-shrink: 0;
+        width: 280px;
+        height: 280px;
+        background: #ffffff;
+        border: 2px solid #f0f0f0;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        overflow: hidden;
+        padding: 25px;
+      }
+
+      .product-illustration img {
+        max-width: 100%;
+        max-height: 100%;
+        width: auto;
+        height: auto;
+        object-fit: contain;
+        z-index: 2;
+        position: relative;
+      }
+
+      .product-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .product-illustration::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, rgba(255,127,80,0.02) 0%, rgba(255,127,80,0.08) 100%);
+        z-index: 1;
+        border-radius: 12px;
+      }
+
+      @keyframes shimmer {
+        0% { opacity: 0.5; }
+        50% { opacity: 1; }
+        100% { opacity: 0.5; }
+      }
+
+      .product-header {
+        margin-bottom: 15px;
+      }
+
+      .product-title {
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: #ff7f50;
+        margin-bottom: 8px;
+        line-height: 1.3;
+      }
+
+      .product-subtitle {
+        font-size: 0.95rem;
+        color: #666;
+        font-weight: 500;
+        margin-bottom: 12px;
+      }
+
+      .product-description {
+        font-size: 1rem;
+        line-height: 1.6;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .product-price {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 20px;
+      }
+
+      .price-label {
+        font-size: 1rem;
+        color: #666;
+        margin-right: 8px;
+      }
+
+      .price-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #28a745;
+      }
+
+      .price-suffix {
+        font-size: 1.1rem;
+        color: #666;
+        margin-left: 5px;
+      }
+
+      .product-cta {
+        margin-bottom: 20px;
+      }
+
+      .btn-order {
+        background: #28a745;
+        color: white;
+        padding: 12px 35px;
+        font-size: 1.05rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-order:hover {
+        background: #218838;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        color: white;
+        text-decoration: none;
+      }
+
+      .product-features {
+        margin-top: auto;
+        padding-top: 15px;
+        border-top: 2px solid #f0f0f0;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+        color: #444;
+      }
+
+      .feature-icon {
+        color: #28a745;
+        font-size: 1.3rem;
+        margin-right: 12px;
+        flex-shrink: 0;
+      }
+
+      .btn-details {
+        background: transparent;
+        color: #ff7f50;
+        border: 2px solid #ff7f50;
+        padding: 10px 25px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 15px;
+        width: 100%;
+      }
+
+      .btn-details:hover {
+        background: #ff7f50;
+        color: white;
+      }
+
+      .product-details {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease;
+        margin-top: 0;
+      }
+
+      .product-details.active {
+        max-height: 1000px;
+        margin-top: 20px;
+      }
+
+      .product-details h4 {
+        font-size: 1.3rem;
+        color: #333;
+        margin-bottom: 15px;
+        font-weight: 700;
+      }
+
+      .product-details p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        color: #555;
+        margin-bottom: 15px;
+      }
+
+      .product-details strong {
+        color: #ff7f50;
+      }
+
+      .coming-soon-placeholder {
+        background: #f8f9fa;
+        border: 2px dashed #dee2e6;
+        border-radius: 12px;
+        padding: 40px;
+        text-align: center;
+        margin-bottom: 30px;
+        color: #999;
+      }
+
+      .coming-soon-placeholder h4 {
+        font-size: 1.5rem;
+        color: #666;
+        margin-bottom: 10px;
+      }
+
+      .coming-soon-placeholder p {
+        font-size: 1rem;
+        margin: 0;
+      }
+
+      @media (max-width: 991px) {
+        .product-card {
+          flex-direction: column;
+          padding: 25px 20px;
+        }
+
+        .product-illustration {
+          width: 100%;
+          max-width: 300px;
+          height: 220px;
+          margin: 0 auto 20px;
+        }
+
+        .product-content {
+          width: 100%;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .product-card {
+          padding: 20px 15px;
+        }
+
+        .product-title {
+          font-size: 1.4rem;
+        }
+
+        .product-subtitle {
+          font-size: 0.9rem;
+        }
+
+        .product-description {
+          font-size: 0.95rem;
+        }
+
+        .price-value {
+          font-size: 1.8rem;
+        }
+
+        .btn-order {
+          width: 100%;
+          text-align: center;
+          padding: 12px 20px;
+        }
+
+        .product-illustration {
+          height: 180px;
+          max-width: 250px;
+        }
+
+        .feature-item {
+          font-size: 0.9rem;
+        }
+      }
     </style>
   </head>
   <body>
@@ -521,7 +824,7 @@
         <div class="row">
           <div class="col-lg-8">
             
-            <h2>Komarnici za Beograd - Kompletna Zaštita Od Insekata</h2>
+            <h2>Izrada Komarnika Beograd - Kompletna Zaštita Od Insekata</h2>
             
             <p>
               Kada su u pitanju <strong>komarnici</strong>, svaki dom u Beogradu zaslužuje kvalitetnu zaštitu od komaraca i drugih insekata. 
@@ -532,8 +835,8 @@
 
             <div class="image-section">
               <picture>
-      <source srcset="images/Komarnici-cena.webp" type="image/webp">
-      <img src="images/komarnici-cena.jpg" width="1920" height="865" alt="Fiksni Komarnici Beograd - KOMOTRAKS Ugradnja" loading="lazy">
+      <source srcset="images/trakaste-zavese.webp" type="image/webp">
+      <img src="images/trakaste-zavese.webp" width="1920" height="865" alt="Fiksni Komarnici Beograd - KOMOTRAKS Ugradnja" loading="lazy">
     </picture>
             </div>
 
@@ -545,164 +848,517 @@
 
             <h3>Vrste Komarnika Koje Nudimo</h3>
 
-            <div class="komarnici-type-card">
-              <h4>Fiksni Komarnici</h4>
-              <p>
-                <strong>Fiksni komarnici</strong> su najtraženije i najekonomičnije rešenje za zaštitu prozora od insekata. 
-                Ovaj tip komarnika se montira na ram prozora ili vrata i ostaje trajno postavljen. Idealni su za prozore koje 
-                retko otvarate ili za sezonsku upotrebu. Naši fiksni komarnici se prave po meri vašeg prozora, garantujući 
-                savršenu zaštitu bez pukotina kroz koje bi insekti mogli da prođu. Aluminijumski ram i kvalitetna mreža 
-                obezbeđuju dugotrajnost i otpornost na vremenske uslove.
-              </p>
-              <p>
-                <strong>Fiksni komarnici cena</strong> kod nas je od 20€ do 25€, što ih čini pristupačnim rešenjem za svaki budžet. 
-                Pokrivamo ceo Beograd - od Zvezdare do Voždovca, ugradnja se vrši brzo i profesionalno. Montaža fiksnog komarnika 
-                traje samo 15-20 minuta po prozoru, a rezultat je godinama zaštite bez brige.
-              </p>
+            <!-- Product Show-off Section -->
+            <div class="product-showoff-section">
+              <div class="container">
+                
+                <!-- Fiksni Komarnici Card -->
+                <div class="product-card">
+                  <div class="product-illustration">
+                    <picture>
+                      <source srcset="images/fiksni-komarnik-product.webp" type="image/webp">
+                      <img src="images/fiksni-komarnik-product.png" alt="fiksni komarnici cena" loading="lazy">
+                    </picture>
+                  </div>
+                  
+                  <div class="product-content">
+                    <div class="product-header">
+                      <h4 class="product-title">Fiksni Komarnici</h4>
+                      <p class="product-subtitle">Komarnici bez mehanizma</p>
+                    </div>
+                    
+                    <p class="product-description">
+                      Idealni za male otvore koji se ređe koriste. Montiraju se trajno na prozor i pružaju pouzdanu zaštitu bez dodatnih mehanizama.
+                    </p>
+                    
+                    <div class="product-price">
+                      <span class="price-label">Cena:</span>
+                      <span class="price-value">20€-25€</span>
+                      <span class="price-suffix">po komadu</span>
+                    </div>
+                    
+                    <div class="product-cta">
+                      <a href="tel:+381616738181" class="btn-order">Poruči odmah</a>
+                    </div>
+                    
+                    <div class="product-features">
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Montiraju se fiksno na prozor</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Fiksna mreža bez vidljivih delova</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Povoljan trošak</span>
+                      </div>
+                    </div>
+                    
+                    <button class="btn-details" onclick="toggleDetails(this)">Detaljnije ▼</button>
+                    
+                    <div class="product-details">
+                      <h4>Fiksni Komarnici - Detaljnije</h4>
+                      <p>
+                        <strong>Fiksni komarnici</strong> su najtraženije i najekonomičnije rešenje za zaštitu prozora od insekata. 
+                        Ovaj tip komarnika se montira na ram prozora ili vrata i ostaje trajno postavljen. Idealni su za prozore koje 
+                        retko otvarate ili za sezonsku upotrebu. Naši fiksni komarnici se prave po meri vašeg prozora, garantujući 
+                        savršenu zaštitu bez pukotina kroz koje bi insekti mogli da prođu. Aluminijumski ram i kvalitetna mreža 
+                        obezbeđuju dugotrajnost i otpornost na vremenske uslove.
+                      </p>
+                      <p>
+                        <strong>Fiksni komarnici cena</strong> kod nas je od 20€ do 25€, što ih čini pristupačnim rešenjem za svaki budžet. 
+                        Pokrivamo ceo Beograd - od Zvezdare do Voždovca, ugradnja se vrši brzo i profesionalno. Montaža fiksnog komarnika 
+                        traje samo 15-20 minuta po prozoru, a rezultat je godinama zaštite bez brige.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Plise (Harmonika) Komarnici Card -->
+                <div class="product-card">
+                  <div class="product-illustration">
+                    <picture>
+                      <source srcset="images/plise-komarnik-product.webp" type="image/webp">
+                      <img src="images/plise-komarnik-product.png" alt="plise komarnici cena" loading="lazy">
+                    </picture>
+                  </div>
+                  
+                  <div class="product-content">
+                    <div class="product-header">
+                      <h4 class="product-title">Plise (Harmonika) Komarnici</h4>
+                      <p class="product-subtitle">Fleksibilna zaštita za vrata i veće otvore</p>
+                    </div>
+                    
+                    <p class="product-description">
+                      Elegantno rešenje koje se skuplja poput harmonike, idealno za terase i balkonska vrata. Štedi prostor i omogućava potpunu kontrolu.
+                    </p>
+                    
+                    <div class="product-price">
+                      <span class="price-label">Cena:</span>
+                      <span class="price-value">38€-45€</span>
+                      <span class="price-suffix">zavisi od dimenzija</span>
+                    </div>
+                    
+                    <div class="product-cta">
+                      <a href="tel:+381616738181" class="btn-order">Poruči odmah</a>
+                    </div>
+                    
+                    <div class="product-features">
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Ne zauzimaju dodatni prostor</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Visoka otpornost na vetar</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Jednostavno rukovanje jednom rukom</span>
+                      </div>
+                    </div>
+                    
+                    <button class="btn-details" onclick="toggleDetails(this)">Detaljnije ▼</button>
+                    
+                    <div class="product-details">
+                      <h4>Plise Komarnici</h4>
+                      <p>
+                        <strong>Plise komarnici</strong> predstavljaju modernije rešenje koje spaja funkcionalnost sa estetikom. 
+                        Ovaj tip komarnika se harmonika sklapa i rasklaplja po potrebi, štedijuč prostor i omogućavajući vam da koristite 
+                        prozor ili vrata bez uklanjanja komarnika. Posebno su popularni za balkonska vrata i veće otvore gde klasični 
+                        fiksni komarnici nisu praktični. Za veće otvore između prostorija, možete razmotriti i <a href="harmonika-vrata.html" style="color: #ff7f50; font-weight: 600;">harmonika vrata</a> koja pružaju elegantan prelaz.
+                      </p>
+                      <p>
+                        Sistem plise komarnika omogućava lako sklanjanje kada vam komarnik nije potreban, a može se brzo aktivirati kada 
+                        želite zaštitu. Idealan je izbor za one koji cene fleksibilnost i moderan dizajn. Cena <strong>plise komarnika</strong> 
+                        kod nas je od 38€ do 45€ i varira u zavisnosti od dimenzija, ali je investicija koja se brzo isplati kroz udobnost i funkcionalnost. 
+                        Nudimo ih za sve tipove prozora i vrata u Beogradu.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Dvodelni Plise Komarnici Card -->
+                <div class="product-card">
+                  <div class="product-illustration">
+                    <picture>
+                      <source srcset="images/dvodelni-plise-komarnik-product.webp" type="image/webp">
+                      <img src="images/dvodelni-plise-komarnik-product.png" alt="Dvodelni Plise Komarnici" loading="lazy">
+                    </picture>
+                  </div>
+                  
+                  <div class="product-content">
+                    <div class="product-header">
+                      <h4 class="product-title">Dvodelni Plise Komarnici</h4>
+                      <p class="product-subtitle">Inovativno rešenje sa magnetnim zatvaranjem</p>
+                    </div>
+                    
+                    <p class="product-description">
+                      Najnovija inovacija koja omogućava zatvaranje sa obe strane pomoću magneta. Idealno za veće otvore, balkonska vrata i terase gde možete otvoriti komarnik sa leve ili desne strane.
+                    </p>
+                    
+                    <div class="product-price">
+                      <span class="price-label">Cena:</span>
+                      <span class="price-value">45€</span>
+                      <span class="price-suffix">fiksna cena</span>
+                    </div>
+                    
+                    <div class="product-cta">
+                      <a href="tel:+381616738181" class="btn-order">Poruči odmah</a>
+                    </div>
+                    
+                    <div class="product-features">
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Dvosmerno zatvaranje</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Magnetni sistem fiksiranja</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Hermetičko prijanjanje bez pukotina</span>
+                      </div>
+                    </div>
+                    
+                    <button class="btn-details" onclick="toggleDetails(this)">Detaljnije ▼</button>
+                    
+                    <div class="product-details">
+                      <h4>Dvodelni Plise Komarnici - Inovativno Rešenje</h4>
+                      <p>
+                        <strong>Dvodelni plise komarnici</strong> su najnovija inovacija u oblasti zaštite od insekata. Za razliku od standardnih 
+                        plise komarnika koji se otvaraju samo sa jedne strane, dvodelni sistem omogućava <strong>zatvaranje sa obe strane pomoću magneta</strong>. 
+                        Ovo praktično rešenje je idealno za veće otvore, balkonska vrata i terase jer omogućava da otvorite komarnik sa leve ili desne strane, 
+                        zavisno od vaših potreba.
+                      </p>
+                      <p>
+                        Magnetni sistem zatvaranja obezbeđuje sigurno i hermetičko prijanjanje bez pukotina kroz koje bi insekti mogli da prođu. 
+                        Komarnik se lako sklapa i rasklaplja, a magneti automatski fiksiraju mreže kada ih zatvorite. Cena dvodelnih plise komarnika 
+                        je <strong>45€</strong> i predstavlja odličan odnos cene i kvaliteta za ovaj tip sistema. Posebno su popularni kod porodica 
+                        sa decom i ljubimcima jer omogućavaju lak prolaz sa obe strane.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Američki Komarnici Card -->
+                <div class="product-card">
+                  <div class="product-illustration">
+                    <picture>
+                      <source srcset="images/americki-komarnik-product.webp" type="image/webp">
+                      <img src="images/americki-komarnik-product.png" alt="americki komarnici" loading="lazy">
+                    </picture>
+                  </div>
+                  
+                  <div class="product-content">
+                    <div class="product-header">
+                      <h4 class="product-title">Američki Komarnici</h4>
+                      <p class="product-subtitle">Komarnici sa šarkama (američka vrata)</p>
+                    </div>
+                    
+                    <p class="product-description">
+                      Klasično rešenje za ulazna i balkonska vrata sa automatskim zatvaranjem. Otvaraju se ka spolja i imaju magnetno zatvaranje za sigurnost.
+                    </p>
+                    
+                    <div class="product-price">
+                      <span class="price-label">Cena:</span>
+                      <span class="price-value">150€-200€</span>
+                      <span class="price-suffix">zavisi od veličine</span>
+                    </div>
+                    
+                    <div class="product-cta">
+                      <a href="tel:+381616738181" class="btn-order">Poruči odmah</a>
+                    </div>
+                    
+                    <div class="product-features">
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Otvaranje ka spolja</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Magnetno zatvaranje</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Izuzetna čvrstina aluminijumskog okvira</span>
+                      </div>
+                    </div>
+                    
+                    <button class="btn-details" onclick="toggleDetails(this)">Detaljnije ▼</button>
+                    
+                    <div class="product-details">
+                      <h4>Američki Komarnici</h4>
+                      <p>
+                        <strong>Američki komarnici</strong>, poznati i kao rolokomari, predstavljaju vrhunac udobnosti i funkcionalnosti. 
+                        Ovaj tip se klizi vertikalno gore-dole po šinama, omogućavajući vam potpunu kontrolu nad otvorom. Kada vam komarnik 
+                        nije potreban, jednostavno ga podignete i on ostaje diskretno smešten u gornjem delu rama.
+                      </p>
+                      <p>
+                        Američki komarnici su posebno praktični za vrata i veće prozore gde često prolazite. Mehanizam klizanja je precizan 
+                        i trajan, a mreža kvalitetna i izdržljiva. Ovaj premium tip komarnika spaja estetiku sa performansama, čineći ga 
+                        idealnim izborom za one koji žele najbolje. Nudimo ugradnju američkih komarnika u svim delovima Beograda.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Rolo Komarnici Card -->
+                <div class="product-card">
+                  <div class="product-illustration">
+                    <picture>
+                      <source srcset="images/rolo-komarnik-product.webp" type="image/webp">
+                      <img src="images/rolo-komarnik-product.png" alt="rolo komarnici cena" loading="lazy">
+                    </picture>
+                  </div>
+                  
+                  <div class="product-content">
+                    <div class="product-header">
+                      <h4 class="product-title">Rolo Komarnici</h4>
+                      <p class="product-subtitle">Vertikalno klizanje - ekonomično rešenje</p>
+                    </div>
+                    
+                    <p class="product-description">
+                      Ekonomično rešenje koje se klizi vertikalno gore-dole. Jednostavna upotreba i montaža, idealno za standardne prozore i balkone.
+                    </p>
+                    
+                    <div class="product-price">
+                      <span class="price-label">Cena:</span>
+                      <span class="price-value">40€</span>
+                      <span class="price-suffix">standardna veličina</span>
+                    </div>
+                    
+                    <div class="product-cta">
+                      <a href="tel:+381616738181" class="btn-order">Poruči odmah</a>
+                    </div>
+                    
+                    <div class="product-features">
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Klizi gore-dole</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Ekonomičan izbor</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Jednostavna montaža i upotreba</span>
+                      </div>
+                    </div>
+                    
+                    <button class="btn-details" onclick="toggleDetails(this)">Detaljnije ▼</button>
+                    
+                    <div class="product-details">
+                      <h4>Rolo Komarnici</h4>
+                      <p>
+                        <strong>Rolo komarnici</strong> su ekonomično rešenje koje kombinuje praktičnost sa pristupačnom cenom. 
+                        Sistem vertikalnog klizanja omogućava lako podizanje i spuštanje mreže po potrebi. Mehanizam je jednostavan 
+                        za rukovanje i ne zahteva posebno održavanje.
+                      </p>
+                      <p>
+                        Idealni su za standardne prozore i balkonska vrata gde želite fleksibilnost ali vam nije potreban premium sistem. 
+                        Cena rolo komarnika je <strong>40€</strong> za standardne dimenzije, što ih čini jednim od najpristupačnijih 
+                        rešenja na tržištu. Montaža je brza i jednostavna, a rezultat je funkcionalna zaštita od insekata.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Krovni Komarnici Card -->
+                <div class="product-card">
+                  <div class="product-illustration">
+                    <picture>
+                      <source srcset="images/krovni-komarnik-product.webp" type="image/webp">
+                      <img src="images/krovni-komarnik-product.png" alt="krovni komarnici" loading="lazy">
+                    </picture>
+                  </div>
+                  
+                  <div class="product-content">
+                    <div class="product-header">
+                      <h4 class="product-title">Krovni Komarnici</h4>
+                      <p class="product-subtitle">Specijalizovano rešenje za krovne prozore</p>
+                    </div>
+                    
+                    <p class="product-description">
+                      Specijalno dizajnirani za Velux i druge krovne prozore. Prilagođeni nagibu krova i otporni na vremenske uslove.
+                    </p>
+                    
+                    <div class="product-price">
+                      <span class="price-label">Cena:</span>
+                      <span class="price-value">40€-45€</span>
+                      <span class="price-suffix">zavisi od dimenzija</span>
+                    </div>
+                    
+                    <div class="product-cta">
+                      <a href="tel:+381616738181" class="btn-order">Poruči odmah</a>
+                    </div>
+                    
+                    <div class="product-features">
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Za krovne prozore (Velux i ostale)</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Prilagođeno nagibu krova</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Specijalna montaža</span>
+                      </div>
+                    </div>
+                    
+                    <button class="btn-details" onclick="toggleDetails(this)">Detaljnije ▼</button>
+                    
+                    <div class="product-details">
+                      <h4>Krovni Komarnici</h4>
+                      <p>
+                        <strong>Krovni komarnici</strong> zahtevaju poseban pristup zbog specifičnog položaja i nagiba krovnih prozora. 
+                        Kompatibilni su sa najpopularnijim brendovima kao što su Velux, Roto, Fakro i drugi. Sistem se montira direktno 
+                        na ram krovnog prozora i prilagođava se uglu nagiba.
+                      </p>
+                      <p>
+                        Krovni prozori su posebno izloženi toploti tokom leta, što često znači i veću koncentraciju insekata. 
+                        Naši krovni komarnici su dizajnirani da izdrže direktnu sunčevu svetlost i promene temperature. Cena 
+                        <strong>krovnih komarnika</strong> je od 40€ do 45€ zavisno od dimenzija prozora. Nudimo profesionalnu montažu 
+                        sa pristupom sa krovnih stepenica ili fasadnih skela.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </div>
-
-            <div class="komarnici-type-card">
-              <h4>Plise Komarnici</h4>
-              <p>
-                <strong>Plise komarnici</strong> predstavljaju modernije rešenje koje spaja funkcionalnost sa estetikom. 
-                Ovaj tip komarnika se harmonika sklapa i rasklaplja po potrebi, štedijuč prostor i omogućavajući vam da koristite 
-                prozor ili vrata bez uklanjanja komarnika. Posebno su popularni za balkonska vrata i veće otvore gde klasični 
-                fiksni komarnici nisu praktični. Za veće otvore između prostorija, možete razmotriti i <a href="harmonika-vrata.html" style="color: #ff7f50; font-weight: 600;">harmonika vrata</a> koja pružaju elegantan prelaz.
-              </p>
-              <p>
-                Sistem plise komarnika omogućava lako sklanjanje kada vam komarnik nije potreban, a može se brzo aktivirati kada 
-                želite zaštitu. Idealan je izbor za one koji cene fleksibilnost i moderan dizajn. Cena <strong>plise komarnika</strong> 
-                kod nas je od 38€ do 45€ i varira u zavisnosti od dimenzija, ali je investicija koja se brzo isplati kroz udobnost i funkcionalnost. 
-                Nudimo ih za sve tipove prozora i vrata u Beogradu.
-              </p>
-
-              <h4>Dvodelni Plise Komarnici - Inovativno Rešenje</h4>
-              <p>
-                <strong>Dvodelni plise komarnici</strong> su najnovija inovacija u oblasti zaštite od insekata. Za razliku od standardnih 
-                plise komarnika koji se otvaraju samo sa jedne strane, dvodelni sistem omogućava <strong>zatvaranje sa obe strane pomoću magneta</strong>. 
-                Ovo praktično rešenje je idealno za veće otvore, balkonska vrata i terase jer omogućava da otvorite komarnik sa leve ili desne strane, 
-                zavisno od vaših potreba.
-              </p>
-              <p>
-                Magnetni sistem zatvaranja obezbeđuje sigurno i hermetičko prijanjanje bez pukotina kroz koje bi insekti mogli da prođu. 
-                Komarnik se lako sklapa i rasklaplja, a magneti automatski fiksiraju mreže kada ih zatvorite. Cena dvodelnih plise komarnika 
-                je <strong>45€</strong> i predstavlja odličan odnos cene i kvaliteta za ovaj tip sistema. Posebno su popularni kod porodica 
-                sa decom i ljubimcima jer omogućavaju lak prolaz sa obe strane.
-              </p>
+            
+            <!-- Gallery CTA -->
+            <div class="text-center" style="margin: 50px 0 30px 0;">
+              <div style="background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%); border: 3px solid #ff7f50; border-radius: 15px; padding: 30px; box-shadow: 0 8px 25px rgba(255, 127, 80, 0.15); max-width: 800px; margin: 0 auto;">
+                <p style="font-size: 1.8rem; font-weight: 700; color: #333; margin: 0; line-height: 1.5;">
+                  Primere Ugrađenih Komarnika možete videti u 
+                  <a href="galerija.html" class="gallery-link" style="color: #ff7f50; text-decoration: none; position: relative; transition: all 0.3s ease; display: inline-block; padding: 0 5px;">
+                    Galeriji
+                  </a>
+                </p>
+              </div>
             </div>
+            
+            <style>
+              .gallery-link {
+                border-bottom: 3px solid #ff7f50;
+              }
+              
+              .gallery-link:hover {
+                color: #fff !important;
+                background: #ff7f50;
+                border-radius: 8px;
+                transform: translateY(-2px);
+                box-shadow: 0 5px 15px rgba(255, 127, 80, 0.4);
+              }
+            </style>
+            <!-- End Product Show-off Section -->
 
-            <div class="image-section">
-              <picture>
-      <source srcset="images/plise-komarnici.webp" type="image/webp">
-      <img src="images/plise-komarnici.jpg" width="1920" height="1440" alt="Plise Komarnici Beograd - Montaža Po Meri" loading="lazy">
-    </picture>
-            </div>
-
-            <div class="komarnici-type-card">
-              <h4>Američki Komarnici</h4>
-              <p>
-                <strong>Američki komarnici</strong>, poznati i kao rolokomari, predstavljaju vrhunac udobnosti i funkcionalnosti. 
-                Ovaj tip se klizi vertikalno gore-dole po šinama, omogućavajući vam potpunu kontrolu nad otvorom. Kada vam komarnik 
-                nije potreban, jednostavno ga podignete i on ostaje diskretno smešten u gornjem delu rama.
-              </p>
-              <p>
-                Američki komarnici su posebno praktični za vrata i veće prozore gde često prolazite. Mehanizam klizanja je precizan 
-                i trajan, a mreža kvalitetna i izdržljiva. Ovaj premium tip komarnika spaja estetiku sa performansama, čineći ga 
-                idealnim izborom za one koji žele najbolje. Nudimo ugradnju američkih komarnika u svim delovima Beograda.
-              </p>
-            </div>
-
-            <h3>Zašto Izabrati KOMOTRAKS za Ugradnju Komarnika?</h3>
-
-            <p>
-              Sa 5 godina iskustva u <strong>ugradnji komarnika</strong> širom Beograda, razumemo potrebe naših klijenata. 
-              Svaki komarnik pravimo <strong>po meri</strong> - ne postoje standardne veličine, svaki prozor je različit i 
-              zaslužuje precizno prilagođeno rešenje. Naš tim dolazi na vašu adresu za besplatno merenje, savetuje vas o 
-              najboljem tipu komarnika za vaše potrebe. <strong>Rok izrade je 3-7 dana od merenja</strong>, a ugradnja se izvodi brzo i profesionalno.
+            <p style="font-size: 1.15rem; line-height: 1.8; color: #555; margin-bottom: 30px;">
+              Dosadni insekti ne moraju biti deo vaše svakodnevice, a komarnici ne moraju da kvare izgled vašeg doma. 
+              Verujemo da je <strong>estetika jednako važna kao i funkcionalnost</strong>, zato smo tu da vam pomognemo 
+              da zaštitite svoj prostor, a da pritom vaši prozori izgledaju bolje nego ikad.
             </p>
 
-            <div class="image-section">
-              <picture>
-      <source srcset="images/komarnici-ugradnja.webp" type="image/webp">
-      <img src="images/komarnici-ugradnja.jpg" width="1920" height="3413" alt="Profesionalna Ugradnja Komarnici Beograd" loading="lazy">
-    </picture>
-            </div>
+            <h3 style="color: #ff7f50; font-size: 1.8rem; margin-top: 40px;">Boje koje se stapaju sa vašim domom</h3>
 
-            <p>
-              Pokrivamo sve delove grada - <strong>komarnici Zvezdara</strong>, Palilula, Karaburma, Voždovac, Novi Beograd i Zemun. 
-              Bez obzira gde se nalazite, naš tim je spreman da vam pruži uslugu koja premašuje očekivanja. Koristimo samo kvalitetne 
-              materijale - aluminijumske profile koji ne rdaju i fiberglasne mreže koje ne cediraju i ne deformišu se.
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 25px;">
+              Znamo da vam je bitno da se svaki detalj uklopi. Naši aluminijumski profili su <strong>trajno obojeni 
+              tehnikom elektrostatičkog plastificiranja</strong> – što znači da nema ljuštenja, a boja ostaje postojana 
+              i nakon godina izlaganja suncu. Birajte između tri najtraženije nijanse:
             </p>
 
-            <p>
-              Proces je jednostavan: pozovete nas, zakažete besplatno merenje, dobijete ponudu sa tačnom cenom bez skrivenih troškova, 
-              i mi dolazimo da ugradimo vaše nove komarnice. Sve od merenja do montaže je uključeno u cenu, a garancija na materijale 
-              i rad vam daje dodatnu sigurnost. Svaki projekat tretiramo sa maksimalnom pažnjom jer znamo da vaše zadovoljstvo znači 
-              naše sledeće preporuke. Pogledajte <a href="index.html" style="color: #ff7f50; font-weight: 600;">sve usluge</a> i kontaktirajte nas za besplatnu konsultaciju.
-            </p>
-
-            <h3>Komarnici Po Meri - Savršeno Prilagođeni Vašim Prozorima</h3>
-
-            <p>
-              Kada kažemo <strong>komarnici po meri</strong>, to znači da ne koristimo gotove šablone. Svaki prozor ima svoje dimenzije, 
-              svaka lokacija ima svoje zahteve. U Beogradu, gde arhitektura varira od starih zgrada do modernih novogradnji, pristup 
-              "jedne veličine za sve" jednostavno ne funkcioniše. Zato naš proces počinje pažljivim merenjem i procenom.
-            </p>
-
-            <p>
-              Merimo visinu, širinu, dubinu fuga, proveravamo tip prozora i način otvaranja. Sve ove informacije utiču na izbor 
-              odgovarajućeg tipa komarnika i metode ugradnje. Zatim izrađujemo komarnik tačno prema tim dimenzijama, sa tolerancijom 
-              od svega nekoliko milimetara. Rezultat je komarnik koji se savršeno uklapa, ne propušta insekte i izgleda kao da je 
-              deo originalnog prozora.
-            </p>
-
-            <div class="image-section">
-              <picture>
-      <source srcset="images/Komarnici-Beograd.webp" type="image/webp">
-      <img src="images/komarnici-beograd.jpg" width="1920" height="1440" alt="Komarnici Po Meri Beograd - Sve Vrste" loading="lazy">
-    </picture>
-            </div>
-
-            <h3>Komarnici Dostupni u Više Boja - Uskladite Sa Prozorima</h3>
-
-            <p>
-              Estetika je jednako važna kao i funkcionalnost kada je u pitanju izbor komarnika. Zato svi naši <strong>komarnici</strong> 
-              dolaze u <strong>više boja</strong> kako bi se savršeno uklopili sa vašim prozorima i enterjerom. Nudimo tri najpopularnije boje:
-            </p>
-
-            <ul style="font-size: 18px; line-height: 1.8; margin-bottom: 30px;">
-              <li><strong>Antracit Siva</strong> - moderna, tamna nijansa koja se odlično uklapa sa savremenim PVC i ALU prozorima tamnih tonova</li>
-              <li><strong>Braon</strong> - klasična boja koja odgovara drvenima prozorima ili PVC prozorima u braon boji, pruža toplinu i eleganciju</li>
-              <li><strong>Bela</strong> - univerzalna boja koja se savršeno slaže sa belim prozorima, daje čist i minimalistički izgled</li>
+            <ul style="font-size: 1.1rem; line-height: 2; color: #555; margin-bottom: 35px; list-style: none; padding-left: 0;">
+              <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                <span style="position: absolute; left: 0; color: #ff7f50; font-weight: bold;">▸</span>
+                <strong style="color: #333;">Antracit siva</strong> – za moderani industrijski izgled savremene stolarije
+              </li>
+              <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                <span style="position: absolute; left: 0; color: #ff7f50; font-weight: bold;">▸</span>
+                <strong style="color: #333;">Klasična braon</strong> – savršen par za drvene prozore i toplu porodičnu atmosferu
+              </li>
+              <li style="margin-bottom: 15px; padding-left: 25px; position: relative;">
+                <span style="position: absolute; left: 0; color: #ff7f50; font-weight: bold;">▸</span>
+                <strong style="color: #333;">Snežno bela</strong> – minimalistički izbor koji se neprimetno stapa sa belim PVC-om
+              </li>
             </ul>
 
-            <p>
-              Svi aluminijumski profili su <strong>trajno obojeni</strong> tehnikom elektrostatičkog bojenja, što znači da boja ne bledi na suncu 
-              i ne ljušti se tokom vremena. Bez obzira koju boju izaberete, vaši komarnici će zadržati svoj izgled godinama. Tokom besplatnog 
-              merenja, naš tim će vam pomoći da odaberete boju koja najbolje odgovara vašim prozorima i željenom stilu.
+            <h3 style="color: #ff7f50; font-size: 1.8rem; margin-top: 40px;">Iskustvo i preciznost na koje se možete osloniti</h3>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 25px;">
+              Sa <strong>5 godina iskustva u radu širom Beograda</strong>, naučili smo da ne postoji standardna veličina prozora. 
+              Svaki prozor je priča za sebe, zato svakom projektu pristupamo hirurški precizno. Koristimo isključivo 
+              <strong>aluminijum koji ne rđa</strong> i <strong>fiberglas mreže</strong> koje su otporne na kidanje i deformaciju.
+            </p>
+
+            <h3 style="color: #ff7f50; font-size: 1.8rem; margin-top: 40px;">Kako do mira u kući? Lakše je nego što mislite</h3>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 20px;">
+              Naš proces je osmišljen tako da niko ne gubi vreme:
+            </p>
+
+            <div style="background: #f9f9f9; border-left: 4px solid #ff7f50; padding: 25px; margin-bottom: 30px; border-radius: 8px;">
+              <ol style="font-size: 1.05rem; line-height: 2; color: #555; margin: 0; padding-left: 25px;">
+                <li style="margin-bottom: 20px;">
+                  <strong style="color: #333; font-size: 1.15rem;">Besplatno merenje i savet:</strong><br>
+                  Dolazimo na vašu adresu bilo gde u Beogradu (Zvezdara, Palilula, Voždovac, Novi Beograd, Zemun...). 
+                  Na licu mesta biramo najbolji model i boju.
+                </li>
+                <li style="margin-bottom: 20px;">
+                  <strong style="color: #333; font-size: 1.15rem;">Brza Izrada:</strong><br>
+                  Vaši novi komarnici su gotovi za <strong style="color: #ff7f50;">3 do 7 dana</strong>.
+                </li>
+                <li style="margin-bottom: 20px;">
+                  <strong style="color: #333; font-size: 1.15rem;">Profesionalna ugradnja:</strong><br>
+                  Montažu vršimo brzo, čisto i pedantno.
+                </li>
+                <li>
+                  <strong style="color: #333; font-size: 1.15rem;">Čista računica:</strong><br>
+                  Dobijate ponudu sa <strong>fiksnom cenom – bez skrivenih troškova</strong>. Sve je uključeno u cenu, 
+                  od merenja do garancije na rad i materijale.
+                </li>
+              </ol>
+            </div>
+
+            <p style="font-size: 1.2rem; line-height: 1.8; color: #333; font-weight: 600; text-align: center; 
+                      background: linear-gradient(135deg, #fff5f0 0%, #ffe8dc 100%); 
+                      padding: 25px; border-radius: 12px; border: 2px solid #ff7f50; margin-top: 40px;">
+              Pustite svež vazduh unutra, a insekte ostavite napolju. Mi smo tu da vam pružimo rešenje koje će trajati godinama, 
+              jer <strong style="color: #ff7f50;">vaše zadovoljstvo je naša najbolja preporuka</strong>.
             </p>
 
             <h3>Oblasti Koje Pokrivamo u Beogradu</h3>
 
             <p>
-              Naš servis <strong>ugradnje komarnika</strong> dostupan je u svim delovima Beograda. <strong>Komarnici Zvezdara</strong> su 
-              posebno popularni - ovaj deo grada sa svojom gustom naseljenošću i blizinom reka ima povećanu potrebu za kvalitetnom 
-              zaštitom od komaraca. Pokrivamo Crveni Krst, Bulbulder, Mali Mokri Lug, Veliki Mokri Lug, Mirijevo i sve druge delove 
-              opštine Zvezdara.
+              Znamo da život u Beogradu nosi različite izazove – od rečne vlage do gradske vreve. Zato naš servis ugradnje ne pokriva samo adrese, već rešava konkretne probleme vašeg komšiluka.
             </p>
 
             <p>
-              U Paliluli, Karaburmi i Bogosloviji takođe imamo brojne zadovoljne klijente. Blizina Dunava čini ove krajeve posebno 
-              izloženim komarcima tokom toplih meseci, pa je kvalitetan komarnik ovde ne samo komfor već i neophodnost. Voždovac, 
-              sa svojim naseljima Banjica, Autokomanda i Jajinci, takođe je jedna od naših glavnih zona pokrivenosti.
+              Zvezdara i Palilula su nam prva linija odbrane. 
+Blizina Zvezdarske šume i Dunava znači samo jedno – komarci su ovde "domaćini". Komarnici na Zvezdari (od Crvenog Krsta i Bulbuldera do Mirijeva i Mokrog Luga) su naša najtraženija usluga. Na Karaburmi i Bogosloviji, gde je blizina reke ključni faktor, kvalitetna zaštita nije luksuz, već neophodnost za normalan san tokom letnjih noći.
             </p>
 
             <p>
-              Novi Beograd i Zemun, sa svojim modernim zgradama i velikim staklenim površinama, često zahtevaju posebna rešenja. 
-              Ovde se često koriste plise komarnici ili američki komarnici za veće otvore. Gde god da ste u Beogradu ili okolini, 
-              kontaktirajte nas i mi ćemo pronaći rešenje koje odgovara vašem prostoru i budžetu.
+              Novi Beograd i Zemun zatrazuju rešenja za moderne prostore, koje takodje nudimo! 
+Ovaj deo grada krase moderni objekti sa velikim staklenim površinama i terasama. Standardni komarnici ovde često nisu dovoljni. Zato za Novobeograđane i Zemunce najčešće biramo plise komarnike ili američke sisteme za velika vrata – oni pružaju maksimalnu zaštitu bez kvarenja pogleda i modernog dizajna vašeg stana.
             </p>
+            
+            <p>
+              Voždovac, Rakovica i Čukarica gde je uvek brza i sigurna montaža.
+Bilo da ste na Banjici, u Jajincima ili na padinama Čukarice, naše ekipe su vam blizu. Voždovac je jedna od naših glavnih zona, gde se klijenti najčešće odlučuju za dugotrajna rešenja koja odolevaju vetru i suncu.
+            </p>
+            <p>
+              Bez obzira u kom se delu Beograda nalazite, naš proces je uvek isti: Pozovete nas, mi procenimo situaciju na terenu i zajedno pronalazimo model koji se uklapa u vaš budžet i potrebe.
 
+Dostupni smo u svakom kutku grada. Ako vidite naš kombi u vašem naselju, mahnite nam, verovatno upravo montiramo miran san nekom od vaših komšija!
+            </p>
           </div>
 
           <!-- Sidebar -->
@@ -732,7 +1388,7 @@
 
               <!-- Service Areas -->
               <div style="background: white; border: 2px solid #ff7f50; padding: 25px;">
-                <h5 style="font-weight: 700; margin-bottom: 15px; color: #ff7f50;">📍 Pokrivamo</h5>
+                <h5 style="font-weight: 700; margin-bottom: 15px; color: #ff7f50;">📍 Komarnici Beograd - Pokrivamo: </h5>
                 <p style="margin: 0; color: #666; line-height: 1.8;">
                   Zvezdara • Palilula • Karaburma • Voždovac • Novi Beograd • Zemun • Rakovica • Čukarica
                 </p>
@@ -740,168 +1396,6 @@
             </div>
 
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="ftco-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-8 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Cenovnik Komarnika - Beograd</h2>
-            <p>Transparentne cene za sve vrste komarnika. Finalna cena zavisi od dimenzija prozora.</p>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          
-          <!-- Fiksni Komarnici Price Card -->
-          <div class="col-xl-3 col-lg-6 col-md-6 mb-4 ftco-animate">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-header text-center py-3" style="background: linear-gradient(135deg, #f8b739 0%, #e9a121 100%); border: none;">
-                <h4 class="mb-0 text-white font-weight-bold">FIKSNI KOMARNICI</h4>
-              </div>
-              <div class="card-body p-4">
-                <div class="text-center mb-4">
-                  <div style="font-size: 3rem; font-weight: 700; color: #f8b739;">20€-25€</div>
-                  <small class="text-muted">po komadu</small>
-                </div>
-                <ul style="list-style: none; padding: 0;">
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Po meri</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Alu ram</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Kvalitetna mreža</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Brza montaža</li>
-                  <li style="padding: 8px 0;"><i class="icon-check mr-2" style="color: #28a745;"></i>Garancija</li>
-                </ul>
-              </div>
-              <div class="card-footer bg-white border-0 text-center py-3">
-                <a href="tel:+381616738181" class="btn btn-primary btn-sm px-4">Poruči Sada</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Plise Komarnici Price Card -->
-          <div class="col-xl-3 col-lg-6 col-md-6 mb-4 ftco-animate">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-header text-center py-3" style="background: linear-gradient(135deg, #f8b739 0%, #e9a121 100%); border: none;">
-                <h4 class="mb-0 text-white font-weight-bold">PLISE KOMARNICI</h4>
-              </div>
-              <div class="card-body p-4">
-                <div class="text-center mb-4">
-                  <div style="font-size: 3rem; font-weight: 700; color: #f8b739;">38€-45€</div>
-                  <small class="text-muted">zavisi od dimenzija</small>
-                </div>
-                <ul style="list-style: none; padding: 0;">
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Sklapa se harmonika</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Štedi prostor</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Za veće otvore</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Moderan dizajn</li>
-                  <li style="padding: 8px 0;"><i class="icon-check mr-2" style="color: #28a745;"></i>Premium kvalitet</li>
-                </ul>
-              </div>
-              <div class="card-footer bg-white border-0 text-center py-3">
-                <a href="tel:+381616738181" class="btn btn-primary btn-sm px-4">Poruči Sada</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Američki Komarnici Price Card -->
-          <div class="col-xl-3 col-lg-6 col-md-6 mb-4 ftco-animate">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-header text-center py-3" style="background: linear-gradient(135deg, #f8b739 0%, #e9a121 100%); border: none;">
-                <h4 class="mb-0 text-white font-weight-bold">AMERIČKI KOMARNICI</h4>
-              </div>
-              <div class="card-body p-4">
-                <div class="text-center mb-4">
-                  <div style="font-size: 2.5rem; font-weight: 700; color: #f8b739;">150€-200€</div>
-                  <small class="text-muted">zavisi od veličine</small>
-                </div>
-                <ul style="list-style: none; padding: 0;">
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Rolokomarnik sistem</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Laka upotreba</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Trajan mehanizam</li>
-                  <li style="padding: 8px 0;"><i class="icon-check mr-2" style="color: #28a745;"></i>Premium izbor</li>
-                </ul>
-              </div>
-              <div class="card-footer bg-white border-0 text-center py-3">
-                <a href="tel:+381616738181" class="btn btn-primary btn-sm px-4">Poruči Sada</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Dvodelni Plise Komarnici Price Card -->
-          <div class="col-xl-3 col-lg-6 col-md-6 mb-4 ftco-animate">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-header text-center py-3" style="background: linear-gradient(135deg, #f8b739 0%, #e9a121 100%); border: none;">
-                <h4 class="mb-0 text-white font-weight-bold">DVODELNI PLISE</h4>
-              </div>
-              <div class="card-body p-4">
-                <div class="text-center mb-4">
-                  <div style="font-size: 3rem; font-weight: 700; color: #f8b739;">45€</div>
-                  <small class="text-muted">fiksna cena</small>
-                </div>
-                <ul style="list-style: none; padding: 0;">
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Dvosmerno zatvaranje</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Magnetni sistem</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Za veće otvore</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Praktično rešenje</li>
-                  <li style="padding: 8px 0;"><i class="icon-check mr-2" style="color: #28a745;"></i>Moderna funkcija</li>
-                </ul>
-              </div>
-              <div class="card-footer bg-white border-0 text-center py-3">
-                <a href="tel:+381616738181" class="btn btn-primary btn-sm px-4">Poruči Sada</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Rolo Komarnici Price Card -->
-          <div class="col-xl-3 col-lg-6 col-md-6 mb-4 ftco-animate">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-header text-center py-3" style="background: linear-gradient(135deg, #f8b739 0%, #e9a121 100%); border: none;">
-                <h4 class="mb-0 text-white font-weight-bold">ROLO KOMARNICI</h4>
-              </div>
-              <div class="card-body p-4">
-                <div class="text-center mb-4">
-                  <div style="font-size: 3rem; font-weight: 700; color: #f8b739;">40€</div>
-                  <small class="text-muted">standardna veličina</small>
-                </div>
-                <ul style="list-style: none; padding: 0;">
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Klizi gore-dole</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Ekonomičan izbor</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Jednostavna montaža</li>
-                  <li style="padding: 8px 0;"><i class="icon-check mr-2" style="color: #28a745;"></i>Praktičan sistem</li>
-                </ul>
-              </div>
-              <div class="card-footer bg-white border-0 text-center py-3">
-                <a href="tel:+381616738181" class="btn btn-primary btn-sm px-4">Poruči Sada</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Krovni Komarnici Price Card -->
-          <div class="col-xl-3 col-lg-6 col-md-6 mb-4 ftco-animate">
-            <div class="card h-100 border-0 shadow-sm">
-              <div class="card-header text-center py-3" style="background: linear-gradient(135deg, #f8b739 0%, #e9a121 100%); border: none;">
-                <h4 class="mb-0 text-white font-weight-bold">KROVNI KOMARNICI</h4>
-              </div>
-              <div class="card-body p-4">
-                <div class="text-center mb-4">
-                  <div style="font-size: 2.8rem; font-weight: 700; color: #f8b739;">40€-45€</div>
-                  <small class="text-muted">zavisi od dimenzija</small>
-                </div>
-                <ul style="list-style: none; padding: 0;">
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Za krovne prozore</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Specijalna montaža</li>
-                  <li style="padding: 8px 0; border-bottom: 1px solid #eee;"><i class="icon-check mr-2" style="color: #28a745;"></i>Prilagođeno nagibu</li>
-                  <li style="padding: 8px 0;"><i class="icon-check mr-2" style="color: #28a745;"></i>Kvalitetna izrada</li>
-                </ul>
-              </div>
-              <div class="card-footer bg-white border-0 text-center py-3">
-                <a href="tel:+381616738181" class="btn btn-primary btn-sm px-4">Poruči Sada</a>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -1040,6 +1534,22 @@
   
   <!-- Service Worker for offline support and caching -->
   <script src="js/sw-register.js"></script>
+  
+  <!-- Product Details Toggle Script -->
+  <script>
+    function toggleDetails(button) {
+      const productCard = button.closest('.product-card');
+      const detailsSection = productCard.querySelector('.product-details');
+      
+      detailsSection.classList.toggle('active');
+      
+      if (detailsSection.classList.contains('active')) {
+        button.innerHTML = 'Sakrij ▲';
+      } else {
+        button.innerHTML = 'Detaljnije ▼';
+      }
+    }
+  </script>
     
   </body>
 </html>

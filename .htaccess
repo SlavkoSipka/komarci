@@ -1,0 +1,69 @@
+# ============================================
+# KOMOTRAKS - SEO Technical Fix
+# Redirect Rules for Path Anomalies
+# ============================================
+
+RewriteEngine On
+RewriteBase /
+
+# 1. Fix duplicate /images/images/ paths (301 Permanent Redirect)
+RewriteCond %{REQUEST_URI} ^/images/images/(.*)$ [NC]
+RewriteRule ^images/images/(.*)$ /images/$1 [R=301,L,NC]
+
+# 2. Fix misplaced /images/js/ paths
+RewriteCond %{REQUEST_URI} ^/images/js/(.*)$ [NC]
+RewriteRule ^images/js/(.*)$ /js/$1 [R=301,L,NC]
+
+# 3. Fix misplaced /images/css/ paths
+RewriteCond %{REQUEST_URI} ^/images/css/(.*)$ [NC]
+RewriteRule ^images/css/(.*)$ /css/$1 [R=301,L,NC]
+
+# 4. Fix reverse paths /js/images/
+RewriteCond %{REQUEST_URI} ^/js/images/(.*)$ [NC]
+RewriteRule ^js/images/(.*)$ /images/$1 [R=301,L,NC]
+
+# 5. Case-insensitive file matching (za Linux servere)
+# Redirect uppercase extensions to lowercase
+RewriteCond %{REQUEST_URI} \.(JPG|JPEG|PNG|GIF|WEBP)$ [NC]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^(.*)\.([A-Z]+)$ $1\.%{tolower:$2} [R=301,L]
+
+# 6. Prevent directory listing
+Options -Indexes
+
+# 7. Force HTTPS (SEO best practice)
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 8. WWW to non-WWW redirect (za ugradnja-zavesa-komarnika.com)
+RewriteCond %{HTTP_HOST} ^www\.ugradnja-zavesa-komarnika\.com [NC]
+RewriteRule ^(.*)$ https://ugradnja-zavesa-komarnika.com/$1 [L,R=301]
+
+# ============================================
+# Cache Control za Core Web Vitals optimizaciju
+# ============================================
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+  
+  # Images
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  
+  # CSS and JavaScript
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  
+  # Fonts
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# ============================================
+# Gzip Compression za Performance
+# ============================================
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css application/javascript application/json
+</IfModule>
