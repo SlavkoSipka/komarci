@@ -472,6 +472,37 @@
         }
       }
 
+      /* Content Links Styling - Better UX for anchors */
+      .content-section a:not(.btn):not(.btn-order):not(.navbar-brand):not(.nav-link):not(.dropdown-item) {
+        color: #ff7f50;
+        font-weight: 600;
+        text-decoration: underline;
+        text-decoration-style: solid;
+        text-decoration-thickness: 1px;
+        text-underline-offset: 2px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .content-section a:not(.btn):not(.btn-order):not(.navbar-brand):not(.nav-link):not(.dropdown-item):hover {
+        color: #ff5722;
+        text-decoration: none;
+        background: linear-gradient(to bottom, transparent 50%, rgba(255, 127, 80, 0.2) 50%);
+      }
+
+      .content-section a:not(.btn):not(.btn-order):not(.navbar-brand):not(.nav-link):not(.dropdown-item):active {
+        color: #d84315;
+      }
+
+      /* Mobile touch feedback */
+      @media (max-width: 768px) {
+        .content-section a:not(.btn):not(.btn-order):not(.navbar-brand):not(.nav-link):not(.dropdown-item) {
+          -webkit-tap-highlight-color: rgba(255, 127, 80, 0.3);
+          padding: 2px 4px;
+          margin: -2px -4px;
+        }
+      }
+
       /* Product Show-off Section */
       .product-showoff-section {
         padding: 60px 0;
@@ -813,7 +844,7 @@
     <div class="komarnici-hero">
       <div class="container">
         <p class="breadcrumbs"><span class="mr-2"><a href="index.html" style="color: #fff;">Početna</a></span> <span class="mr-2">/</span> <span>Komarnici</span></p>
-        <h1>Komarnici Beograd</h1>
+        <h1 style="text-transform: uppercase;">komarnici beograd</h1>
         <p>Profesionalna ugradnja svih tipova komarnika po meri - Fiksni, Plise, Američki</p>
       </div>
     </div>
@@ -824,7 +855,7 @@
         <div class="row">
           <div class="col-lg-8">
             
-            <h2>Izrada Komarnika Beograd - Kompletna Zaštita Od Insekata</h2>
+            <h2 style="text-transform: uppercase;">izrada komarnika beograd - Kompletna Zaštita Od Insekata</h2>
             
             <p>
               Kada su u pitanju <strong>komarnici</strong>, svaki dom u Beogradu zaslužuje kvalitetnu zaštitu od komaraca i drugih insekata. 
@@ -884,15 +915,15 @@
                     <div class="product-features">
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Montiraju se fiksno na prozor</span>
+                        <span><strong style="color: #000;">Montiraju se fiksno</strong> na prozor</span>
                       </div>
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Fiksna mreža bez vidljivih delova</span>
+                        <span><strong style="color: #000;">Fiksna mreža</strong> bez vidljivih delova</span>
                       </div>
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Povoljan trošak</span>
+                        <span><strong style="color: #000;">Povoljan trošak</strong></span>
                       </div>
                     </div>
                     
@@ -948,15 +979,15 @@
                     <div class="product-features">
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Ne zauzimaju dodatni prostor</span>
+                        <span><strong style="color: #000;">Ne zauzimaju dodatni prostor</strong></span>
                       </div>
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Visoka otpornost na vetar</span>
+                        <span><strong style="color: #000;">Visoka otpornost na vetar</strong></span>
                       </div>
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Jednostavno rukovanje jednom rukom</span>
+                        <span><strong style="color: #000;">Jednostavno rukovanje</strong> jednom rukom</span>
                       </div>
                     </div>
                     
@@ -1012,15 +1043,15 @@
                     <div class="product-features">
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Dvosmerno zatvaranje</span>
+                        <span><strong style="color: #000;">Dvosmerno zatvaranje</strong></span>
                       </div>
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Magnetni sistem fiksiranja</span>
+                        <span><strong style="color: #000;">Magnetni sistem fiksiranja</strong></span>
                       </div>
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Hermetičko prijanjanje bez pukotina</span>
+                        <span><strong style="color: #000;">Hermetičko prijanjanje</strong> bez pukotina</span>
                       </div>
                     </div>
                     
@@ -1076,15 +1107,15 @@
                     <div class="product-features">
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Otvaranje ka spolja</span>
+                        <span><strong style="color: #000;">Otvaranje ka spolja</strong></span>
                       </div>
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Magnetno zatvaranje</span>
+                        <span><strong style="color: #000;">Magnetno zatvaranje</strong></span>
                       </div>
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Izuzetna čvrstina aluminijumskog okvira</span>
+                        <span><strong style="color: #000;">Izuzetna čvrstina</strong> aluminijumskog okvira</span>
                       </div>
                     </div>
                     
@@ -1138,15 +1169,15 @@
                     <div class="product-features">
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Klizi gore-dole</span>
+                        <span><strong style="color: #000;">Klizi gore-dole</strong></span>
                       </div>
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Ekonomičan izbor</span>
+                        <span><strong style="color: #000;">Ekonomičan izbor</strong></span>
                       </div>
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Jednostavna montaža i upotreba</span>
+                        <span><strong style="color: #000;">Jednostavna montaža i upotreba</strong></span>
                       </div>
                     </div>
                     
@@ -1200,15 +1231,15 @@
                     <div class="product-features">
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Za krovne prozore (Velux i ostale)</span>
+                        <span><strong style="color: #000;">Za krovne prozore</strong> (Velux i ostale)</span>
                       </div>
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Prilagođeno nagibu krova</span>
+                        <span><strong style="color: #000;">Prilagođeno nagibu krova</strong></span>
                       </div>
                       <div class="feature-item">
                         <span class="feature-icon">✓</span>
-                        <span>Specijalna montaža</span>
+                        <span><strong style="color: #000;">Specijalna montaža</strong></span>
                       </div>
                     </div>
                     
@@ -1298,6 +1329,13 @@
               <strong>aluminijum koji ne rđa</strong> i <strong>fiberglas mreže</strong> koje su otporne na kidanje i deformaciju.
             </p>
 
+            <div style="text-align: center; margin: 40px 0;">
+              <picture>
+      <source srcset="images/Komarnici.webp" type="image/webp">
+      <img src="images/Komarnici.jpg" alt="Profesionalna ugradnja komarnika Beograd" style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);" loading="lazy">
+    </picture>
+            </div>
+
             <h3 style="color: #ff7f50; font-size: 1.8rem; margin-top: 40px;">Kako do mira u kući? Lakše je nego što mislite</h3>
 
             <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 20px;">
@@ -1341,24 +1379,94 @@
             </p>
 
             <p>
-              Zvezdara i Palilula su nam prva linija odbrane. 
-Blizina Zvezdarske šume i Dunava znači samo jedno – komarci su ovde "domaćini". Komarnici na Zvezdari (od Crvenog Krsta i Bulbuldera do Mirijeva i Mokrog Luga) su naša najtraženija usluga. Na Karaburmi i Bogosloviji, gde je blizina reke ključni faktor, kvalitetna zaštita nije luksuz, već neophodnost za normalan san tokom letnjih noći.
+              <strong style="color: #ff7f50;">Zvezdara i Palilula</strong> su nam prva linija odbrane. 
+Blizina Zvezdarske šume i Dunava znači samo jedno – komarci su ovde "domaćini". Komarnici na <strong style="color: #ff7f50;">Zvezdari</strong> (od <strong>Crvenog Krsta</strong> i <strong>Bulbuldera</strong> do <strong>Mirijeva</strong> i <strong>Mokrog Luga</strong>) su naša najtraženija usluga. Na <strong style="color: #ff7f50;">Karaburmi</strong> i <strong style="color: #ff7f50;">Bogosloviji</strong>, gde je blizina reke ključni faktor, kvalitetna zaštita nije luksuz, već neophodnost za normalan san tokom letnjih noći.
             </p>
 
             <p>
-              Novi Beograd i Zemun zatrazuju rešenja za moderne prostore, koje takodje nudimo! 
+              <strong style="color: #ff7f50;">Novi Beograd i Zemun</strong> zatrazuju rešenja za moderne prostore, koje takodje nudimo! 
 Ovaj deo grada krase moderni objekti sa velikim staklenim površinama i terasama. Standardni komarnici ovde često nisu dovoljni. Zato za Novobeograđane i Zemunce najčešće biramo plise komarnike ili američke sisteme za velika vrata – oni pružaju maksimalnu zaštitu bez kvarenja pogleda i modernog dizajna vašeg stana.
             </p>
             
             <p>
-              Voždovac, Rakovica i Čukarica gde je uvek brza i sigurna montaža.
-Bilo da ste na Banjici, u Jajincima ili na padinama Čukarice, naše ekipe su vam blizu. Voždovac je jedna od naših glavnih zona, gde se klijenti najčešće odlučuju za dugotrajna rešenja koja odolevaju vetru i suncu.
+              <strong style="color: #ff7f50;">Voždovac, Rakovica i Čukarica</strong> gde je uvek brza i sigurna montaža.
+Bilo da ste na <strong style="color: #ff7f50;">Banjici</strong>, u <strong style="color: #ff7f50;">Jajincima</strong> ili na padinama <strong style="color: #ff7f50;">Čukarice</strong>, naše ekipe su vam blizu. <strong style="color: #ff7f50;">Voždovac</strong> je jedna od naših glavnih zona, gde se klijenti najčešće odlučuju za dugotrajna rešenja koja odolevaju vetru i suncu.
             </p>
             <p>
               Bez obzira u kom se delu Beograda nalazite, naš proces je uvek isti: Pozovete nas, mi procenimo situaciju na terenu i zajedno pronalazimo model koji se uklapa u vaš budžet i potrebe.
 
 Dostupni smo u svakom kutku grada. Ako vidite naš kombi u vašem naselju, mahnite nam, verovatno upravo montiramo miran san nekom od vaših komšija!
             </p>
+
+            <!-- FAQ Sekcija -->
+            <h3 style="color: #ff7f50; font-size: 2rem; margin-top: 50px; margin-bottom: 30px;">Često Postavljana Pitanja (FAQ)</h3>
+
+            <div class="faq-container" style="margin-bottom: 50px;">
+              <!-- FAQ Item 1 -->
+              <div class="faq-item" style="background: #fff; border: 2px solid #e0e0e0; margin-bottom: 15px; border-radius: 8px; overflow: hidden; transition: all 0.3s ease;">
+                <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                  <h4 style="color: #333; font-size: 1.2rem; margin: 0; font-weight: 600;">Da li je merenje zaista besplatno?</h4>
+                  <span class="faq-icon" style="color: #ff7f50; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s ease;">+</span>
+                </div>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fff;">
+                  <p style="padding: 20px; color: #555; line-height: 1.7; margin: 0; border-top: 1px solid #e0e0e0;">
+                    Da, apsolutno! <strong>Besplatno dolazimo na vašu adresu</strong> bilo gde u Beogradu, precizno merimo sve prozore i vrata, i dajemo stručan savet o najboljem rešenju. Nema skrivenih troškova – merenje je potpuno besplatno bez obaveze narudžbine.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="faq-item" style="background: #fff; border: 2px solid #e0e0e0; margin-bottom: 15px; border-radius: 8px; overflow: hidden; transition: all 0.3s ease;">
+                <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                  <h4 style="color: #333; font-size: 1.2rem; margin: 0; font-weight: 600;">Koliko brzo možete da ugradite komarnike?</h4>
+                  <span class="faq-icon" style="color: #ff7f50; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s ease;">+</span>
+                </div>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fff;">
+                  <p style="padding: 20px; color: #555; line-height: 1.7; margin: 0; border-top: 1px solid #e0e0e0;">
+                    Nakon merenja, komarnici su gotovi za <strong>3 do 7 dana</strong>. Montažu vršimo brzo i čisto, obično za 1-2 sata za ceo stan.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="faq-item" style="background: #fff; border: 2px solid #e0e0e0; margin-bottom: 15px; border-radius: 8px; overflow: hidden; transition: all 0.3s ease;">
+                <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                  <h4 style="color: #333; font-size: 1.2rem; margin: 0; font-weight: 600;">Koja vrsta komarnika je najbolja za moj prostor?</h4>
+                  <span class="faq-icon" style="color: #ff7f50; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s ease;">+</span>
+                </div>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fff;">
+                  <p style="padding: 20px; color: #555; line-height: 1.7; margin: 0; border-top: 1px solid #e0e0e0;">
+                    Za standardne prozore preporučujemo <strong>fiksne komarnike</strong>. Za terase i balkone – <strong>plise ili američke</strong>. Za krovne prozore – <strong>specijalne rolo sisteme</strong>. Naši stručnjaci će vam pomoći da odaberete idealno rešenje prilikom besplatnog merenja.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="faq-item" style="background: #fff; border: 2px solid #e0e0e0; margin-bottom: 15px; border-radius: 8px; overflow: hidden; transition: all 0.3s ease;">
+                <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                  <h4 style="color: #333; font-size: 1.2rem; margin: 0; font-weight: 600;">Šta dobijam uz garanciju?</h4>
+                  <span class="faq-icon" style="color: #ff7f50; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s ease;">+</span>
+                </div>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fff;">
+                  <p style="padding: 20px; color: #555; line-height: 1.7; margin: 0; border-top: 1px solid #e0e0e0;">
+                    Svi komarnici dolaze sa <strong>2 godine garancije</strong> na materijale i rad. To znači da ako dođe do problema sa ramom, mrežom ili mehanizmom – mi to besplatno popravljamo ili menjamo. Garancija pokriva sve osim namerne štete.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="faq-item" style="background: #fff; border: 2px solid #e0e0e0; margin-bottom: 15px; border-radius: 8px; overflow: hidden; transition: all 0.3s ease;">
+                <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                  <h4 style="color: #333; font-size: 1.2rem; margin: 0; font-weight: 600;">Koliko dugo traju komarnici?</h4>
+                  <span class="faq-icon" style="color: #ff7f50; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s ease;">+</span>
+                </div>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fff;">
+                  <p style="padding: 20px; color: #555; line-height: 1.7; margin: 0; border-top: 1px solid #e0e0e0;">
+                    Naši komarnici su izrađeni od <strong>aluminijuma koji ne rđa</strong> i <strong>fiberglas mreže</strong> koja je otporna na kidanje. Uz pravilno održavanje, mogu trajati <strong>10+ godina</strong>. Dajemo 2 godine garancije na sve materijale i rad.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           <!-- Sidebar -->
@@ -1388,7 +1496,7 @@ Dostupni smo u svakom kutku grada. Ako vidite naš kombi u vašem naselju, mahni
 
               <!-- Service Areas -->
               <div style="background: white; border: 2px solid #ff7f50; padding: 25px;">
-                <h5 style="font-weight: 700; margin-bottom: 15px; color: #ff7f50;">📍 Komarnici Beograd - Pokrivamo: </h5>
+                <h5 style="font-weight: 700; margin-bottom: 15px; color: #ff7f50; text-transform: uppercase;">📍 komarnici beograd - Pokrivamo: </h5>
                 <p style="margin: 0; color: #666; line-height: 1.8;">
                   Zvezdara • Palilula • Karaburma • Voždovac • Novi Beograd • Zemun • Rakovica • Čukarica
                 </p>
@@ -1406,7 +1514,7 @@ Dostupni smo u svakom kutku grada. Ako vidite naš kombi u vašem naselju, mahni
     	<div class="container">
     		<div class="row d-md-flex">
     		<div class="col-md-12 text-center ftco-animate">
-    			<h3 class="mb-4" style="color: white; font-size: 2.5rem; font-weight: 700;">Spremni Za Komarnici Koji Savršeno Odgovaraju?</h3>
+    			<h3 class="mb-4" style="color: white; font-size: 2.5rem; font-weight: 700;">Spremni Za Komarnike Koji vam Savršeno Odgovaraju?</h3>
     			<p style="color: white; font-size: 1.2rem; margin-bottom: 30px;">Pozovite nas za besplatno merenje i stručnu procenu. Radimo brzo, kvalitetno i po vašoj meri.</p>
     			<p>
               <a href="tel:+381616738181" class="btn btn-white py-3 px-5" style="font-size: 1.1rem;">
@@ -1547,6 +1655,39 @@ Dostupni smo u svakom kutku grada. Ako vidite naš kombi u vašem naselju, mahni
         button.innerHTML = 'Sakrij ▲';
       } else {
         button.innerHTML = 'Detaljnije ▼';
+      }
+    }
+
+    // FAQ Toggle Script
+    function toggleFAQ(element) {
+      const faqItem = element.parentElement;
+      const answer = faqItem.querySelector('.faq-answer');
+      const icon = element.querySelector('.faq-icon');
+      const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+      
+      // Zatvori sve ostale FAQ iteme
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+          const otherAnswer = item.querySelector('.faq-answer');
+          const otherIcon = item.querySelector('.faq-icon');
+          otherAnswer.style.maxHeight = '0';
+          otherIcon.textContent = '+';
+          otherIcon.style.transform = 'rotate(0deg)';
+          item.style.borderColor = '#e0e0e0';
+        }
+      });
+      
+      // Toggle trenutni item
+      if (isOpen) {
+        answer.style.maxHeight = '0';
+        icon.textContent = '+';
+        icon.style.transform = 'rotate(0deg)';
+        faqItem.style.borderColor = '#e0e0e0';
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.textContent = '−';
+        icon.style.transform = 'rotate(180deg)';
+        faqItem.style.borderColor = '#ff7f50';
       }
     }
   </script>

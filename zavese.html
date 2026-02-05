@@ -313,6 +313,11 @@
         
         /* HERO NASLOVI - Smanjeni za mobilni */
         .zavese-hero h1 {
+          font-size: 0.85rem !important;
+          line-height: 1.2 !important;
+        }
+        
+        .zavese-hero h2 {
           font-size: 2rem !important;
           line-height: 1.3 !important;
         }
@@ -349,6 +354,16 @@
       }
 
       .zavese-hero h1 {
+        font-size: 0.9rem;
+        font-weight: 400;
+        margin-bottom: 10px;
+        text-shadow: none;
+        color: #cccccc;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+      }
+
+      .zavese-hero h2 {
         font-size: 3.5rem;
         font-weight: 700;
         margin-bottom: 20px;
@@ -387,6 +402,213 @@
         line-height: 1.9;
         color: #666;
         margin-bottom: 20px;
+      }
+
+      .product-showoff-section {
+        padding: 60px 0;
+        background: #f8f9fa;
+      }
+
+      .product-showoff-section h3 {
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 50px;
+        color: #333;
+      }
+
+      .product-card {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        padding: 30px;
+        margin-bottom: 30px;
+        transition: all 0.3s ease;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+      }
+
+      .product-card:hover {
+        box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+        transform: translateY(-5px);
+      }
+
+      .product-illustration {
+        flex-shrink: 0;
+        width: 280px;
+        height: 280px;
+        background: #fff;
+        border: 2px solid #f0f0f0;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .product-illustration img,
+      .product-illustration picture {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .product-content {
+        flex: 1;
+      }
+
+      .product-header {
+        margin-bottom: 20px;
+      }
+
+      .product-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 8px;
+      }
+
+      .product-subtitle {
+        font-size: 1rem;
+        color: #666;
+        font-style: italic;
+        margin: 0;
+      }
+
+      .product-description {
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #666;
+        margin-bottom: 20px;
+      }
+
+      .product-price {
+        display: flex;
+        align-items: baseline;
+        margin-bottom: 20px;
+      }
+
+      .price-label {
+        font-size: 1rem;
+        color: #666;
+        margin-right: 8px;
+      }
+
+      .price-value {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #28a745;
+      }
+
+      .price-suffix {
+        font-size: 1.1rem;
+        color: #666;
+        margin-left: 5px;
+      }
+
+      .product-cta {
+        margin-bottom: 20px;
+      }
+
+      .btn-order {
+        background: #28a745;
+        color: white;
+        padding: 12px 35px;
+        font-size: 1.05rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+        display: inline-block;
+      }
+
+      .btn-order:hover {
+        background: #218838;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        color: white;
+        text-decoration: none;
+      }
+
+      .product-features {
+        margin-top: auto;
+        padding-top: 15px;
+        border-top: 2px solid #f0f0f0;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+        color: #444;
+      }
+
+      .feature-icon {
+        color: #28a745;
+        font-size: 1.3rem;
+        margin-right: 12px;
+        font-weight: 400;
+      }
+
+      .btn-details {
+        background: transparent;
+        border: 2px solid coral;
+        color: coral;
+        padding: 10px 25px;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .btn-details:hover {
+        background: #ff7f50;
+        color: white;
+      }
+
+      .product-details {
+        display: none;
+        margin-top: 20px;
+        padding-top: 20px;
+        border-top: 1px solid #e0e0e0;
+      }
+
+      .product-details.active {
+        display: block;
+      }
+
+      .product-details h4 {
+        color: #ff7f50;
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+      }
+
+      .product-details p {
+        line-height: 1.8;
+        color: #666;
+      }
+
+      @media (max-width: 768px) {
+        .product-card {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .product-illustration {
+          width: 100%;
+          max-width: 200px;
+          height: 200px;
+          margin: 0 auto;
+        }
+
+        .product-title {
+          font-size: 1.5rem;
+        }
       }
 
       .zavese-type-card {
@@ -510,7 +732,8 @@
     <div class="zavese-hero">
       <div class="container">
         <p class="breadcrumbs"><span class="mr-2"><a href="index.html" style="color: #fff;">Početna</a></span> <span class="mr-2">/</span> <span>Zavese</span></p>
-        <h1>Zebra Zavese i Trakaste Zavese Beograd</h1>
+        <h1>trakaste zavese cena | zebra zavese cena</h1>
+        <h2>Zavese</h2>
         <p>Profesionalna ugradnja zebra zavesa i trakastih zavesa po meri - Moderna rešenja za vaš prostor</p>
       </div>
     </div>
@@ -521,175 +744,279 @@
         <div class="row">
           <div class="col-lg-8">
             
-            <h2>Moderne Zavese Za Svaki Prostor - Kontrola Svetlosti i Privatnosti</h2>
+            <h3>Moderne Zavese Za Svaki Prostor - Kontrola Svetlosti i Privatnosti</h3>
             
             <p>
-              Kada vam je potrebna kompletna kontrola svetlosti u domu ili kancelariji, moderna rešenja za prozore pružaju savršenu kombinaciju 
-              funkcionalnosti i estetike. KOMOTRAKS sa <strong>5 godina iskustva</strong> nudi profesionalnu <a href="komarnici.html" style="color: #ff7f50; font-weight: 600;">ugradnju komarnika</a>, 
-              zavesa i <a href="harmonika-vrata.html" style="color: #ff7f50; font-weight: 600;">harmonika vrata</a> širom Beograda. Naš pristup se zasniva 
-              na preciznom merenju, kvalitetnim materijalima i brzoj montaži koja odgovara vašem rasporedu.
+              Znate onaj osećaj zadovoljstva kada uđete u prostoriju koja odiše mirom, a svetlost je podešena baš onako kako vam u tom trenutku prija? E, to je ono što u KOMOTRAKS-u radimo već pet godina sa ogromnim uživanjem. Verujte mi, nema ništa lepše nego kada vidimo osmeh na licu klijenta nakon što namontiramo zavese ili komarnike koji se savršeno uklapaju. Prokrstarili smo celim Beogradom i u svaki prostor uneli malo te naše pozitivne energije i vrhunske funkcionalnosti.
             </p>
 
             <div class="image-section">
               <picture>
       <source srcset="images/zebra-zavesa-1.webp" type="image/webp">
-      <img src="images/zebra-zavesa-1.jpg" width="901" height="1600" alt="Zebra Zavese Beograd - KOMOTRAKS Ugradnja" loading="lazy">
+      <picture>
+      <source srcset="images/zebra-zavesa-1.webp" type="image/webp">
+      <img src="images/zebra-zavesa-1.jpg" alt="Zebra Zavese Beograd - KOMOTRAKS Ugradnja" loading="lazy">
+    </picture>
     </picture>
             </div>
 
             <p>
-              Ugradnja <strong>po meri</strong> nije samo estetska odluka - to je praktično rešenje koje omogućava kontrolu količine svetlosti, 
-              pruža privatnost i štiti od sunčevih zraka. Bilo da vam je potreban moderan dizajn za dnevni boravak ili funkcionalno rešenje 
-              za poslovni prostor, mi nudimo širok spektar opcija koje se prilagođavaju vašim specifičnim zahtevima i budžetu.
+              Kada kažem ugradnja po meri, ja zaista mislim na rešenje koje „diše" sa vašim prozorom. To nije samo estetika, mada ruku na srce, izgleda fantastično. To je onaj praktični luksuz koji vam omogućava da jednim pokretom ruke dobijete potpunu privatnost ili da se zastitite od jakog sunca. Koristimo isključivo materijale za koje lično garantujemo, jer želimo da, kada završimo montažu, i vi i mi budemo podjednako zadovoljni obavljenim poslom.
             </p>
 
-            <h3>Zebra Zavese - Elegantnost i Funkcionalnost</h3>
+            <!-- Product Show-off Section -->
+            <div class="product-showoff-section">
+              <div class="container">
+                
+                <!-- Zebra Zavese Card -->
+                <div class="product-card">
+                  <div class="product-illustration">
+                    <picture>
+                      <source srcset="images/zebra-zavesa-product.webp" type="image/webp">
+                      <img src="images/zebra-zavesa-product.png" alt="zebra zavese cena" loading="lazy">
+                    </picture>
+                  </div>
+                  
+                  <div class="product-content">
+                    <div class="product-header">
+                      <h4 class="product-title">Zebra Zavese</h4>
+                      <p class="product-subtitle">"Day and Night" elegancija sa kontrolom svetlosti</p>
+                    </div>
+                    
+                    <p class="product-description">
+                      Revolucionarno rešenje koje spaja funkcionalnost klasičnih roletni sa elegancijom modernih zavesa. Potpuna kontrola svetlosti od potpune transparentnosti do kompletnog zamračenja.
+                    </p>
+                    
+                    <div class="product-price">
+                      <span class="price-label">Cena:</span>
+                      <span class="price-value">40€-50€</span>
+                      <span class="price-suffix">zavisi od dimenzija</span>
+                    </div>
+                    
+                    <div class="product-cta">
+                      <a href="tel:+381616738181" class="btn-order">Poruči odmah</a>
+                    </div>
+                    
+                    <div class="product-features">
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span><strong style="color: #000;">Potpuna kontrola svetlosti</strong> - od prozirnosti do tamnog</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span><strong style="color: #000;">Fleksibilan sistem</strong> sa preklapajućim trakama</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span><strong style="color: #000;">Moderan dizajn</strong> koji ulepšava svaki prostor</span>
+                      </div>
+                    </div>
+                    
+                    <button class="btn-details" onclick="toggleDetails(this)">Detaljnije ▼</button>
+                    
+                    <div class="product-details">
+                      <h4>Zebra Zavese - Detaljnije</h4>
+                      <p>
+                        <strong>Zebra zavese</strong>, poznate i kao "day and night" zavese, predstavljaju revolucionarno rešenje koje spaja funkcionalnost klasičnih roletni sa elegancijom modernih zavesa. Njihov jedinstveni dizajn omogućava vam potpunu kontrolu nad svetlošću - od potpune transparentnosti do kompletnog zamračenja, sve u zavisnosti od vašeg trenutnog raspoloženja i potreba.
+                      </p>
+                      <p>
+                        Sistem zebra zavesa funkcioniše tako što se horizontalne trake tkanine preklapaju, omogućavajući vam da prilagodite količinu svetlosti koja ulazi u prostor. Kada su prozirne trake poravnate, svetlost slobodno prolazi, stvarajući prijatan ambijent. Kada su neprozirne trake postavljene tako da se preklapaju, prostor je potpuno zamračen. Ova fleksibilnost čini <strong>zebra zavese</strong> idealnim izborom za spavaće sobe, dnevne boravke i kancelarije.
+                      </p>
+                      <p>
+                        <strong>Zebra zavese cena</strong> kod nas kreće se od 40€ do 50€ i zavisi od dimenzija prozora i odabrane tkanine. Nudimo širok spektar boja i tekstura - od laganih, prozračnih materijala za prijatan ambijent, do guščih varijanti za potpuno zamračenje. Svaka zavesa se pravi po meri vašeg prozora, garantujući savršeno prianjanje i funkcionalnost.
+                      </p>
+                    </div>
+                  </div>
+                </div>
 
-            <div class="zavese-type-card">
-              <h4>Prednosti Zebra Zavesa</h4>
-              <p>
-                <strong>Zebra zavese</strong>, poznate i kao "day and night" zavese, predstavljaju revolucionarno rešenje koje spaja funkcionalnost 
-                klasičnih roletni sa elegancijom modernih zavesa. Njihov jedinstveni dizajn omogućava vam potpunu kontrolu nad svetlošću - od potpune 
-                transparentnosti do kompletnog zamračenja, sve u zavisnosti od vašeg trenutnog raspoloženja i potreba.
-              </p>
-              <p>
-                Sistem zebra zavesa funkcioniše tako što se horizontalne trake tkanine preklapaju, omogućavajući vam da prilagodite količinu svetlosti 
-                koja ulazi u prostor. Kada su prozirne trake poravnate, svetlost slobodno prolazi, stvarajući prijatan ambijent. Kada su neprozirne 
-                trake postavljene tako da se preklapaju, prostor je potpuno zamračen. Ova fleksibilnost čini <strong>zebra zavese</strong> idealnim 
-                izborom za spavaće sobe, dnevne boravke i kancelarije.
-              </p>
+                <!-- Trakaste Zavese Card -->
+                <div class="product-card">
+                  <div class="product-illustration">
+                    <picture>
+                      <source srcset="images/trakaste-zavese-product.webp" type="image/webp">
+                      <img src="images/trakaste-zavese-product.png" alt="trakaste zavese cena" loading="lazy">
+                    </picture>
+                  </div>
+                  
+                  <div class="product-content">
+                    <div class="product-header">
+                      <h4 class="product-title">Trakaste Zavese</h4>
+                      <p class="product-subtitle">Vertikalne žaluzine - klasična elegancija sa fleksibilnošću</p>
+                    </div>
+                    
+                    <p class="product-description">
+                      Klasično i ekonomično rešenje za kontrolu svetlosti. Vertikalne lamele omogućavaju savršenu regulaciju svetlosti i idealne su za veće prozore i balkonska vrata.
+                    </p>
+                    
+                    <div class="product-price">
+                      <span class="price-label">Cena:</span>
+                      <span class="price-value">25€-30€</span>
+                      <span class="price-suffix">zavisi od dimenzija</span>
+                    </div>
+                    
+                    <div class="product-cta">
+                      <a href="tel:+381616738181" class="btn-order">Poruči odmah</a>
+                    </div>
+                    
+                    <div class="product-features">
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span><strong style="color: #000;">Ekonomično rešenje</strong> bez kompromisa na kvalitet</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span><strong style="color: #000;">Idealne za veće prozore</strong> i balkonska vrata</span>
+                      </div>
+                      <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span><strong style="color: #000;">Laka regulacija svetlosti</strong> rotacijom lamela</span>
+                      </div>
+                    </div>
+                    
+                    <button class="btn-details" onclick="toggleDetails(this)">Detaljnije ▼</button>
+                    
+                    <div class="product-details">
+                      <h4>Trakaste Zavese - Detaljnije</h4>
+                      <p>
+                        <strong>Trakaste zavese</strong>, poznate i kao vertikalne žaluzine ili lamele, predstavljaju klasično i ekonomično rešenje za kontrolu svetlosti. Posebno su popularne za veće prozore, balkonska vrata i poslovne prostore gde je potrebna jednostavna i funkcionalna zaštita od sunca. Njihova konstrukcija omogućava lako usmeravanje svetlosti rotacijom vertikalnih lamela.
+                      </p>
+                      <p>
+                        <strong>Trakaste zavese za prozore</strong> dolaze u širokom spektru boja i materijala - od laganih PVC lamela do elegantnijih tkanina. Mehanizam otvaranja može biti ručni ili motorni, zavisno od vaših preferencija. Lamele se mogu pomicati u stranu, ostavljajući prozor potpuno otvoren, ili se mogu postaviti pod uglom za filtriranje svetlosti.
+                      </p>
+                      <p>
+                        <strong>Trakaste zavese cena</strong> kod nas je od 25€ do 30€ i zavisi od dimenzija, materijala lamela i tipa mehanizma. To ih čini jednim od najekonomičnijih rešenja za zaštitu od sunca, bez kompromisa na funkcionalnosti. Posebno su pogodne za veće površine gde bi drugi tipovi zavesa bili skupi ili nepraktični.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            <div class="image-section">
-              <picture>
-      <source srcset="images/ZEBRA-ZAVESA-ZVEZDARA.webp" type="image/webp">
-      <img src="images/ZEBRA-ZAVESA-ZVEZDARA.webp" width="1920" height="1440" alt="Zebra Zavese Zvezdara - Montaža Po Meri" loading="lazy">
-    </picture>
+            <h3 style="color: #ff7f50; font-size: 1.8rem; margin-top: 40px;">Zašto Izabrati KOMOTRAKS?</h3>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 20px;">
+              Pitate se šta nas izdvaja iz mase? Iskreno, to je strast prema rešavanju vaših problema sa prostorom! Za ovih 5 godina krstarenja Beogradom, nagledali smo se svega: od krivih zidova u starogradnji do ultra-modernih stanova gde se pazi na svaki milimetar. I znate šta? Svaki put smo pronašli savršeno rešenje.
+            </p>
+            
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 20px;">
+Svaki prostor je priča za sebe, baš kao i svaki klijent. Zato ne verujemo u prepiske starih rešenja. Kada uđemo u vaš dom, gledamo ga kao da je naš, zato pazimo na estetiku, funkcionalnost, ali i na to da vam se zavese savršeno uklapaju uz boju parketa ili kuhinje.            </p>
+
+            <div style="background: #f9f9f9; border-left: 4px solid #ff7f50; padding: 25px; margin-bottom: 30px; border-radius: 8px;">
+              <ul style="font-size: 1.05rem; line-height: 2; color: #555; margin: 0; padding-left: 25px;">
+                <li style="margin-bottom: 15px;">
+                  <strong style="color: #333;">Kvalitetni materijali</strong> - koristimo samo zavese od renomiranih proizvođača
+                </li>
+                <li style="margin-bottom: 15px;">
+                  <strong style="color: #333;">Precizna izrada</strong> - svake zavese po meri do milimetra
+                </li>
+                <li style="margin-bottom: 15px;">
+                  <strong style="color: #333;">Brza ugradnja</strong> - većina projekata završena za 2-4 sata
+                </li>
+                <li style="margin-bottom: 15px;">
+                  <strong style="color: #333;">Transparentne cene</strong> - bez skrivenih troškova
+                </li>
+                <li>
+                  <strong style="color: #333;">Garancija 2 godine</strong> - na rad i materijale
+                </li>
+              </ul>
             </div>
 
-            <div class="zavese-type-card">
-              <h4>Zebra Zavese Cena i Kvalitet</h4>
-              <p>
-                <strong>Zebra zavese cena</strong> kod nas kreće se od **40€ do 50€** i zavisi od dimenzija prozora i odabrane tkanine. 
-                Nudimo širok spektar boja, tekstura i gustina tkanine - od laganih, prozračnih materijala za prijatan ambijent, do guščih, 
-                tamnosivih ili crnih varijanti za potpuno zamračenje. Svaka zavesa se pravi po meri vašeg prozora, garantujući savršeno prianjanje 
-                i funkcionalnost.
-              </p>
-              <p>
-                Kvalitet naših zebra zavesa ogleda se u precizno izrađenom mehanizmu, izdržljivoj tkanini koja ne izbljedi na suncu i glatkom 
-                podizanju i spuštanju. Jednostavna za održavanje - dovoljno je povremeno obrisati vlažnom krpom. <strong>Zebra zavese</strong> 
-                su dugotrajno rešenje koje će godinama služiti bez problema.
-              </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin: 30px 0;">
+              <picture style="border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                <source srcset="images/ZEBRA-ZAVESA-ZVEZDARA.webp" type="image/webp">
+                <img src="images/ZEBRA-ZAVESA-ZVEZDARA.jpg" alt="Zebra Zavese Zvezdara" loading="lazy" style="width: 100%;">
+              </picture>
             </div>
 
-            <h3>Trakaste Zavese - Praktično Rešenje Za Prozore</h3>
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 20px;">
+Znate one majstore koji vam okrenu kuću naglavačke? E, mi nismo ti! Naša ugradnja je sto bi se reklo, hirurški precizna i čista. Verujemo da dobar posao nije završen samo kada zavese staviš na mesto, već kada vi ostanete sa osmehom na licu, a mi sa čistim obrazom.            </p>
 
-            <div class="zavese-type-card">
-              <h4>Trakaste Zavese Za Svaki Prostor</h4>
-              <p>
-                <strong>Trakaste zavese</strong>, poznate i kao vertikalne žaluzine ili lamele, predstavljaju klasično i ekonomično rešenje 
-                za kontrolu svetlosti. Posebno su popularne za veće prozore, balkonska vrata i poslovne prostore gde je potrebna jednostavna 
-                i funkcionalna zaštita od sunca. Njihova konstrukcija omogućava lako usmeravanje svetlosti rotacijom vertikalnih lamela.
-              </p>
-              <p>
-                <strong>Trakaste zavese za prozore</strong> dolaze u širokom spektru boja i materijala - od laganih PVC lamela do elegantnijih 
-                tkanina. Mehanizam otvaranja može biti ručni ili motorni, zavisno od vaših preferencija. Lamele se mogu pomicati u stranu, 
-                ostavljajući prozor potpuno otvoren, ili se mogu postaviti pod uglom za filtriranje svetlosti.
-              </p>
+<p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 20px;">
+Od prvog telefonskog poziva do trenutka kada vam pružimo ruku nakon montaže, kod nas nema mutnih radnji niti sitnih slova u ugovoru. Cena koju dogovorimo je ona koju plaćate, a rok od 3-7 dana za nas je svetinja.
+
+
+            <h3 style="color: #ff7f50; font-size: 1.8rem; margin-top: 40px;">Oblasti Koje Pokrivamo u Beogradu</h3>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555; margin-bottom: 20px;">
+              Naš servis ugradnje <strong>zavesa</strong> dostupan je u svim delovima Beograda. Pokrivamo <strong style="color: #ff7f50;">Zvezdaru, Palilulu, Karaburmu, Voždovac, Novi Beograd, Zemun, Rakovicu i Čukaricu</strong>. 
+              Bez obzira gde se nalazite, naš tim je spreman da vam pruži uslugu na najvišem nivou.
+            </p>
+
+            <p style="font-size: 1.1rem; line-height: 1.8; color: #555;">
+              Besplatno dolazimo na merenje bilo gde u Beogradu. Svaka lokacija donosi svoje specifičnosti, a mi smo spremni na svaki izazov - od starih zgrada 
+              sa nestandardnim otvorima do modernih novih stanova.
+            </p>
+
+            <!-- Često Postavljana Pitanja (FAQ) sekcija -->
+            <h3 style="color: #ff7f50; font-size: 1.8rem; margin-top: 50px; margin-bottom: 30px;">Često Postavljana Pitanja (FAQ)</h3>
+
+            <div class="faq-container" style="margin-bottom: 50px;">
+              <!-- FAQ Item 1 -->
+              <div class="faq-item" style="background: #fff; border: 2px solid #ff7f50; margin-bottom: 15px; border-radius: 8px; overflow: hidden; transition: all 0.3s ease;">
+                <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                  <h4 style="color: #333; font-size: 1.2rem; margin: 0; font-weight: 600;">Da li je merenje zaista besplatno?</h4>
+                  <span class="faq-icon" style="color: #ff7f50; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s ease;">+</span>
+                </div>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fff;">
+                  <p style="padding: 20px; color: #555; line-height: 1.7; margin: 0; border-top: 1px solid #ff7f50;">
+                    Da, apsolutno! <strong>Besplatno dolazimo na vašu adresu</strong> bilo gde u Beogradu, precizno merimo sve prozore i vrata, i dajemo stručan savet o najboljem rešenju. Nema skrivenih troškova – merenje je potpuno besplatno bez obaveze narudžbine.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 2 -->
+              <div class="faq-item" style="background: #fff; border: 2px solid #ff7f50; margin-bottom: 15px; border-radius: 8px; overflow: hidden; transition: all 0.3s ease;">
+                <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                  <h4 style="color: #333; font-size: 1.2rem; margin: 0; font-weight: 600;">Koliko brzo možete da montaž zavese?</h4>
+                  <span class="faq-icon" style="color: #ff7f50; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s ease;">+</span>
+                </div>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fff;">
+                  <p style="padding: 20px; color: #555; line-height: 1.7; margin: 0; border-top: 1px solid #ff7f50;">
+                    Nakon merenja, zavese su gotove za <strong>3-7 dana</strong>. Montažu vršimo brzo i čisto, obično za 1-2 sata. Većina klijenata je veoma iznenađena brzinom i čistotom naše ugradnje.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 3 -->
+              <div class="faq-item" style="background: #fff; border: 2px solid #ff7f50; margin-bottom: 15px; border-radius: 8px; overflow: hidden; transition: all 0.3s ease;">
+                <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                  <h4 style="color: #333; font-size: 1.2rem; margin: 0; font-weight: 600;">Koje boje i tipove zavesa nudite?</h4>
+                  <span class="faq-icon" style="color: #ff7f50; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s ease;">+</span>
+                </div>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fff;">
+                  <p style="padding: 20px; color: #555; line-height: 1.7; margin: 0; border-top: 1px solid #ff7f50;">
+                    Nudimo <strong>zebra zavese</strong> sa kontrolom svetlosti, <strong>trakaste zavese</strong> (vertikalne lamele) za veće prozore, i različite <strong>boje i materijale</strong> prilagođene vašem enterijeru. Svi dizajni su prilagođeni da se savršeno uklapaju u vaš prostor. Možete da vidite primere u našoj <a href="galerija.html" style="color: #ff7f50; font-weight: 600; text-decoration: none;">Galeriji</a>.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 4 -->
+              <div class="faq-item" style="background: #fff; border: 2px solid #ff7f50; margin-bottom: 15px; border-radius: 8px; overflow: hidden; transition: all 0.3s ease;">
+                <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                  <h4 style="color: #333; font-size: 1.2rem; margin: 0; font-weight: 600;">Šta dobijam uz garanciju?</h4>
+                  <span class="faq-icon" style="color: #ff7f50; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s ease;">+</span>
+                </div>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fff;">
+                  <p style="padding: 20px; color: #555; line-height: 1.7; margin: 0; border-top: 1px solid #ff7f50;">
+                    Sve zavese dolaze sa <strong>2 godine garancije</strong> na materijale i rad. To znači da ako dođe do problema sa mehanizmom, žicama ili drugima delovima – mi to besplatno popravljamo ili menjamo. Garancija pokriva sve osim namerne štete.
+                  </p>
+                </div>
+              </div>
+
+              <!-- FAQ Item 5 -->
+              <div class="faq-item" style="background: #fff; border: 2px solid #ff7f50; margin-bottom: 15px; border-radius: 8px; overflow: hidden; transition: all 0.3s ease;">
+                <div class="faq-question" onclick="toggleFAQ(this)" style="padding: 20px; cursor: pointer; display: flex; justify-content: space-between; align-items: center; background: #f9f9f9;">
+                  <h4 style="color: #333; font-size: 1.2rem; margin: 0; font-weight: 600;">Koliko dugo traju zavese?</h4>
+                  <span class="faq-icon" style="color: #ff7f50; font-size: 1.5rem; font-weight: bold; transition: transform 0.3s ease;">+</span>
+                </div>
+                <div class="faq-answer" style="max-height: 0; overflow: hidden; transition: max-height 0.3s ease; background: #fff;">
+                  <p style="padding: 20px; color: #555; line-height: 1.7; margin: 0; border-top: 1px solid #ff7f50;">
+                    Naše zavese su izrađene od <strong>kvalitetnih materijala</strong> koji su otporni na istrošavanje i <strong>čeličnih komponenti</strong> koje su otporne na kidanje. Uz pravilno održavanje, mogu trajati <strong>10+ godina</strong>. Dajemo 2 godine garancije na sve materijale i rad.
+                  </p>
+                </div>
+              </div>
             </div>
-
-            <div class="image-section">
-              <picture>
-      <source srcset="images/zebra-zavese-2.webp" type="image/webp">
-      <img src="images/zebra-zavese-2.jpg" width="1600" height="901" alt="Zebra Zavese Beograd - Ugradnja" loading="lazy">
-    </picture>
-            </div>
-
-            <div class="zavese-type-card">
-              <h4>Trakaste Zavese Cena i Montaža</h4>
-              <p>
-                <strong>Trakaste zavese cena</strong> kod nas je od **25€ do 30€** i zavisi od dimenzija, materijala lamela i tipa mehanizma. 
-                To ih čini jednim od najekonomičnijih rešenja za zaštitu od sunca, bez kompromisa na funkcionalnosti. Posebno su pogodne za 
-                veće površine gde bi drugi tipovi zavesa bili skupi ili nepraktični.
-              </p>
-              <p>
-                Montaža trakastih zavesa je brza - naš tim dolazi sa svim potrebnim alatima, montira šine na plafon ili zid, postavlja lamele 
-                i testira mehanizam. Ceo proces traje od 30 minuta do sat vremena, zavisno od veličine i broja prozora. Nakon montaže, dobijate 
-                detaljne instrukcije za korišćenje i održavanje.
-              </p>
-            </div>
-
-            <div class="image-section">
-              <picture>
-      <source srcset="images/trakaste-zavese-cena.webp" type="image/webp">
-      <img src="images/trakaste-zavese-cena.jpg" width="1920" height="864" alt="Trakaste Zavese Cena - Beograd" loading="lazy">
-    </picture>
-            </div>
-
-            <h3>Ugradnja Po Meri - Svaki Prozor Je Jedinstven</h3>
-
-            <p>
-              Kada kažemo <strong>ugradnja po meri</strong>, to znači da ne koristimo gotove standardne veličine. Svaki prozor ima svoje dimenzije, 
-              svaki prostor ima svoje zahteve. Zato naš proces počinje besplatnim dolaskom na vašu adresu, preciznim merenjem i konsultacijom 
-              o najboljem rešenju za vaš prostor.
-            </p>
-
-            <p>
-              Merimo visinu, širinu, dubinu fuga, proveravamo tip prozora i mesto montaže (plafon ili zid). Na osnovu ovih informacija, 
-              izrađujemo zavese tačno prema tim dimenzijama. Rezultat je savršeno prilagođeno rešenje koje izgleda kao da je deo originalnog 
-              enterijera. Svaka <strong>zebra zavesa</strong> i <strong>trakasta zavesa</strong> koju ugradimo dolazi sa garancijom i našom podrškom.
-            </p>
-
-            <h3>Zavese u Raznim Bojama - Prilagodite Svoj Prostor</h3>
-
-            <div class="image-section">
-              <picture>
-      <source srcset="images/boje-zavesa.webp" type="image/webp">
-      <img src="images/boje-zavesa.jpg" width="1600" height="1200" alt="Dostupne Boje Zavesa - KOMOTRAKS" style="border-radius: 8px;" loading="lazy">
-    </picture>
-            </div>
-
-            <p>
-              Jedan od najvećih prioriteta prilikom izbora zavesa je <strong>usklađivanje sa enterjerom</strong> vašeg prostora. Zato nudimo 
-              <strong>zavese u raznim bojama i nijansama</strong> koje možete prilagoditi svom stilu i željenom ambijentu. Bez obzira da li 
-              preferirate neutralne tonove poput bele, sive ili bež boje, ili pak želite da dodaš živopisnije akcente sa plavim, zelenim ili 
-              braon nijansama - imamo rešenje za vas.
-            </p>
-
-            <p>
-              Naše <strong>zebra zavese</strong> i <strong>trakaste zavese</strong> dostupne su u bogatoj paleti boja, od svetlih pastelnih 
-              tonova koji otvaraju prostor, do tamnijih nijansi koje pružaju potpunu privatnost i eleganciju. Svaka boja je pažljivo odabrana 
-              kako bi bila izdržljiva, otporna na UV zrake i laka za održavanje. Tokom besplatnog merenja, naš tim će vam pokazati uzorke svih 
-              dostupnih boja i pomoći vam da odaberete onu koja najbolje odgovara vašem enterijeru.
-            </p>
-
-            <h3>Zašto Izabrati KOMOTRAKS za Ugradnju Zavesa?</h3>
-
-            <p>
-              Sa 5 godina iskustva u <strong>ugradnji zavesa</strong> širom Beograda, razumemo potrebe naših klijenata. Pokrivamo sve delove 
-              grada - Zvezdaru, Palilulu, Karaburmu, Voždovac, Novi Beograd, Zemun i okolinu. Bez obzira gde se nalazite, naš tim je spreman 
-              da vam pruži uslugu koja premašuje očekivanja.
-            </p>
-
-            <p>
-              Koristimo samo kvalitetne materijale od proverenih proizvođača. Svaki projekat tretiramo individualno, od prvog kontakta do 
-              finalne montaže. Transparentnost u cenama, <strong>rok izrade 3-7 dana od merenja</strong> i profesionalizam su naši prioriteti. 
-              Pozovite nas i uverite se zašto smo prvi izbor za <strong>zebra zavese</strong> i <strong>trakaste zavese</strong> u Beogradu. 
-              Pogledajte <a href="index.html" style="color: #ff7f50; font-weight: 600;">sve usluge</a> koje nudimo.
-            </p>
-
-            <h3>Oblasti Koje Pokrivamo</h3>
-
-            <p>
-              Naš servis <strong>ugradnje zavesa</strong> dostupan je u svim delovima Beograda. Posebno smo aktivni na Zvezdari, Paliluli, 
-              u Karaburmi i na Voždovcu, gde imamo brojne zadovoljne klijente. <strong>Zebra zavese</strong> su postale veoma popularne u 
-              Novom Beogradu, zahvaljujući modernom dizajnu zgrada i velikim prozorima.
-            </p>
-
-            <p>
-              U Zemunu, Rakovici i Čukarici takođe redovno radimo projekte, od privatnih stanova do poslovnih prostora. Bez obzira da li imate 
-              male prozore u starim zgradama ili velike panoramske otvore u modernim zgradama, mi imamo iskustvo i rešenje za svaki prostor.
-            </p>
+            <!-- Kraj FAQ sekcije -->
 
           </div>
 
@@ -728,93 +1055,6 @@
             </div>
 
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Pricing Section -->
-    <section class="ftco-section bg-light">
-      <div class="container">
-        <div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-8 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Cenovnik Zavesa - Beograd</h2>
-            <p>Transparentne cene za sve vrste zavesa. Finalna cena zavisi od dimenzija prozora.</p>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          
-          <!-- Zebra Zavese Price Card -->
-          <div class="col-lg-5 col-md-6 mb-4 ftco-animate">
-            <div class="card h-100 border-0 shadow-lg">
-              <div class="card-header text-center py-4" style="background: linear-gradient(135deg, #f8b739 0%, #e9a121 100%); border: none;">
-                <h4 class="mb-0 text-white font-weight-bold" style="font-size: 1.8rem;">ZEBRA ZAVESE</h4>
-              </div>
-              <div class="card-body p-5">
-                <div class="text-center mb-4">
-                  <div style="font-size: 3.5rem; font-weight: 700; color: #f8b739;">40€ - 50€</div>
-                  <small class="text-muted" style="font-size: 1.1rem;">Zavisi od dimenzija</small>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <ul style="list-style: none; padding: 0;">
-                      <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem;"><i class="icon-check mr-2" style="color: #28a745;"></i>Po meri</li>
-                      <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem;"><i class="icon-check mr-2" style="color: #28a745;"></i>Različite boje</li>
-                      <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem;"><i class="icon-check mr-2" style="color: #28a745;"></i>Day & Night sistem</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6">
-                    <ul style="list-style: none; padding: 0;">
-                      <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem;"><i class="icon-check mr-2" style="color: #28a745;"></i>Besplatno merenje</li>
-                      <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem;"><i class="icon-check mr-2" style="color: #28a745;"></i>Brza montaža</li>
-                      <li style="padding: 12px 0; font-size: 1.05rem;"><i class="icon-check mr-2" style="color: #28a745;"></i>Kontrola svetlosti</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer bg-white border-0 text-center py-4">
-                <a href="tel:+381616738181" class="btn btn-primary btn-lg px-5 py-3" style="font-size: 1.1rem;">
-                  <span class="icon-phone mr-2"></span>Pozovi +381 61 6738181
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Trakaste Zavese Price Card -->
-          <div class="col-lg-5 col-md-6 mb-4 ftco-animate">
-            <div class="card h-100 border-0 shadow-lg">
-              <div class="card-header text-center py-4" style="background: linear-gradient(135deg, #f8b739 0%, #e9a121 100%); border: none;">
-                <h4 class="mb-0 text-white font-weight-bold" style="font-size: 1.8rem;">TRAKASTE ZAVESE</h4>
-              </div>
-              <div class="card-body p-5">
-                <div class="text-center mb-4">
-                  <div style="font-size: 3.5rem; font-weight: 700; color: #f8b739;">25€ - 30€</div>
-                  <small class="text-muted" style="font-size: 1.1rem;">Zavisi od dimenzija</small>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">
-                    <ul style="list-style: none; padding: 0;">
-                      <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem;"><i class="icon-check mr-2" style="color: #28a745;"></i>Po meri</li>
-                      <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem;"><i class="icon-check mr-2" style="color: #28a745;"></i>Vertikalne lamele</li>
-                      <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem;"><i class="icon-check mr-2" style="color: #28a745;"></i>Za veće prozore</li>
-                    </ul>
-                  </div>
-                  <div class="col-md-6">
-                    <ul style="list-style: none; padding: 0;">
-                      <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem;"><i class="icon-check mr-2" style="color: #28a745;"></i>Besplatno merenje</li>
-                      <li style="padding: 12px 0; border-bottom: 1px solid #eee; font-size: 1.05rem;"><i class="icon-check mr-2" style="color: #28a745;"></i>Ekonomično</li>
-                      <li style="padding: 12px 0; font-size: 1.05rem;"><i class="icon-check mr-2" style="color: #28a745;"></i>Praktično</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-              <div class="card-footer bg-white border-0 text-center py-4">
-                <a href="tel:+381616738181" class="btn btn-primary btn-lg px-5 py-3" style="font-size: 1.1rem;">
-                  <span class="icon-phone mr-2"></span>Pozovi +381 61 6738181
-                </a>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
@@ -953,6 +1193,54 @@
   
   <!-- Service Worker for offline support and caching -->
   <script src="js/sw-register.js"></script>
+
+  <!-- Product and FAQ Toggle Scripts -->
+  <script>
+    function toggleDetails(button) {
+      const productCard = button.closest('.product-card');
+      const detailsSection = productCard.querySelector('.product-details');
+      detailsSection.classList.toggle('active');
+      
+      if (detailsSection.classList.contains('active')) {
+        button.innerHTML = 'Sakrij ▲';
+      } else {
+        button.innerHTML = 'Detaljnije ▼';
+      }
+    }
+
+    // FAQ Toggle Script
+    function toggleFAQ(element) {
+      const faqItem = element.parentElement;
+      const answer = faqItem.querySelector('.faq-answer');
+      const icon = element.querySelector('.faq-icon');
+      const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+      
+      // Zatvori sve ostale FAQ iteme
+      document.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+          const otherAnswer = item.querySelector('.faq-answer');
+          const otherIcon = item.querySelector('.faq-icon');
+          otherAnswer.style.maxHeight = '0';
+          otherIcon.textContent = '+';
+          otherIcon.style.transform = 'rotate(0deg)';
+          item.style.borderColor = '#ff7f50';
+        }
+      });
+      
+      // Toggle trenutni item
+      if (isOpen) {
+        answer.style.maxHeight = '0';
+        icon.textContent = '+';
+        icon.style.transform = 'rotate(0deg)';
+        faqItem.style.borderColor = '#ff7f50';
+      } else {
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+        icon.textContent = '−';
+        icon.style.transform = 'rotate(180deg)';
+        faqItem.style.borderColor = '#ff7f50';
+      }
+    }
+  </script>
     
   </body>
 </html>
