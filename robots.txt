@@ -1,0 +1,30 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ugradnja-zavesa-komarnika.com/sitemap.xml
+
+# Disallow admin and config files
+Disallow: /node_modules/
+Disallow: /scss/
+Disallow: *.config
+Disallow: /package.json
+Disallow: /package-lock.json
+Disallow: /build-tools/
+Disallow: /dist/build-tools/
+
+# Block incorrect nested paths that might be crawled
+Disallow: /images/images/
+Disallow: /images/js/
+Disallow: /images/css/
+Disallow: /js/images/
+Disallow: /js/css/
+Disallow: /css/images/
+Disallow: /css/js/
+
+# Allow CSS, JS, images, fonts, and favicons for proper rendering
+Allow: /css/
+Allow: /js/
+Allow: /images/
+Allow: /fonts/
+Allow: /favicons/

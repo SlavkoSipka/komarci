@@ -1,0 +1,25 @@
+# Static assets - ne redirektujo na SPA
+/js/*                200
+/css/*               200
+/images/*            200
+/fonts/*             200
+/favicons/*          200
+
+# HTML page redirects (bez .html)
+/komarnici           /komarnici.html   301
+/harmonika-vrata     /harmonika-vrata.html  301
+/zavese              /zavese.html      301
+/kontakt             /kontakt.html     301
+/galerija            /galerija.html    301
+/blog                /blog.html        301
+/autor               /autor.html       301
+
+# Block nested paths
+/images/images/*     /404.html   404
+/images/js/*         /404.html   404
+/images/css/*        /404.html   404
+/js/images/*         /404.html   404
+/css/images/*        /404.html   404
+
+# Catch-all SPA redirect (MORA biti zadnje)
+/*                   /index.html   200

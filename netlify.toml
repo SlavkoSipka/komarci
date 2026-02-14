@@ -1,0 +1,134 @@
+[build]
+  # Build command - build sve fajlove u dist folder
+  command = "npm run build"
+  
+  # Publish directory - built files
+  publish = "dist"
+
+# Environment variables
+[build.environment]
+  NODE_VERSION = "20"
+
+# Redirect rules - Fix duplicate URLs (without .html to with .html)
+[[redirects]]
+  from = "/komarnici"
+  to = "/komarnici.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/harmonika-vrata"
+  to = "/harmonika-vrata.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/zavese"
+  to = "/zavese.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/kontakt"
+  to = "/kontakt.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/galerija"
+  to = "/galerija.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/blog"
+  to = "/blog.html"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/autor"
+  to = "/autor.html"
+  status = 301
+  force = true
+
+
+# Block nested image paths - redirect to 404
+[[redirects]]
+  from = "/images/images/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/images/js/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/images/css/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/js/images/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/css/images/*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# Cache headers za statične fajlove
+[[headers]]
+  for = "/*.{js,css,jpg,jpeg,png,gif,svg,webp,woff,woff2,ttf,eot}"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+# Don't redirect static assets and paths to SPA
+[[redirects]]
+  from = "/js/*"
+  to = "/js/:splat"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/css/*"
+  to = "/css/:splat"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/images/*"
+  to = "/images/:splat"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/fonts/*"
+  to = "/fonts/:splat"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/favicons/*"
+  to = "/favicons/:splat"
+  status = 200
+  force = false
+
+# Catch-all - prikazi 404 stranicu za nepostojece URL-ove
+[[redirects]]
+  from = "/*"
+  to = "/404.html"
+  status = 404
+  force = false

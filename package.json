@@ -1,0 +1,53 @@
+{
+  "name": "welfare-gh-pages",
+  "version": "1.0.0",
+  "description": "Welfare - Charity Website Template",
+  "main": "index.html",
+  "scripts": {
+    "dev": "concurrently --kill-others-on-fail \"npm run sass:watch\" \"npm run serve\" \"npm run open-browser\"",
+    "serve": "http-server -p 3000 -c-1",
+    "open-browser": "node -e \"setTimeout(() => { require('child_process').exec('start http://localhost:3000', (err) => { if(err) console.error(err); }); }, 3000);\"",
+    "sass:watch": "sass --watch scss:css --style expanded --source-map",
+    "sass:build": "sass scss:css --style compressed --no-source-map",
+    "build": "npm run clean && npm run sass:build && npm run optimize && npm run copy-assets && npm run validate:sitemap",
+    "validate:sitemap": "node build-tools/validate-sitemap.js",
+    "optimize": "npm run optimize:css && npm run optimize:js && npm run optimize:html",
+    "optimize:css": "node build-tools/optimize-css.js",
+    "optimize:js": "node build-tools/optimize-js.js",
+    "optimize:html": "node build-tools/optimize-html.js",
+    "copy-assets": "node build-tools/copy-assets.js",
+    "start": "npm run dev",
+    "clean": "rimraf css/style.css css/style.css.map dist/",
+    "format": "prettier --write \"**/*.{html,css,scss,js,json}\"",
+    "lint:scss": "stylelint \"scss/**/*.scss\" --fix"
+  },
+  "keywords": [
+    "charity",
+    "welfare",
+    "nonprofit",
+    "donation",
+    "bootstrap",
+    "template"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "concurrently": "^8.2.2",
+    "html-minifier-terser": "^7.2.0",
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2",
+    "prettier": "^3.1.1",
+    "rimraf": "^5.0.5",
+    "sass": "^1.69.7",
+    "sharp": "^0.34.5",
+    "stylelint": "^16.1.0",
+    "stylelint-config-standard-scss": "^13.0.0",
+    "terser": "^5.27.0"
+  },
+  "browserslist": [
+    "last 5 versions",
+    "> 1%",
+    "not dead"
+  ]
+}

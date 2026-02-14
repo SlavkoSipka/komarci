@@ -1,0 +1,35 @@
+# Dependencies
+node_modules/
+# package-lock.json - Now included for Netlify
+
+# Build outputs
+# dist/ - Now included for Netlify deployment
+build/
+*.css.map
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Temporary files
+*.tmp
+*.temp
+.cache/
+
+# OS
+Thumbs.db

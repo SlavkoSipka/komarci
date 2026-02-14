@@ -1,0 +1,213 @@
+====================================================================
+📧 EMAILJS EMAIL TEMPLATE ZA KOMOTRAKS KONTAKT FORMU
+====================================================================
+
+KORACI ZA POSTAVLJANJE:
+
+1. Idi na https://www.emailjs.com/ i registruj se (BESPLATNO)
+
+2. DODAJ EMAIL SERVICE:
+   - Idi na "Email Services" > "Add New Service"
+   - Izaberi Gmail / Outlook / Yahoo (šta god koristiš)
+   - Povezuj svoj email nalog (komotraks@gmail.com)
+   - Sačuvaj SERVICE_ID (primer: service_abc123)
+
+3. KREIRAJ EMAIL TEMPLATE:
+   - Idi na "Email Templates" > "Create New Template"
+   - Kopiraj SUBJECT i BODY ispod
+   - Sačuvaj TEMPLATE_ID (primer: template_xyz456)
+
+4. UZMI PUBLIC KEY:
+   - Idi na "Account" > "API Keys"
+   - Kopiraj Public Key (primer: abc123XYZ456)
+
+5. STAVI SVE U dist/js/config.js:
+   - EMAILJS_PUBLIC_KEY: 'tvoj_public_key'
+   - EMAILJS_SERVICE_ID: 'tvoj_service_id'
+   - EMAILJS_TEMPLATE_ID: 'tvoj_template_id'
+
+====================================================================
+
+📝 COPY-PASTE OVAJ TEMPLATE NA EMAILJS.COM:
+
+--------------------------------------------------------------------
+TEMPLATE NAME (na EmailJS):
+--------------------------------------------------------------------
+komotraks_contact_form
+
+--------------------------------------------------------------------
+SUBJECT (na EmailJS):
+--------------------------------------------------------------------
+🏡 Novi Upit | {{from_name}} | {{from_phone}}
+
+--------------------------------------------------------------------
+CONTENT / BODY (na EmailJS):
+--------------------------------------------------------------------
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .email-container {
+      background: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .header {
+      background: linear-gradient(135deg, #f8b739 0%, #e9a121 100%);
+      color: white;
+      padding: 20px;
+      border-radius: 10px 10px 0 0;
+      text-align: center;
+      margin: -30px -30px 30px -30px;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+    }
+    .info-row {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-left: 4px solid #f8b739;
+      border-radius: 5px;
+    }
+    .info-label {
+      font-weight: bold;
+      color: #e9a121;
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+    .info-value {
+      font-size: 16px;
+      color: #333;
+    }
+    .message-box {
+      background: #fff9e6;
+      border: 2px solid #f8b739;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 20px;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      padding-top: 20px;
+      border-top: 2px solid #f0f0f0;
+      color: #666;
+      font-size: 14px;
+    }
+    .urgent {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 20px 0;
+      text-align: center;
+      font-weight: bold;
+      color: #856404;
+    }
+  </style>
+</head>
+<body>
+  <div class="email-container">
+    <div class="header">
+      <h1>🏡 NOVI UPIT SA SAJTA</h1>
+      <p style="margin: 5px 0 0 0;">KOMOTRAKS - Kontakt Forma</p>
+    </div>
+
+    <div class="urgent">
+      ⚠️ HITNO: Novi klijent čeka odgovor!
+    </div>
+
+    <div class="info-row">
+      <span class="info-label">👤 Ime Klijenta</span>
+      <span class="info-value">{{from_name}}</span>
+    </div>
+
+    <div class="info-row">
+      <span class="info-label">📞 Telefon</span>
+      <span class="info-value"><a href="tel:{{from_phone}}" style="color: #e9a121; text-decoration: none; font-weight: bold;">{{from_phone}}</a></span>
+    </div>
+
+    <div class="info-row">
+      <span class="info-label">📧 Email</span>
+      <span class="info-value"><a href="mailto:{{from_email}}" style="color: #e9a121; text-decoration: none;">{{from_email}}</a></span>
+    </div>
+
+    <div class="message-box">
+      <span class="info-label">💬 Poruka / Dodatne Informacije</span>
+      <p class="info-value" style="margin: 10px 0 0 0; white-space: pre-wrap;">{{message}}</p>
+    </div>
+
+    <div class="footer">
+      <p><strong>Brzo reaguj!</strong> Klijent očekuje povratni poziv.</p>
+      <p style="margin: 10px 0;">📞 Pozovi odmah: <a href="tel:{{from_phone}}" style="color: #e9a121; font-weight: bold;">{{from_phone}}</a></p>
+      <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 20px 0;">
+      <p style="font-size: 12px; color: #999;">
+        Ova poruka je automatski poslata sa sajta KOMOTRAKS.com<br>
+        Vreme slanja: {{reply_to}}
+      </p>
+    </div>
+  </div>
+</body>
+</html>
+
+--------------------------------------------------------------------
+TEMPLATE SETTINGS (na EmailJS):
+--------------------------------------------------------------------
+From name: KOMOTRAKS Website
+From email: komotraks@gmail.com (tvoj email)
+To email: komotraks@gmail.com (gde želiš da primaš upite)
+
+====================================================================
+
+🔑 PARAMETRI (Variables) KOJE KORISTI TEMPLATE:
+====================================================================
+{{from_name}}      - Ime klijenta
+{{from_phone}}     - Telefon klijenta
+{{from_email}}     - Email klijenta (ili "Nije unet email")
+{{message}}        - Poruka klijenta
+{{to_name}}        - KOMOTRAKS Tim (automatski)
+{{reply_to}}       - Reply-to adresa (email ili telefon)
+
+====================================================================
+
+✅ NAKON POSTAVLJANJA:
+====================================================================
+1. Testiraj formu na localhost-u prvo
+2. Proveri u EmailJS dashboard-u da li stiže email
+3. Push na Git i testiraj na live sajtu
+4. Proveri spam folder ako ne stigne email
+
+====================================================================
+
+📧 BESPLATNI PLAN EMAILJS:
+====================================================================
+- 200 email-ova mesečno BESPLATNO
+- Više nego dovoljno za početak
+- Nema kreditne kartice
+
+====================================================================
+
+🆘 POMOĆ:
+====================================================================
+Ako nešto ne radi:
+1. Proveri da li si stavio PUBLIC KEY, SERVICE ID i TEMPLATE ID u dist/js/config.js
+2. Proveri Console u browseru (F12) za greške
+3. Proveri da li EmailJS service ima status "Active"
+4. Proveri spam folder
+
+====================================================================

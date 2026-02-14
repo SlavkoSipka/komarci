@@ -1,0 +1,92 @@
+// Utility Classes
+
+// Background image helper classes
+.bg-hero-1 {
+  background-image: url('../images/bg_1.jpg');
+}
+
+.bg-hero-2 {
+  background-image: url('../images/bg_2.jpg');
+}
+
+.bg-hero-3 {
+  background-image: url('../images/bg_3.jpg');
+}
+
+.bg-hero-4 {
+  background-image: url('../images/bg_4.jpg');
+}
+
+.bg-hero-5 {
+  background-image: url('../images/bg_5.jpg');
+}
+
+.bg-hero-6 {
+  background-image: url('../images/bg_6.jpg');
+}
+
+.bg-hero-7 {
+  background-image: url('../images/bg_7.jpg');
+}
+
+// Spacing utilities (if needed beyond Bootstrap)
+.mt-neg-80 {
+  margin-top: -80px;
+}
+
+.mt-neg-40 {
+  margin-top: -40px;
+}
+
+// Text utilities
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 0.1em;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 0.2em;
+}
+
+.letter-spacing-5 {
+  letter-spacing: 0.5em;
+}
+
+// Display utilities
+.d-table {
+  display: table;
+}
+
+.d-table-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+// Position utilities
+.pos-relative {
+  position: relative;
+}
+
+.pos-absolute {
+  position: absolute;
+}
+
+// Z-index utilities
+.z-index-1 {
+  z-index: 1;
+}
+
+.z-index-2 {
+  z-index: 2;
+}
+
+.z-index-3 {
+  z-index: 3;
+}
+
+.z-index-99 {
+  z-index: 99;
+}

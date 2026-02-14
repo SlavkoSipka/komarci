@@ -1,0 +1,23 @@
+LISTA FAJLOVA ZA FAVICON - KOMOTRAKS
+=====================================
+
+Ovde treba da ubacite sledeće fajlove:
+
+1. favicon.ico
+2. favicon-16x16.png
+3. favicon-32x32.png
+4. apple-touch-icon.png
+5. android-chrome-192x192.png
+6. android-chrome-512x512.png
+
+✅ site.webmanifest - Već kreiran
+
+---
+
+NAPOMENA:
+- Koristite KOMOTRAKS logo iz images/komotraks logotip.png
+- Preporučeni generator: https://realfavicongenerator.net/
+- Nakon generisanja, kopirajte sve PNG i ICO fajlove ovde
+
+Nakon što dodate fajlove, potrebno je dodati HTML kod u head sekciju svih stranica.
+Detaljne instrukcije su u README.md fajlu.

@@ -1,0 +1,13 @@
+{
+  "port": 3000,
+  "files": ["*.html", "css/**/*.css", "js/**/*.js", "images/**/*"],
+  "server": {
+    "baseDir": "./",
+    "middleware": {
+      "0": null
+    }
+  },
+  "open": "local",
+  "notify": false,
+  "ghostMode": false
+}

@@ -1,0 +1,53 @@
+# KOMOTRAKS - Izveštaj o izmenama u sekciji "Usluge" (Komarnici, Harmonika vrata, Zavese)
+
+Ovaj izveštaj sumira sve ključne izmene i unapređenja na stranicama:
+- Komarnici
+- Harmonika vrata
+- Zavese
+
+---
+
+## 1. Komarnici
+- **SEO optimizacija**: Dodata H1 i velika H2 za bolju vidljivost na pretraživačima.
+- **Showcase kartice**: Prikaz svih tipova komarnika sa slikama, cenama, benefitima i detaljima.
+- **WebP slike**: Svi produkti koriste WebP format za brže učitavanje.
+- **Jedinstvena zelena boja**: Svi CTA dugmići, cene i ikone su ujednačeni (#28a745).
+- **FAQ sekcija**: Akordeon sa najčešćim pitanjima i odgovorima, klikom se otvara/zatvara odgovor.
+- **Oblasti pokrivanja**: Jasno istaknuto gde se vrši montaža u Beogradu.
+- **Garancija**: Istaknuta garancija na sve proizvode.
+
+## 2. Harmonika vrata
+- **SEO optimizacija**: Pravilna hijerarhija naslova (H1, H2).
+- **Showcase kartice**: Prikaz svih tipova harmonika vrata sa slikama, benefitima i detaljima.
+- **WebP slike**: Svi produkti koriste WebP format.
+- **Zelena boja**: Usklađen vizuelni identitet sa ostalim stranicama.
+- **FAQ sekcija**: Akordeon sa 5 najčešćih pitanja i odgovora, funkcionalan klik.
+- **Oblasti pokrivanja**: Jasno istaknuto gde se vrši montaža.
+- **Garancija**: 2 godine na materijal i rad.
+
+## 3. Zavese
+- **SEO optimizacija**: H1 i velika H2 za bolju pretragu.
+- **Showcase kartice**: Prikaz Zebra i Trakastih zavesa sa WebP slikama, benefitima i detaljima.
+- **WebP slike**: Svi produkti koriste WebP format.
+- **Zelena boja**: Usklađen vizuelni identitet.
+- **FAQ sekcija**: Akordeon sa 5 najčešćih pitanja i odgovora, funkcionalan klik.
+- **Oblasti pokrivanja**: Jasno istaknuto gde se vrši montaža.
+- **Garancija**: 2 godine na materijal i rad.
+- **Lifestyle slika**: Dodata referentna slika iz realnog prostora.
+
+---
+
+## Zajedničke prednosti
+- **Brže učitavanje**: Optimizovane slike i minifikovan kod.
+- **Konzistentan dizajn**: Sve stranice koriste istu paletu boja i stil dugmića.
+- **Jasna navigacija**: Usluge su lako dostupne iz glavnog menija.
+- **FAQ sekcije**: Sve stranice imaju funkcionalan FAQ za najčešća pitanja klijenata.
+- **Garancija i transparentnost**: Istaknute garancije i transparentne cene.
+
+---
+
+Za sva dodatna pitanja ili izmene, stojimo na raspolaganju!
+
+---
+
+Izveštaj generisan: 05.02.2026.
