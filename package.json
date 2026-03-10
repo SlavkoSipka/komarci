@@ -6,9 +6,9 @@
   "scripts": {
     "dev": "concurrently --kill-others-on-fail \"npm run sass:watch\" \"npm run serve\" \"npm run open-browser\"",
     "serve": "http-server -p 3000 -c-1",
-    "open-browser": "node -e \"setTimeout(() => { require('child_process').exec('start http://localhost:3000', (err) => { if(err) console.error(err); }); }, 3000);\"",
-    "sass:watch": "sass --watch scss:css --style expanded --source-map",
-    "sass:build": "sass scss:css --style compressed --no-source-map",
+    "open-browser": "node -e \"const {exec}=require('child_process'); const cmd=process.platform==='win32'?'start':'xdg-open'; setTimeout(()=>exec(cmd+' http://localhost:3000',(err)=>{if(err)console.error(err)}),3000)\"",
+    "sass:watch": "sass --watch scss:css --style expanded --source-map --quiet-deps",
+    "sass:build": "sass scss:css --style compressed --no-source-map --quiet-deps",
     "build": "npm run clean && npm run sass:build && npm run optimize && npm run copy-assets && npm run validate:sitemap",
     "validate:sitemap": "node build-tools/validate-sitemap.js",
     "optimize": "npm run optimize:css && npm run optimize:js && npm run optimize:html",
