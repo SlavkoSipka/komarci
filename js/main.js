@@ -153,7 +153,7 @@ AOS.init({
 	/**
 	 * Initialize Scrollax for smooth scrolling effects
 	 */
-	$.Scrollax();
+	if ($.Scrollax) { $.Scrollax(); }
 
 	/**
 	 * Initialize Owl Carousel for causes section
@@ -161,6 +161,7 @@ AOS.init({
 	 * NO DRAG - samo strelice za navigaciju
 	 */
 	var carousel = function() {
+		if (!$.fn.owlCarousel) return;
 		$('.carousel-cause').owlCarousel({
 			autoplay: true,
 			center: true,
@@ -290,7 +291,8 @@ AOS.init({
 	 * Triggers animation when section scrolls into view
 	 */
 	var counter = function() {
-		
+		if (!$.animateNumber) return;
+
 		$('#section-counter').waypoint( function( direction ) {
 
 			if( direction === 'down' && !$(this.element).hasClass('ftco-animated') ) {
@@ -386,6 +388,7 @@ AOS.init({
 	 * Initialize Magnific Popup for image gallery
 	 * Enables lightbox functionality for images - BEZ tamnog overlay-a
 	 */
+	if ($.fn.magnificPopup) {
 	$('.image-popup').magnificPopup({
     type: 'image',
     closeOnContentClick: true,
@@ -414,11 +417,9 @@ AOS.init({
       }
     }
 	});
+	} // end magnificPopup check
 
-	/**
-	 * Initialize Magnific Popup for video embeds
-	 * Handles YouTube, Vimeo, and Google Maps popups
-	 */
+	if ($.fn.magnificPopup) {
 	$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
     disableOn: 700,
     type: 'iframe',
@@ -428,19 +429,24 @@ AOS.init({
 
 		fixedContentPos: false
 	});
+	} // end magnificPopup video check
 
 	/**
 	 * Initialize datepicker for appointment date field
 	 */
+	if ($.fn.datepicker) {
 	$('#appointment_date').datepicker({
 		'format': 'm/d/yyyy',
 		'autoclose': true
 	});
+	}
 
 	/**
 	 * Initialize timepicker for appointment time field
 	 */
+	if ($.fn.timepicker) {
 	$('#appointment_time').timepicker();
+	}
 
 
 
