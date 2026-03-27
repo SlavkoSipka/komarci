@@ -2,29 +2,38 @@
 📧 EMAILJS EMAIL TEMPLATE ZA KOMOTRAKS KONTAKT FORMU
 ====================================================================
 
-KORACI ZA POSTAVLJANJE:
+🔧 POLJA IZ KONTAKT FORME:
+--------------------------------------------------------------------
+- name (Ime korisnika)
+- phone (Telefon)
+- email (Email - opciono)
+- message (Poruka)
+
+====================================================================
+
+📋 KORACI ZA POSTAVLJANJE:
 
 1. Idi na https://www.emailjs.com/ i registruj se (BESPLATNO)
 
 2. DODAJ EMAIL SERVICE:
-   - Idi na "Email Services" > "Add New Service"
-   - Izaberi Gmail / Outlook / Yahoo (šta god koristiš)
-   - Povezuj svoj email nalog (komotraks@gmail.com)
+   - "Email Services" > "Add New Service"
+   - Izaberi Outlook
+   - Povezuj svoj email (komotraks-kontakt@outlook.com)
    - Sačuvaj SERVICE_ID (primer: service_abc123)
 
 3. KREIRAJ EMAIL TEMPLATE:
-   - Idi na "Email Templates" > "Create New Template"
+   - "Email Templates" > "Create New Template"
    - Kopiraj SUBJECT i BODY ispod
    - Sačuvaj TEMPLATE_ID (primer: template_xyz456)
 
 4. UZMI PUBLIC KEY:
-   - Idi na "Account" > "API Keys"
+   - "Account" > "API Keys"
    - Kopiraj Public Key (primer: abc123XYZ456)
 
-5. STAVI SVE U dist/js/config.js:
-   - EMAILJS_PUBLIC_KEY: 'tvoj_public_key'
-   - EMAILJS_SERVICE_ID: 'tvoj_service_id'
-   - EMAILJS_TEMPLATE_ID: 'tvoj_template_id'
+5. UPDATE config.js sa:
+   CONFIG.EMAILJS_PUBLIC_KEY = 'tvoj_public_key'
+   CONFIG.EMAILJS_SERVICE_ID = 'tvoj_service_id'
+   CONFIG.EMAILJS_TEMPLATE_ID = 'tvoj_template_id'
 
 ====================================================================
 
@@ -158,7 +167,7 @@ CONTENT / BODY (na EmailJS):
       <hr style="border: none; border-top: 1px solid #e0e0e0; margin: 20px 0;">
       <p style="font-size: 12px; color: #999;">
         Ova poruka je automatski poslata sa sajta KOMOTRAKS.com<br>
-        Vreme slanja: {{reply_to}}
+        Odgovori na: {{from_email}} | Telefon: {{from_phone}}
       </p>
     </div>
   </div>
@@ -169,8 +178,8 @@ CONTENT / BODY (na EmailJS):
 TEMPLATE SETTINGS (na EmailJS):
 --------------------------------------------------------------------
 From name: KOMOTRAKS Website
-From email: komotraks@gmail.com (tvoj email)
-To email: komotraks@gmail.com (gde želiš da primaš upite)
+From email: komotraks-kontakt@outlook.com
+To email: homoljac69@gmail.com
 
 ====================================================================
 
