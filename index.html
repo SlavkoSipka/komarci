@@ -19,10 +19,10 @@
     <meta name="theme-color" content="#1a1a1a">
     <meta name="msapplication-TileColor" content="#1a1a1a">
     <meta name="msapplication-config" content="favicons/browserconfig.xml">
-    <meta name="description" content="Komarnici, harmonika vrata i zavese Beograd. Ugradnja po meri za Zvezdaru, Palilulu, Voždovac. Besplatno merenje, cene od 20€. ☎ 061 6738181">
+    <meta name="description" content="Komarnici, harmonika vrata i zavese Beograd ⭐ Ugradnja po meri. Novi Beograd, Vračar, Zvezdara, Voždovac, Palilula. Besplatno merenje, cene od 20€. ☎ 061 6738181">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Ugradnja Komarnika, Harmonika Vrata & Zavesa Beograd | KOMOTRAKS">
-    <meta property="og:description" content="Profesionalna ugradnja komarnika, harmonika vrata i zavesa u Beogradu. Besplatno merenje, cene od 20€. Pozovite 061 6738181.">
+    <meta property="og:description" content="Profesionalna ugradnja komarnika, harmonika vrata i zavesa u Beogradu. Novi Beograd, Vračar, Zvezdara, Palilula. Besplatno merenje, cene od 20€. ☎ 061 6738181">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ugradnja-zavesa-komarnika.com/">
     <meta property="og:image" content="https://ugradnja-zavesa-komarnika.com/images/komotraks-logotip.png">
@@ -30,6 +30,15 @@
     
     <!-- Canonical URL -->
         <link rel="canonical" href="https://ugradnja-zavesa-komarnika.com/">
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="RS-00">
+    <meta name="geo.placename" content="Beograd">
+    <meta name="geo.position" content="44.787197;20.457273">
+    <meta name="ICBM" content="44.787197, 20.457273">
+    
+    <meta name="keywords" content="komarnici beograd, harmonika vrata beograd, zavese beograd, ugradnja komarnika, harmonika vrata po meri, zebra zavese, komarnici novi beograd, komarnici vračar, harmonika vrata za terase, ugradnja zavesa">
+
 <!-- Sitemap -->
     <link rel="sitemap" type="application/xml" title="Sitemap" href="https://ugradnja-zavesa-komarnika.com/sitemap.xml">
     
@@ -49,12 +58,18 @@
         "addressCountry": "RS"
       },
       "areaServed": [
-        {"@type": "City", "name": "Zvezdara"},
-        {"@type": "City", "name": "Palilula"},
-        {"@type": "City", "name": "Karaburma"},
-        {"@type": "City", "name": "Voždovac"},
-        {"@type": "City", "name": "Novi Beograd"},
-        {"@type": "City", "name": "Zemun"}
+        {"@type": "City", "name": "Beograd"},
+        {"@type": "AdministrativeArea", "name": "Novi Beograd"},
+        {"@type": "AdministrativeArea", "name": "Vračar"},
+        {"@type": "AdministrativeArea", "name": "Zvezdara"},
+        {"@type": "AdministrativeArea", "name": "Palilula"},
+        {"@type": "AdministrativeArea", "name": "Karaburma"},
+        {"@type": "AdministrativeArea", "name": "Voždovac"},
+        {"@type": "AdministrativeArea", "name": "Zemun"},
+        {"@type": "AdministrativeArea", "name": "Rakovica"},
+        {"@type": "AdministrativeArea", "name": "Čukarica"},
+        {"@type": "AdministrativeArea", "name": "Stari Grad"},
+        {"@type": "AdministrativeArea", "name": "Savski Venac"}
       ],
       "priceRange": "20€ - 200€",
       "openingHours": "Mo-Sa 08:00-20:00",
@@ -2724,21 +2739,21 @@
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
   </script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery.waypoints.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/jquery.animatenumber.min.js"></script>
-  <script src="js/bootstrap-datepicker.js"></script>
-  <script src="js/jquery.timepicker.min.js"></script>
-  <script src="js/scrollax.min.js"></script>
+  <script src="js/popper.min.js" defer></script>
+  <script src="js/bootstrap.min.js" defer></script>
+  <script src="js/jquery.easing.1.3.js" defer></script>
+  <script src="js/jquery.waypoints.min.js" defer></script>
+  <script src="js/jquery.stellar.min.js" defer></script>
+  <script src="js/owl.carousel.min.js" defer></script>
+  <script src="js/jquery.magnific-popup.min.js" defer></script>
+  <script src="js/aos.js" defer></script>
+  <script src="js/jquery.animatenumber.min.js" defer></script>
+  <script src="js/bootstrap-datepicker.js" defer></script>
+  <script src="js/jquery.timepicker.min.js" defer></script>
+  <script src="js/scrollax.min.js" defer></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="js/google-map.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/google-map.js" defer></script>
+  <script src="js/main.js" defer></script>
   
   <!-- DISABLE PARALLAX ON MOBILE -->
   <script>
@@ -2854,19 +2869,19 @@
   </script>
 
   <!-- Lazy Loading za Background Slike (optimizacija) -->
-  <script src="js/lazy-backgrounds.js"></script>
+  <script src="js/lazy-backgrounds.js" defer></script>
   
   <!-- EmailJS SDK for contact form -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   
   <!-- API Configuration (EmailJS keys) -->
-  <script src="js/config.js"></script>
+  <script src="js/config.js" defer></script>
   
   <!-- EmailJS Contact Form Handler -->
-  <script src="js/emailjs-contact.js"></script>
+  <script src="js/emailjs-contact.js" defer></script>
   
   <!-- Service Worker for offline support and caching -->
-  <script src="js/sw-register.js"></script>
+  <script src="js/sw-register.js" defer></script>
     
   </body>
 </html>
