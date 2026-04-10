@@ -5,8 +5,8 @@ const CONFIG = {
     
     // EmailJS Configuration
     // Dobićeš ove vrednosti nakon registracije na https://www.emailjs.com/
-    EMAILJS_PUBLIC_KEY: 'smz_B_DFSpZ4OLD2C',  // Idi na: Account > API Keys > Public Key
-    EMAILJS_SERVICE_ID: 'service_i1e680q',          // Email Services (EmailJS dashboard)
-    EMAILJS_TEMPLATE_ID: 'template_j94voyd'         // Idi na: Email Templates > Create Template
+    EMAILJS_PUBLIC_KEY: 'LjHmllhoMp87LxI_D',  // Idi na: Account > API Keys > Public Key
+    EMAILJS_SERVICE_ID: 'service_4pyjzhu',          // Email Services (EmailJS dashboard)
+    EMAILJS_TEMPLATE_ID: 'template_lnocxoc'         // Idi na: Email Templates > Create Template
 };
     
