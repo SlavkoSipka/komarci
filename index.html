@@ -19,10 +19,10 @@
     <meta name="theme-color" content="#1a1a1a">
     <meta name="msapplication-TileColor" content="#1a1a1a">
     <meta name="msapplication-config" content="favicons/browserconfig.xml">
-    <meta name="description" content="Komarnici, harmonika vrata i zavese Beograd ⭐ Ugradnja po meri. Novi Beograd, Vračar, Zvezdara, Voždovac, Palilula. Besplatno merenje, cene od 20€. ☎ 061 6738181">
+    <meta name="description" content="Komarnici, harmonika vrata i zavese Beograd ⭐ Ugradnja po meri. Novi Beograd, Vračar, Zvezdara, Voždovac, Palilula. Besplatno merenje, cene od 25€. ☎ 061 6738181">
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Ugradnja Komarnika, Harmonika Vrata & Zavesa Beograd | KOMOTRAKS">
-    <meta property="og:description" content="Profesionalna ugradnja komarnika, harmonika vrata i zavesa u Beogradu. Novi Beograd, Vračar, Zvezdara, Palilula. Besplatno merenje, cene od 20€. ☎ 061 6738181">
+    <meta property="og:description" content="Profesionalna ugradnja komarnika, harmonika vrata i zavesa u Beogradu. Novi Beograd, Vračar, Zvezdara, Palilula. Besplatno merenje, cene od 25€. ☎ 061 6738181">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ugradnja-zavesa-komarnika.com/">
     <meta property="og:image" content="https://ugradnja-zavesa-komarnika.com/images/komotraks-logotip.png">
@@ -1574,12 +1574,13 @@
           <li class="nav-item"><a href="galerija.html" class="nav-link">Galerija</a></li>
           <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
           <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="tel:+381616738181" class="nav-link" style="color: #ff7f50 !important; font-weight: 700; white-space: nowrap;">📞 061 6738181</a></li>
         </ul>
       </div>
     </div>
   </nav>
     <!-- END nav -->
-    
+
     <div class="hero-wrap" style="background-image: url('images/komarnici-cena-palilula.webp');" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
@@ -1588,7 +1589,10 @@
             <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Ugradnja Komarnika, Harmonika Vrata i Zavesa - Beograd</h1>
             <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Profesionalna ugradnja komarnika, harmonika vrata i zavesa za Beograd, Zvezdaru, Palilulu i šire. Besplatno merenje i brza montaža!</p>
 
-            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="kontakt.html" class="btn px-4 py-3" style="background-color: #1a1a1a; color: white; border: none;"><span class="icon-phone mr-2"></span>Kontaktirajte Nas</a></p>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">
+              <a href="tel:+381616738181" class="btn px-4 py-3 mr-2" style="background-color: #ff7f50; color: white; border: none; font-weight: 700; font-size: 1.1rem;"><span class="icon-phone mr-2"></span>Pozovite: 061 6738181</a>
+              <a href="kontakt.html" class="btn px-4 py-3" style="background-color: rgba(255,255,255,0.15); color: white; border: 2px solid rgba(255,255,255,0.7);">Zakažite Merenje</a>
+            </p>
           </div>
         </div>
       </div>
@@ -2643,6 +2647,27 @@
     	</div>
     </section>
 
+    <!-- CTA Section -->
+    <section class="ftco-section-3 img" style="background-image: url('images/KOMARNICI-ZVEZDARA.webp');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row d-md-flex">
+          <div class="col-md-12 text-center ftco-animate">
+            <h3 class="mb-4" style="color: white; font-size: 2.5rem; font-weight: 700;">Trebaju Vam Komarnici, Zavese ili Harmonika Vrata?</h3>
+            <p style="color: white; font-size: 1.2rem; margin-bottom: 30px;">Pozovite KOMOTRAKS za besplatno merenje i stručnu procenu. Pokrivamo ceo Beograd!</p>
+            <p>
+              <a href="tel:+381616738181" class="btn btn-white py-3 px-5" style="font-size: 1.1rem; font-weight: 700;">
+                <span class="icon-phone mr-2"></span>Pozovi: 061 6738181
+              </a>
+              <a href="kontakt.html" class="btn btn-primary py-3 px-5 ml-3" style="font-size: 1.1rem;">
+                Pošalji Upit
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer class="ftco-footer ftco-section img">
     	<div class="overlay"></div>
       <div class="container">
@@ -2882,6 +2907,58 @@
   
   <!-- Service Worker for offline support and caching -->
   <script src="js/sw-register.js" defer></script>
-    
+
+  <!-- Floating Phone CTA -->
+  <a href="tel:+381616738181" class="komo-phone-float" aria-label="Pozovite KOMOTRAKS 061 6738181">
+    <span class="komo-phone-icon">📞</span>
+    <span class="komo-phone-label">Pozovite: 061 6738181</span>
+  </a>
+  <style>
+  .komo-phone-float {
+    position: fixed;
+    bottom: 28px;
+    right: 24px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ff7f50;
+    color: #fff !important;
+    text-decoration: none !important;
+    border-radius: 50px;
+    padding: 14px 22px 14px 18px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    animation: komoPulse 2.2s infinite;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .komo-phone-float:hover {
+    background: #e86a38;
+    color: #fff !important;
+    transform: scale(1.05);
+    text-decoration: none !important;
+  }
+  .komo-phone-icon { font-size: 1.3rem; line-height: 1; }
+  @keyframes komoPulse {
+    0%   { box-shadow: 0 4px 20px rgba(255,127,80,0.5), 0 0 0 0 rgba(255,127,80,0.65); }
+    70%  { box-shadow: 0 4px 20px rgba(255,127,80,0.5), 0 0 0 16px rgba(255,127,80,0); }
+    100% { box-shadow: 0 4px 20px rgba(255,127,80,0.5), 0 0 0 0 rgba(255,127,80,0); }
+  }
+  @media (max-width: 768px) {
+    .komo-phone-float {
+      bottom: 20px;
+      right: 16px;
+      padding: 0;
+      width: 58px;
+      height: 58px;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .komo-phone-label { display: none; }
+    .komo-phone-icon { font-size: 1.6rem; }
+  }
+  </style>
+
   </body>
 </html>

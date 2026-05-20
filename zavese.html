@@ -768,6 +768,7 @@
           <li class="nav-item"><a href="galerija.html" class="nav-link">Galerija</a></li>
           <li class="nav-item"><a href="kontakt.html" class="nav-link">Kontakt</a></li>
           <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+          <li class="nav-item"><a href="tel:+381616738181" class="nav-link" style="color: #ff7f50 !important; font-weight: 700; white-space: nowrap;">📞 061 6738181</a></li>
         </ul>
       </div>
     </div>
@@ -1282,5 +1283,57 @@ Od prvog telefonskog poziva do trenutka kada vam pružimo ruku nakon montaže, k
     }
   </script>
     
+  <!-- Floating Phone CTA -->
+  <a href="tel:+381616738181" class="komo-phone-float" aria-label="Pozovite KOMOTRAKS 061 6738181">
+    <span class="komo-phone-icon">📞</span>
+    <span class="komo-phone-label">Pozovite: 061 6738181</span>
+  </a>
+  <style>
+  .komo-phone-float {
+    position: fixed;
+    bottom: 28px;
+    right: 24px;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #ff7f50;
+    color: #fff !important;
+    text-decoration: none !important;
+    border-radius: 50px;
+    padding: 14px 22px 14px 18px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    animation: komoPulse 2.2s infinite;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .komo-phone-float:hover {
+    background: #e86a38;
+    color: #fff !important;
+    transform: scale(1.05);
+    text-decoration: none !important;
+  }
+  .komo-phone-icon { font-size: 1.3rem; line-height: 1; }
+  @keyframes komoPulse {
+    0%   { box-shadow: 0 4px 20px rgba(255,127,80,0.5), 0 0 0 0 rgba(255,127,80,0.65); }
+    70%  { box-shadow: 0 4px 20px rgba(255,127,80,0.5), 0 0 0 16px rgba(255,127,80,0); }
+    100% { box-shadow: 0 4px 20px rgba(255,127,80,0.5), 0 0 0 0 rgba(255,127,80,0); }
+  }
+  @media (max-width: 768px) {
+    .komo-phone-float {
+      bottom: 20px;
+      right: 16px;
+      padding: 0;
+      width: 58px;
+      height: 58px;
+      justify-content: center;
+      border-radius: 50%;
+    }
+    .komo-phone-label { display: none; }
+    .komo-phone-icon { font-size: 1.6rem; }
+  }
+  </style>
+
   </body>
 </html>
