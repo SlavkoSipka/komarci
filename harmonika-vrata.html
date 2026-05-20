@@ -1488,6 +1488,19 @@ Od prvog telefonskog poziva do trenutka kada vam pružimo ruku nakon montaže, k
     }
   </script>
     
+  <!-- Sticky Mobile CTA -->
+  <div id="mobile-cta" style="display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 9998; background: #28a745; padding: 12px 20px; box-shadow: 0 -2px 10px rgba(0,0,0,0.2); text-align: center;">
+    <a href="tel:+381616738181" style="color: white; text-decoration: none; font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 8px;">
+      <span class="icon-phone"></span> Pozovite: +381 61 6738181
+    </a>
+  </div>
+  <style>
+    @media (max-width: 768px) {
+      #mobile-cta { display: block !important; }
+      footer.ftco-footer { padding-bottom: 60px; }
+    }
+  </style>
+
   <!-- Floating Phone CTA -->
   <a href="tel:+381616738181" class="komo-phone-float" aria-label="Pozovite KOMOTRAKS 061 6738181">
     <span class="komo-phone-icon">📞</span>
