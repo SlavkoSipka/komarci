@@ -91,24 +91,6 @@ if (fs.existsSync(path.join(__dirname, '../sitemap.xml'))) {
   console.log('🗺️  Copied sitemap.xml');
 }
 
-// Kopiraj _headers za Netlify ako postoji
-if (fs.existsSync(path.join(__dirname, '../_headers'))) {
-  fs.copyFileSync(
-    path.join(__dirname, '../_headers'),
-    path.join(__dirname, '../dist/_headers')
-  );
-  console.log('📋 Copied _headers for Netlify');
-}
-
-// Kopiraj _redirects za Netlify ako postoji
-if (fs.existsSync(path.join(__dirname, '../_redirects'))) {
-  fs.copyFileSync(
-    path.join(__dirname, '../_redirects'),
-    path.join(__dirname, '../dist/_redirects')
-  );
-  console.log('🔀 Copied _redirects for Netlify');
-}
-
 // Kopiraj service-worker.js
 if (fs.existsSync(path.join(__dirname, '../service-worker.js'))) {
   fs.copyFileSync(
