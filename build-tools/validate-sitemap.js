@@ -70,8 +70,8 @@ function validateSitemap() {
 
   // Validate URL format
   const invalidUrls = urls.filter(url => {
-    return !url.startsWith('https://ugradnja-zavesa-komarnika.com/') &&
-           !url.startsWith('https://ugradnja-zavesa-komarnika.com');
+    return !url.startsWith('https://www.ugradnja-zavesa-komarnika.com/') &&
+           !url.startsWith('https://www.ugradnja-zavesa-komarnika.com');
   });
 
   if (invalidUrls.length > 0) {
